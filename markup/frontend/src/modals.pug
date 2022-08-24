@@ -1,0 +1,511 @@
+extends pug/layouts/dashboard
+
+block title
+    title Modals
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 Modals
+        .card.shadow.mb-4
+            .card-header.py-3
+                .edit-form-toolbar
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#no-paddings-modal' data-placement='top' title='Without paddings')
+                        i.fas.fa-battery-empty
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#default-modal' data-placement='top' title='Default Modal')
+                        i.fas.fa-battery-quarter
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#medium-modal' data-placement='top' title='Medium modal')
+                        i.fas.fa-battery-half
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#large-modal' data-placement='top' title='Large Modal')
+                        i.fas.fa-battery-full
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#map-modal' data-placement='top' title='Map Modal')
+                        i.fas.fa-map
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#load-notes-modal' data-placement='top' title='Load Notes Modal')
+                        i.fas.fa-sticky-note
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='.mer-modal' data-placement='top' title='Mobile Express Registration Modal')
+                        i.fas.fa-mobile-alt
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='.modify-location-modal' data-placement='top' title='Modify Location Modal')
+                        i.fas.fa-location-arrow
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='.clear-load-modal' data-placement='top' title='Clear Load')
+                        i.fas.fa-eraser
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='.send-modal' data-placement='top' title='Send')
+                        i.fas.fa-paper-plane
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#random-id-for-launch-by-button-0' data-placement='top' title='Search')
+                        i.fas.fa-table
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='.modal-slider' data-placement='top' title='Modal Slider')
+                        i.fab.fa-hive
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#random-id-for-launch-by-button-1' data-placement='top' title='Payroll Settlement')
+                        i.fas.fa-print
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#random-id-for-launch-by-button-2' data-placement='top' title='Rate Calc')
+                        i.fas.fa-calculator
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#random-id-for-launch-by-button-3' data-placement='top' title='Adjust Balance')
+                        i.fas.fa-balance-scale
+                    button.btn.btn-link(style="margin-left: auto" data-toggle='modal' data-target='#work-order-error') Error modal
+            .card-body
+                ol
+                    li  <code>style='padding: 0;'</code> attribute for .modal-body/header/footer
+                    li  <code>.modal-dialog</code> default size ( small )
+                    li  <code>.modal-dialog.modal-lg</code> for medium size
+                    li  <code>.modal-dialog.modal-xl</code> for big size
+                    li  <code>.modal-dialog.modal-map</code> for map (max-width: 800px)
+                    li  Load Notes
+                    li  Mobile Express Registration ( MER )
+                    li  Location modify
+                    li  Clear Load
+                    li  Send
+                    li  Modal DT example
+                    li  Modal Slider
+                    li  Print Settlements
+                    li  Rate By
+                    li  Adjust Balance
+                    li  Work order error
+
+block modals
+    include pug/components/modals/no-paddings
+    include pug/components/modals/default
+    include pug/components/modals/medium
+    include pug/components/modals/large
+    include pug/components/modals/map-modal
+
+    include pug/components/modals/load-notes
+
+    include pug/components/modals/mer-modal
+
+    include pug/components/modals/modify-location
+
+    include pug/components/modals/location-confirm
+    include pug/components/modals/clear-load
+    include pug/components/modals/send
+    include pug/components/modals/no-scroll
+    include pug/components/modals/slider
+    include pug/components/modals/print-settlements
+    include pug/components/modals/rate-by
+    include pug/components/modals/adjust-balance
+    include pug/components/modals/work-order-error
+
+block scripts
+    script.
+        var dataTableDropdown = {
+            data: [
+                ['Mikron', '1034 6th Ave N', 'KENT', 'WA', '98032', '', false, false],
+                ['MIL-SPEC ENTERPRISE', '88 33RD ST', 'BROOKLYN', 'NY', '11232-192', '', false, false],
+                ['MILAN', '700 MILAN DRIVE', 'SPARKS', 'NV', '89431', '', false, false],
+                ['MILAN EXPRESS DISTRIBUTION SERVICE 5', '700 MILAN DRIVE', 'Sparks', 'NV', '89431', '', false, false],
+                ['MILAN OH', '49 LOCKWOOD RD', 'MILAN', 'OH', '44846', '', false, false],
+            ],
+            paging: false,
+            orderCellsTop: true,
+            initComplete: function () {
+            },
+            columns: [
+                {
+                    title: 'Name',
+                },{
+                    title:  'Address',
+                },{
+                    title: 'City',
+                },{
+                    title: 'St',
+                },{
+                    title: 'Zip',
+                },{
+                    title: 'Zone',
+                },{
+                    title: 'RRP',
+                    searchable: false,
+                    bSortable: false,
+                    render: function (data, type, row) {
+                        if (data) {
+                            return '<input type="checkbox" class="editor-active" onclick="return false;" checked>';
+                        } else {
+                            return '<input type="checkbox" class="editor-active" onclick="return false;">';
+                        }
+                    },
+                    className: "dt-body-center text-center"
+                },{
+                    title: 'Inactive',
+                    searchable: false,
+                    bSortable: false,
+                    render: function (data, type, row) {
+                        if (data) {
+                            return '<input type="checkbox" class="editor-active" onclick="return false;" checked>';
+                        } else {
+                            return '<input type="checkbox" class="editor-active" onclick="return false;">';
+                        }
+                    },
+                    className: "dt-body-center text-center"
+                }
+            ],
+        };
+        var clearData = {
+            data: [
+                [false, '', 'DM WORLD TRANSPORT', 'Load'],
+                [true, '', 'DM WORLD', 'Load'],
+            ],
+            searching: false,
+            paging: true,
+            info: false,
+            lengthChange: false,
+            dom: 't',
+            ordering: false,
+            initComplete: function () {
+            },
+            columns: [
+                {
+                    title: 'Clr',
+                    render: function (data, type, row) {
+                        if (data) {
+                            return '<input type="checkbox" class="editor-active" onclick="return false;" checked>';
+                        } else {
+                            return '<input type="checkbox" class="editor-active" onclick="return false;">';
+                        }
+                    },
+                    className: "dt-body-center text-center"
+                },{
+                    title:  'Date',
+                },{
+                    title: 'Name',
+                },{
+                    title: 'Pay Code',
+                }
+            ],
+            autoWidth: false,
+        };
+        var scansData = {
+            data: [
+                ['BL', 'Bill of Lading'],
+                ['BL', 'Bill of Lading'],
+                ['BL', 'Bill of Lading'],
+                ['TA', 'Transport Agreement'],
+            ],
+            searching: false,
+            paging: true,
+            info: false,
+            lengthChange: false,
+            dom: 't',
+            ordering: false,
+            initComplete: function () {
+            },
+            columns: [
+                {
+                    title: 'Type',
+                },{
+                    title: 'Description',
+                }
+            ],
+            autoWidth: false,
+        };
+
+        /***** DT ****/
+        var firstTable = {
+            data: [
+                ["Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800"],
+                ["Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750"],
+                ["Ashton Cox", "Junior Technical Author", "San Francisco", "1562", "2009/01/12", "$86,000"],
+                ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh", "6224", "2012/03/29", "$433,060"],
+                ["Airi Satou", "Accountant", "Tokyo", "5407", "2008/11/28", "$162,700"],
+                ["Brielle Williamson", "Integration Specialist", "New York", "4804", "2012/12/02", "$372,000"],
+                ["Herrod Chandler", "Sales Assistant", "San Francisco", "9608", "2012/08/06", "$137,500"],
+                ["Rhona Davidson", "Integration Specialist", "Tokyo", "6200", "2010/10/14", "$327,900"],
+                ["Colleen Hurst", "Javascript Developer", "San Francisco", "2360", "2009/09/15", "$205,500"],
+                ["Sonya Frost", "Software Engineer", "Edinburgh", "1667", "2008/12/13", "$103,600"],
+                ["Jena Gaines", "Office Manager", "London", "3814", "2008/12/19", "$90,560"],
+                ["Quinn Flynn", "Support Lead", "Edinburgh", "9497", "2013/03/03", "$342,000"],
+                ["Charde Marshall", "Regional Director", "San Francisco", "6741", "2008/10/16", "$470,600"],
+                ["Haley Kennedy", "Senior Marketing Designer", "London", "3597", "2012/12/18", "$313,500"],
+                ["Tatyana Fitzpatrick", "Regional Director", "London", "1965", "2010/03/17", "$385,750"],
+                ["Michael Silva", "Marketing Designer", "London", "1581", "2012/11/27", "$198,500"],
+                ["Paul Byrd", "Chief Financial Officer (CFO)", "New York", "3059", "2010/06/09", "$725,000"],
+                ["Gloria Little", "Systems Administrator", "New York", "1721", "2009/04/10", "$237,500"],
+                ["Bradley Greer", "Software Engineer", "London", "2558", "2012/10/13", "$132,000"],
+                ["Dai Rios", "Personnel Lead", "Edinburgh", "2290", "2012/09/26", "$217,500"],
+                ["Jenette Caldwell", "Development Lead", "New York", "1937", "2011/09/03", "$345,000"],
+                ["Yuri Berry", "Chief Marketing Officer (CMO)", "New York", "6154", "2009/06/25", "$675,000"],
+                ["Caesar Vance", "Pre-Sales Support", "New York", "8330", "2011/12/12", "$106,450"],
+                ["Doris Wilder", "Sales Assistant", "Sydney", "3023", "2010/09/20", "$85,600"],
+                ["Angelica Ramos", "Chief Executive Officer (CEO)", "London", "5797", "2009/10/09", "$1,200,000"],
+                ["Gavin Joyce", "Developer", "Edinburgh", "8822", "2010/12/22", "$92,575"],
+                ["Jennifer Chang", "Regional Director", "Singapore", "9239", "2010/11/14", "$357,650"],
+                ["Brenden Wagner", "Software Engineer", "San Francisco", "1314", "2011/06/07", "$206,850"],
+                ["Fiona Green", "Chief Operating Officer (COO)", "San Francisco", "2947", "2010/03/11", "$850,000"],
+                ["Shou Itou", "Regional Marketing", "Tokyo", "8899", "2011/08/14", "$163,000"],
+                ["Michelle House", "Integration Specialist", "Sydney", "2769", "2011/06/02", "$95,400"],
+                ["Suki Burks", "Developer", "London", "6832", "2009/10/22", "$114,500"],
+                ["Prescott Bartlett", "Technical Author", "London", "3606", "2011/05/07", "$145,000"],
+                ["Gavin Cortez", "Team Leader", "San Francisco", "2860", "2008/10/26", "$235,500"],
+                ["Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050"],
+                ["Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009/12/09", "$85,675"]
+            ],
+            orderCellsTop: true,
+            colReorder: {
+                realtime: false
+            },
+            select: {
+                style: 'multi',
+                items: 'row'
+            },
+            stateSave: true,
+            initComplete: function () {
+                $('.table tbody tr:nth-child(3)').addClass('load-light-gray');
+                $('.table tbody tr:nth-child(6)').addClass('load-blue');
+                $('.table tbody tr:nth-child(9)').addClass('load-red');
+                $('.table tbody tr:nth-child(12)').addClass('load-light-orange');
+                $('.table tbody tr:nth-child(15)').addClass('load-medium-orange');
+                $('.table tbody tr:nth-child(18)').addClass('load-dark-orange');
+                $('.table tbody tr:nth-child(21)').addClass('load-gray');
+                $('.table tbody tr:nth-child(24)').addClass('load-yellow');
+            },
+            columns: [
+                {
+                    title: "Name",
+                    orderable: false,
+                }, {
+                    title: "Position",
+                }, {
+                    title: "Office",
+                }, {
+                    title: "Extn.",
+                    orderable: false,
+                    searchable: false,
+                }, {
+                    title: "Start Date",
+                }, {
+                    title: "Salary",
+                    orderable: false,
+                    searchable: false,
+                }
+            ],
+            autoWidth: false,
+            conditionalPaging: true,
+            order: [[3, 'asc']],
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    text: '<i class="fas fa-star"></i>',
+                    action: function () {
+                        this.rows().select();
+                    }
+                },
+                {
+                    text: '<i class="far fa-star"></i>',
+                    action: function () {
+                        this.rows().deselect();
+                    }
+                },
+                {
+                    extend: 'copy',
+                },
+                {
+                    extend: 'colvis',
+                    className: 'btn-primary',
+                    attr: {
+                        'title': 'Columns visibility',
+                        'data-colvis-limit': '3', // default/undefined == 1
+                    },
+                    text: 'Hide/Show Columns',
+                    init: function (api, node, config) {
+                        $(node).removeClass('btn-secondary')
+                    }
+                }
+            ]
+        };
+
+        var zeroTable = {
+            data: [
+                ["Tiger Nixon", "System Architect", "Edinburgh"],
+                ["Garrett Winters", "Accountant", "Tokyo"],
+                ["Ashton Cox", "Junior Technical Author", "San Francisco"],
+                ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh"],
+                ["Airi Satou", "Accountant", "Tokyo"],
+            ],
+            orderCellsTop: true,
+            colReorder: {
+                realtime: false,
+            },
+            stateSave: true,
+            initComplete: function () {
+            },
+            columns: [
+                {
+                    title: "Name",
+                    orderable: false,
+                    searchable: false,
+                }, {
+                    title: "Position",
+                    orderable: false,
+                    searchable: false,
+                }, {
+                    title: "Office",
+                    orderable: false,
+                    searchable: false,
+                },
+            ],
+            buttons: [
+                {
+                    text: 'Select all',
+                    action: function () {
+                        this.rows().select();
+                    }
+                },
+                {
+                    text: 'Select none',
+                    action: function () {
+                        this.rows().deselect();
+                    }
+                },
+                {
+                    extend: 'colvis',
+                    columns: ':gt(0)'
+                }
+            ],
+            dom: 'B',
+            order: [[1, 'asc']],
+            autoWidth: false,
+            conditionalPaging: true,
+        };
+
+        var secondTable = {
+            data: [
+                ["Tiger Nixon", "System Architect", "Edinburgh"],
+                ["Garrett Winters", "Accountant", "Tokyo"],
+                ["Ashton Cox", "Junior Technical Author", "San Francisco"],
+                ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh"],
+                ["Airi Satou", "Accountant", "Tokyo"],
+            ],
+            orderCellsTop: true,
+            colReorder: {
+                realtime: false,
+            },
+            stateSave: true,
+            initComplete: function () {
+            },
+            columns: [
+                {
+                    title: "Name",
+                    orderable: false,
+                }, {
+                    title: "Position",
+                }, {
+                    title: "Office",
+                },
+            ],
+            buttons: [
+                {
+                    text: 'Select all',
+                    action: function () {
+                        this.rows().select();
+                    }
+                },
+                {
+                    text: 'Select none',
+                    action: function () {
+                        this.rows().deselect();
+                    }
+                },
+                {
+                    extend: 'colvis',
+                    columns: ':gt(0)'
+                }
+            ],
+            dom: 'Bfrtip',
+            order: [[1, 'asc']],
+            autoWidth: false,
+            conditionalPaging: true,
+        };
+        var thirdTable = {
+            data: [
+                ["Tiger Nixon", "System Architect", "Edinburgh"],
+                ["Garrett Winters", "Accountant", "Tokyo"],
+                ["Ashton Cox", "Junior Technical Author", "San Francisco"],
+                ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh"],
+                ["Airi Satou", "Accountant", "Tokyo"],
+            ],
+            orderCellsTop: true,
+            colReorder: true,
+            stateSave: true,
+            initComplete: function () {
+            },
+            columns: [
+                {
+                    title: "Name",
+                    searchable: false,
+                }, {
+                    title: "Position",
+                }, {
+                    title: "Office",
+                },
+            ],
+            buttons: [
+                {
+                    extend: 'colvis',
+                    columns: ':gt(0)'
+                }
+            ],
+            dom: 'Bfrtip',
+            autoWidth: false,
+            conditionalPaging: true,
+        };
+
+        var payrollDT = {
+            data: [
+                ["ABDI, MOHOYADIN", '1'],
+                ["ABDI, MUSTAFA", '1'],
+                ["ABDULLAHI NOOR, MOHAMED", '1'],
+                ["AGUIRRE, JONATHAN", '1'],
+                ["AHMED, SHUAYB", '1'],
+                ["ALI, YASIN", '1'],
+                ["ALVAREZ, ARIEL", '1'],
+                ["BERMEO, DANIEL", '1'],
+                ["BISHAR, ALI", '1'],
+                ["BROWN, SANTIGO", '1'],
+                ["CHAPPELLE, TRAVE", '1'],
+                ["DARBI, HASSAN", '1'],
+                ["DAUD, MUKTAR", '1'],
+                ["DAYI, MECIT", '1'],
+                ["EGAL, HASSAN", '1'],
+                ["HAKIMI, HAFIZULLAH", '1'],
+                ["HASSAN, ABDIKARIN", '1'],
+                ["HASSAN, ABDIWELI", '1'],
+                ["HERRERA GONZALES, JHONN", '1'],
+                ["HERSI, WALI", '1'],
+            ],
+            orderCellsTop: true,
+            stateSave: true,
+            initComplete: function () {
+            },
+            columns: [
+                {
+                    title: "Payroll For",
+                    // searchable: false,
+                }, {
+                    title: "Settlement",
+                    // searchable: false,
+                }
+            ],
+            buttons: [
+                {
+                    extend: 'print',
+                    text: '<i class="fas fa-print"></i>',
+                    message: 'Test Message',
+                    messageTop: 'Test Top Message',
+                    messageBottom: 'Test Bottom Message',
+                },
+                {
+                    text: '<i class="fas fa-star"></i>',
+                    action: function () {
+                        this.rows().select();
+                    }
+                },
+                {
+                    text: '<i class="far fa-star"></i>',
+                    action: function () {
+                        this.rows().deselect();
+                    }
+                },
+            ],
+            select: true,
+            searching: false,
+            paging: false,
+            dom: 'B',
+            autoWidth: false,
+            conditionalPaging: true,
+        };

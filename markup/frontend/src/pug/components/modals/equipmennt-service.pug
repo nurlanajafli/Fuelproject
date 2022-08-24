@@ -1,0 +1,73 @@
+.modal#equipment-service.fade(tabindex='-1')
+    .modal-dialog.modal-xl
+        .modal-content
+            .modal-header
+                h5.modal-title Equipment Service
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span &times;
+            .card-header
+                .edit-form-toolbar.work-orders__toolbar-modal
+                    button.btn.btn-link.work-orders__toolbar__link(data-tooltip='tooltip' data-placement='top' title='New Service' data-toggle='modal' data-target='#parts-used-modal')
+                        i.fas.fa-plus-square
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='???')
+                        i.fas.fa-save
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Print')
+                        i.fas.fa-print
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Complete')
+                        i.fas.fa-check
+            .modal-body
+                .row
+                    .col-5
+                        .work-orders__settings.setting(style="padding: 20px 40px")
+                            .row
+                                .col-12
+                                    label.setting__fields--label
+                                        p Service No
+                                        div 1576
+                                    label.setting__fields--label
+                                        p Service Date
+                                        input.form-control(type='date' required)
+                                    label.setting__fields--label
+                                        p Service Code
+                                        input.form-control.dropdown-toggle(type='text' data-toggle='dropdown')
+                                        .dropdown-menu.dropdown-menu-right.dropdown-menu--table(style="min-width: 12rem")
+                                            .table.table-responsive
+                                                table.table.table-bordered.compact.js-datatable#ServCode(width='100%' cellspacing='0' data-var='ServCode')
+                                                    thead
+                                                        th
+                                                        th
+                                    label.setting__fields--label
+                                        p Serviced By
+                                        input.form-control.dropdown-toggle(type='text' data-toggle='dropdown')
+                                        .dropdown-menu.dropdown-menu-right.dropdown-menu--table(style="min-width: 12rem")
+                                            .table.table-responsive
+                                                table.table.table-bordered.compact.js-datatable#ServBy(width='100%' cellspacing='0' data-var='ServBy')
+                                                    thead
+                                                        th
+                                                        th
+                                                        th
+                                                        th
+                                    label.setting__fields--label
+                                        p Total Cost
+                                        div 500.00
+                    .col-7
+                        .work-orders__settings.p-0
+                            span.form-legend Service Description
+                            textarea.work-orders__textarea(placeholder='Enter a description...')
+                    .col-12(style='margin: 20px 0 0 0')
+                        .work-orders__table
+                            div.work-orders__table--title Parts / Labor / Miscellaneous
+                            .table.table-responsive
+                                table.table.table-bordered.js-datatable#equipmentServiceRes(cellspacing='0' data-var="equipmentServiceRes")
+                                    thead
+                                        th
+                                        th
+                                        th
+                                        th
+                                        th
+                                        th
+
+            .modal-footer
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary(type='button') Save changes
+

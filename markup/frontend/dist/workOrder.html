@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/css/fontawesome-all.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <title>Work Order</title>
+  </head>
+  <body>
+    <script>
+      var svgArray = [
+          '/svgmin/sprite_icons.svg'
+      ];
+    </script>
+    <div class="svgSprite"></div>
+    <div class="wrapper">
+      <div class="wrapper__inner">
+        <div class="wrapper__content">
+          <div id="wrapper">
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+              <!-- Sidebar - Brand--><a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-truck"></i></div>
+                <div class="sidebar-brand-text mx-3">TMS Markup</div></a>
+              <!-- Divider-->
+              <hr class="sidebar-divider my-0">
+              <!-- Nav Item - Tables-->
+              <li class="nav-item active"><a class="nav-link" href="tables.html"><i class="fas fa-fw fa-table"></i><span>Tables</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="edit.html"><i class="fas fa-fw fa-pen"></i><span>Edit</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="forms.html"><i class="fas fa-fw fa-list"></i><span>Forms</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="notes.html"><i class="fas fa-fw fa-sticky-note"></i><span>Notes</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="compliance.html"><i class="fas fa-fw fa-car"></i><span>Compliance</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="load.html"><i class="fas fa-fw fa-truck-loading"></i><span>Load</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="truck-information.html"><i class="fas fa-fw fa-info"></i><span>Truck information</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="table-dropdown.html"><i class="fas fa-fw fa-table"></i><span>Table dropdown</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="modals.html"><i class="far fa-fw fa-window-maximize"></i><span>Modals</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="location.html"><i class="fas fa-fw fa-search-location"></i><span>Location</span></a></li>
+              <!-- Divider-->
+              <hr class="sidebar-divider d-none d-md-block">
+              <!-- Sidebar Toggler (Sidebar)-->
+              <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+              </div>
+            </ul>
+            <div class="d-flex flex-column" id="content-wrapper">
+              <div id="content">
+                <!-- Topbar-->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                  <!-- Sidebar Toggle (Topbar)-->
+                  <form class="form-inline">
+                    <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop"><i class="fa fa-bars"></i></button>
+                  </form>
+                  <!-- Topbar Search-->
+                  <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div class="input-group">
+                      <input class="form-control bg-light border-0 small" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button"><i class="fas fa-search fa-sm"></i></button>
+                      </div>
+                    </div>
+                  </form>
+                  <!-- Topbar Navbar-->
+                  <ul class="navbar-nav ml-auto">
+                    <!-- Nav Item - Search Dropdown (Visible Only XS)-->
+                    <li class="nav-item dropdown no-arrow d-sm-none"><a class="nav-link dropdown-toggle" id="searchDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-search fa-fw"></i></a>
+                      <!-- Dropdown - Messages-->
+                      <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                        <form class="form-inline mr-auto w-100 navbar-search">
+                          <div class="input-group">
+                            <input class="form-control bg-light border-0 small" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                              <button class="btn btn-primary" type="button"><i class="fas fa-search fa-sm"></i></button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </li>
+                    <!-- Nav Item - Alerts-->
+                    <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" id="alertsDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell fa-fw"></i>
+                        <!-- Counter - Alerts--><span class="badge badge-danger badge-counter">3+</span></a>
+                      <!-- Dropdown - Alerts-->
+                      <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in ntf-list" aria-labelledby="alertsDropdown">
+                        <div class="dropdown-header">
+                          <h6>Notifications</h6>
+                          <button class="ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                        </div><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a>
+                      </div>
+                    </li>
+                    <!-- Nav Item - Messages-->
+                    <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" id="messagesDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-envelope fa-fw"></i>
+                        <!-- Counter - Messages--><span class="badge badge-danger badge-counter">7</span></a>
+                      <!-- Dropdown - Messages-->
+                      <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                        <h6 class="dropdown-header">Message Center</h6><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="images/svg/undraw_profile_1.svg" alt="">
+                            <div class="status-indicator bg-success"></div>
+                          </div>
+                          <div class="font-weight-bold">
+                            <div class="text-truncate">
+                              Hi there! I am wondering if you can help me with a
+                              problem I&apos;ve been having.
+                            </div>
+                            <div class="small text-gray-500">Emily Fowler &middot; 58m</div>
+                          </div></a><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="images/svg/undraw_profile_2.svg" alt="">
+                            <div class="status-indicator"></div>
+                          </div>
+                          <div>
+                            <div class="text-truncate">
+                              I have the photos that you ordered last month, how
+                              would you like them sent to you?
+                            </div>
+                            <div class="small text-gray-500">Jae Chun &middot; 1d</div>
+                          </div></a><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="images/svg/undraw_profile_3.svg" alt="">
+                            <div class="status-indicator bg-warning"></div>
+                          </div>
+                          <div>
+                            <div class="text-truncate">
+                              Last month&apos;s report looks great, I am very happy with
+                              the progress so far, keep up the good work!
+                            </div>
+                            <div class="small text-gray-500">Morgan Alvarez &middot; 2d</div>
+                          </div></a><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                            <div class="status-indicator bg-success"></div>
+                          </div>
+                          <div>
+                            <div class="text-truncate">
+                              Am I a good boy? The reason I ask is because someone
+                              told me that people say this to all dogs, even if they aren&apos;t good...
+                            </div>
+                            <div class="small text-gray-500">Chicken the Dog &middot; 2w</div>
+                          </div></a><a class="dropdown-item text-center small text-gray-500" href="/chat.html">Read More Messages</a>
+                      </div>
+                    </li>
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <!-- Nav Item - User Information-->
+                    <li class="nav-item dropdown no-arrow"><a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span><img class="img-profile rounded-circle" src="images/svg/undraw_profile.svg"></a>
+                      <!-- Dropdown - User Information-->
+                      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>                                    Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>                                    Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>                                    Activity Log</a>
+                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>                                    Logout</a>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- End of Topbar-->
+                <!-- Begin Page Content-->
+                <div class="container-fluid">
+                  <h1 class="h3 mb-4 text-gray-800">Work Order</h1>
+                  <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                      <div class="edit-form-toolbar work-orders__toolbar">
+                        <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Update"><i class="fas fa-sync"></i></button>
+                        <button class="btn btn-link work-orders__toolbar__link" data-tooltip="tooltip" data-placement="top" title="Add" data-toggle="modal" data-target="#work-orders-modal"><i class="fas fa-plus-square"></i></button>
+                        <div class="field row" style="margin: 0">
+                          <div class="work-orders__field">
+                            <label class="work-orders__label">Type:</label>
+                            <select class="form-control" name="typeWorkOrders" style="padding: 3px 5px">
+                              <option selected>Trucks</option>
+                              <option value="Trailers">Trailers</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="field row" style="margin: 0;">
+                          <div class="work-orders__field">
+                            <label class="work-orders__label">Status:</label>
+                            <select class="form-control" name="typeWorkOrders" style="padding: 3px 5px; width: 120%">
+                              <option selected>Open</option>
+                              <option value="Completed">Completed</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="table table-responsive">
+                        <table class="table table-bordered compact js-datatable" id="workOrders" cellspacing="0">
+                          <thead>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                          </thead>
+                          <tfoot>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                          </tfoot>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                  <div class="copyright text-center my-auto"><span>Copyright &copy; Your Website 2020</span></div>
+                </div>
+              </footer>
+            </div><a class="scroll-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="work-orders-modal" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Work Order</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="card-header">
+            <div class="edit-form-toolbar work-orders__toolbar-modal">
+              <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="New Service" data-toggle="modal" data-target="#equipment-service"><i class="fas fa-plus-square"></i></button>
+              <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Import"><i class="fas fa-cloud-download-alt"></i></button>
+              <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Print"><i class="fas fa-print"></i></button>
+              <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Memorize"><i class="fas fa-lightbulb"></i></button>
+              <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Take Equipment Down"><i class="fas fa-briefcase"></i></button>
+              <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Create Purchase Order"><i class="fas fa-file-medical"></i></button>
+              <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Scans"><i class="fas fa-image"></i></button>
+              <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Cancel"><i class="fas fa-eraser"></i></button>
+              <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Complete"><i class="fas fa-check"></i></button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-7">
+                <div class="work-orders__settings setting">
+                  <div class="setting__info">
+                    <div class="setting__info-item">
+                      <div class="setting__info-item--title">
+                        <p>WO No</p>
+                      </div>
+                      <div class="setting__info-item--val">
+                        <p>1991</p>
+                      </div>
+                    </div>
+                    <div class="setting__info-item">
+                      <div class="setting__info-item--title">
+                        <p>Completed</p>
+                      </div>
+                      <div class="setting__info-item--val">
+                        <p>No</p>
+                      </div>
+                    </div>
+                    <div class="setting__info-item">
+                      <div class="setting__info-item--title">
+                        <p>Total</p>
+                      </div>
+                      <div class="setting__info-item--val">
+                        <p>0.00</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <label class="setting__fields--label">
+                        <p>WO Date</p>
+                        <input class="form-control" type="date" required>
+                      </label>
+                      <label class="setting__fields--label has-error">
+                        <p>WO Date</p>
+                        <input class="form-control" type="date" required>
+                        <div class="help-block">Неправильно заполненное поле</div>
+                      </label>
+                      <label class="setting__fields--label">
+                        <p>Unit Type</p>
+                        <select class="custom-select">
+                          <option value="Truck">Truck</option>
+                          <option value="Trailer">Trailer</option>
+                        </select>
+                      </label>
+                      <label class="setting__fields--label">
+                        <p>Unit No</p>
+                        <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown">
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu--table" style="min-width: 12rem">
+                          <div class="table table-responsive">
+                            <table class="table table-bordered compact js-datatable" id="truckDrop" width="100%" cellspacing="0" data-var="truckDrop">
+                              <thead>
+                                <th></th>
+                                <th></th>
+                              </thead>
+                            </table>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="col-6">
+                      <label class="setting__fields--label">
+                        <p>Serviced By</p>
+                        <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown">
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu--table">
+                          <div class="table table-responsive">
+                            <table class="table table-bordered compact js-datatable" id="servicedDrop" width="100%" cellspacing="0" data-var="ServicedDrop">
+                              <thead>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                              </thead>
+                            </table>
+                          </div>
+                        </div>
+                      </label>
+                      <label class="setting__fields--label">
+                        <p>Authorized By</p>
+                        <input class="form-control" type="text">
+                      </label>
+                      <label class="setting__fields--label">
+                        <p>Odometer</p>
+                        <input class="form-control" type="number" value="0">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!--.work-orders__settings-->
+                <!--    p нижнаяя-->
+              </div>
+              <div class="col-5">
+                <div class="work-orders__settings p-0"><span class="form-legend">Description of Problem or Condition</span>
+                  <div style="height: 100%">
+                    <textarea class="work-orders__textarea" placeholder="Enter a description..."></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12" style="margin: 20px 0 0 0">
+                <div class="work-orders__table">
+                  <div class="work-orders__table--title">Services performed on this work order</div>
+                  <div class="table table-responsive">
+                    <table class="table table-bordered compact js-datatable" id="workOrderRes" cellspacing="0" data-var="workOrderRes">
+                      <thead>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="equipment-service" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Equipment Service</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="card-header">
+            <div class="edit-form-toolbar work-orders__toolbar-modal">
+              <button class="btn btn-link work-orders__toolbar__link" data-tooltip="tooltip" data-placement="top" title="New Service" data-toggle="modal" data-target="#parts-used-modal"><i class="fas fa-plus-square"></i></button>
+              <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="???"><i class="fas fa-save"></i></button>
+              <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Print"><i class="fas fa-print"></i></button>
+              <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Complete"><i class="fas fa-check"></i></button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-5">
+                <div class="work-orders__settings setting" style="padding: 20px 40px">
+                  <div class="row">
+                    <div class="col-12">
+                      <label class="setting__fields--label">
+                        <p>Service No</p>
+                        <div>1576</div>
+                      </label>
+                      <label class="setting__fields--label">
+                        <p>Service Date</p>
+                        <input class="form-control" type="date" required>
+                      </label>
+                      <label class="setting__fields--label">
+                        <p>Service Code</p>
+                        <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown">
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu--table" style="min-width: 12rem">
+                          <div class="table table-responsive">
+                            <table class="table table-bordered compact js-datatable" id="ServCode" width="100%" cellspacing="0" data-var="ServCode">
+                              <thead>
+                                <th></th>
+                                <th></th>
+                              </thead>
+                            </table>
+                          </div>
+                        </div>
+                      </label>
+                      <label class="setting__fields--label">
+                        <p>Serviced By</p>
+                        <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown">
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu--table" style="min-width: 12rem">
+                          <div class="table table-responsive">
+                            <table class="table table-bordered compact js-datatable" id="ServBy" width="100%" cellspacing="0" data-var="ServBy">
+                              <thead>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                              </thead>
+                            </table>
+                          </div>
+                        </div>
+                      </label>
+                      <label class="setting__fields--label">
+                        <p>Total Cost</p>
+                        <div>500.00</div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-7">
+                <div class="work-orders__settings p-0"><span class="form-legend">Service Description</span>
+                  <textarea class="work-orders__textarea" placeholder="Enter a description..."></textarea>
+                </div>
+              </div>
+              <div class="col-12" style="margin: 20px 0 0 0">
+                <div class="work-orders__table">
+                  <div class="work-orders__table--title">Parts / Labor / Miscellaneous</div>
+                  <div class="table table-responsive">
+                    <table class="table table-bordered js-datatable" id="equipmentServiceRes" cellspacing="0" data-var="equipmentServiceRes">
+                      <thead>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="parts-used-modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Parts Used</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <label class="setting__fields--label">
+              <p>Qly used</p>
+              <input class="form-control" type="number" value="0">
+            </label>
+            <label class="setting__fields--label">
+              <p>Cost Each</p>
+              <input class="form-control" type="number" value="0">
+            </label>
+            <label class="setting__fields--label">
+              <p>Line Total</p>
+              <div>200.00</div>
+            </label>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/jquery-3.5.1.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.bundle.js" type="text/javascript"></script>
+    <script src="/js/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="/js/dataTables.bootstrap4.js" type="text/javascript"></script>
+    <script src="/js/vendor.js" type="text/javascript"></script>
+    <script src="/js/scripts.js" type="text/javascript"></script>
+    <script>
+      var workOrders = $('#workOrders').DataTable({
+        data: [
+          ["1765","", "12/03/19","809848","0.00","", "","RYDER ORLANDO", "James: 01.03.20 ESTIMATE IS READY AND APPROVED FOR REPAIR"],
+          ["1765","", "12/03/19","809848","0.00","", "","RYDER ORLANDO", "James: 01.03.20 ESTIMATE IS READY AND APPROVED FOR REPAIR"],
+          ["1765","", "12/03/19","809848","0.00","", "","RYDER ORLANDO", "James: 01.03.20 ESTIMATE IS READY AND APPROVED FOR REPAIR"],
+          ["1765","", "12/03/19","809848","0.00","", "","RYDER ORLANDO", "James: 01.03.20 ESTIMATE IS READY AND APPROVED FOR REPAIR"],
+          ["1765","", "12/03/19","809848","0.00","", "","RYDER ORLANDO", "James: 01.03.20 ESTIMATE IS READY AND APPROVED FOR REPAIR"],
+          ["1765","", "12/03/19","809848","0.00","", "","RYDER ORLANDO", "James: 01.03.20 ESTIMATE IS READY AND APPROVED FOR REPAIR"],
+        ],
+        orderCellsTop: true,
+        colReorder: true,
+        stateSave: true,
+        // initComplete: function () {
+        // },
+        columns: [
+          {
+            title: "WO No",
+            orderable: false,
+          },
+          {
+            title: "PO No",
+          },
+          {
+            title: "Date",
+          },
+          {
+            title: "Unit No",
+          },
+          {
+            title: "Cost",
+          },
+          {
+            title: "Charged",
+          },
+          {
+            title: "Mem",
+            orderable: false,
+          },
+          {
+            title: "Serviced By",
+          },
+          {
+            title: "Description",
+            orderable: false,
+          },
+        ],
+        buttons: [
+          {
+            extend: 'colvis',
+            columns: ':gt(0)'
+          }
+        ],
+        dom: 'tp',
+        autoWidth: false,
+        conditionalPaging: true,
+        draw: false,
+      });
+      var TruckDrop = $('#truckDrop').DataTable({
+        data: [
+          ['222947', 'CS'],
+          ['222947', 'CS'],
+          ['222917', 'CS'],
+          ['222927', 'CS'],
+          ['234557', 'CS'],
+          ['222337', 'CS'],
+          ['211237', 'CS'],
+          ['222947', 'CS'],
+        ],
+        dom: 'tp',
+        orderCellsTop: true,
+        // initComplete: function () {
+        // },
+        scrollY: '350px',
+        scrollCollapse: true,
+        paging: false,
+        conditionalPaging: true,
+        columns: [
+          {
+            title: 'Truck No',
+            orderable: false,
+          },
+          {
+            title: 'Type',
+            orderable: false,
+          }
+        ],
+      });
+      var ServCode = $('#ServCode').DataTable({
+        data: [
+          ['AC', 'A/C'],
+          ['ACCREP TRK ', 'Alignment'],
+          ['Tires', 'TIRES'],
+          ['AC', 'A/C'],
+          ['ACCREP TRK ', 'Alignment'],
+          ['Tires', 'TIRES'],
+          ['AC', 'A/C'],
+          ['ACCREP TRK ', 'Alignment'],
+          ['Tires', 'TIRES'],
+          ['AC', 'A/C'],
+          ['ACCREP TRK ', 'Alignment'],
+          ['Tires', 'TIRES'],
+        ],
+        dom: 'tp',
+        orderCellsTop: true,
+        // initComplete: function () {
+        // },
+        scrollY: '350px',
+        scrollCollapse: true,
+        paging: false,
+        conditionalPaging: true,
+        columns: [
+          {
+            title: 'Code',
+            orderable: false,
+          },
+          {
+            title: 'Description',
+            orderable: false,
+          }
+        ],
+      });
+      var ServBy = $('#ServBy').DataTable({
+        data: [
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['112 MKR INC', 'Omaha', 'Ne', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['112 MKR INC', 'Omaha', 'Ne', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['112 MKR INC', 'Omaha', 'Ne', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['112 MKR INC', 'Omaha', 'Ne', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['112 MKR INC', 'Omaha', 'Ne', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['112 MKR INC', 'Omaha', 'Ne', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['112 MKR INC', 'Omaha', 'Ne', 'Vendor'],
+        ],
+        dom: 'tp',
+        orderCellsTop: true,
+        // initComplete: function () {
+        // },
+        scrollY: '350px',
+        scrollCollapse: true,
+        paging: false,
+        conditionalPaging: true,
+        columns: [
+          {
+            title: 'Name',
+            orderable: false,
+          },
+          {
+            title: 'City',
+          },
+          {
+            title: 'St',
+          },
+          {
+            title: 'Type',
+          }
+        ],
+      });
+      var servicedDrop = $('#servicedDrop').DataTable({
+        data: [
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+        ],
+        dom: 'tp',
+        orderCellsTop: true,
+        // initComplete: function () {
+        // },
+        scrollY: '350px',
+        scrollCollapse: true,
+        paging: false,
+        conditionalPaging: true,
+        columns: [
+          {
+            title: 'Name',
+          },
+          {
+            title: 'City',
+          },
+          {
+            title: 'St',
+          },
+          {
+            title: 'Type',
+          }
+        ],
+      });
+      var workOrderRes = $('#workOrderRes').DataTable({
+        data: [],
+        orderCellsTop: true,
+        colReorder: true,
+        stateSave: true,
+        // initComplete: function () {
+        // },
+        columns: [
+          {
+            title: "Svc No",
+          },
+          {
+            title: "Date",
+          },
+          {
+            title: "Code",
+          },
+          {
+            title: "Description",
+          },
+          {
+            title: "Cost",
+          },
+          {
+            title: "Comp",
+          },
+          {
+            title: "Notes",
+          },
+        ],
+        buttons: [
+          {
+            extend: 'colvis',
+            columns: ':gt(0)'
+          }
+        ],
+        dom: 'tp',
+        autoWidth: false,
+        conditionalPaging: true,
+        draw: false,
+      });
+      var equipmentServiceRes = $('#equipmentServiceRes').DataTable({
+        data: [],
+        dom: 'tp',
+        autoWidth: false,
+        colReorder: true,
+        stateSave: true,
+        orderCellsTop: true,
+        // initComplete: function () {
+        // },
+        buttons: [
+          {
+            extend: 'colvis',
+            columns: ':gt(0)'
+          }
+        ],
+        scrollCollapse: true,
+        draw: false,
+        paging: false,
+        conditionalPaging: true,
+        columns: [
+            {
+              title: "Item No",
+            },
+            {
+              title: "Description",
+            },
+            {
+              title: "PO",
+            },
+            {
+              title: "Qly Used",
+            },
+            {
+              title: "Cost Ea",
+            },
+            {
+              title: "Line Total",
+            }
+        ],
+      });
+    </script>
+  </body>
+</html>

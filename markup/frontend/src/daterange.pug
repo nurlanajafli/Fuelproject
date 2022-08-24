@@ -1,0 +1,117 @@
+extends pug/layouts/dashboard
+
+block title
+    title DateRange
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 DateRange
+        .card.shadow.mb-4
+            .card-header.py-3
+                h6.m-0.font-weight-bold.text-primary DataTables Example
+            .card-body
+                .dt-toolbar
+                    .dt-toolbar-actions.js-daterange.d-flex(data-column-index='4' data-date-format='DD/MM/YYYY')
+                        .dropdown
+                            button.btn.btn-primary.dropdown-toggle(type='button' data-toggle='dropdown')
+                                i.fas.fa-filter
+                            .dropdown-menu
+                                a.dropdown-item.js-daterange-this-month(href='#') This Month
+                                a.dropdown-item.js-daterange-last-month(href='#') Last Month
+                                a.dropdown-item.js-daterange-this-quarter(href='#') This Quarter
+                                a.dropdown-item.js-daterange-last-quarter(href='#') Last Quarter
+                                a.dropdown-item.js-daterange-this-year(href='#') This Year
+                                a.dropdown-item.js-daterange-last-year(href='#') Last Year
+                                a.dropdown-item.js-daterange-today(href='#') Today
+                        input.form-control.js-daterange-min(type='text' name='min' placeholder='from date')
+                        input.form-control.js-daterange-max(type='text' name='max' placeholder='to date')
+                .table.table-responsive
+                    table.table.table-bordered.compact.js-datatable#first(cellspacing='0' data-var='firstTable')
+                        thead
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                        tfoot
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+
+block scripts
+    script.
+        var firstTable = {
+            data: [
+                ["2021/08/26", "2021/8/26", "8/26/2021", "08/26/2021", "26/08/2021", "26/8/2021"],
+                ["2021/08/27", "2021/8/27", "8/27/2021", "08/27/2021", "27/08/2021", "27/8/2021"],
+                ["2021/08/25", "2021/8/25", "8/25/2021", "08/25/2021", "25/08/2021", "25/8/2021"],
+                ["2021/07/01", "2021/7/1", "7/1/2021", "07/01/2021", "01/07/2021", "1/7/2021"],
+                ["2021/06/01", "2021/6/1", "6/1/2021", "06/01/2021", "01/06/2021", "1/6/2021"],
+                ["2021/05/01", "2021/5/1", "5/1/2021", "05/01/2021", "01/05/2021", "1/5/2021"],
+                ["2021/04/01", "2021/4/1", "4/1/2021", "04/01/2021", "01/04/2021", "1/4/2021"],
+                ["2021/03/01", "2021/3/1", "3/1/2021", "03/01/2021", "01/03/2021", "1/3/2021"],
+                ["2021/02/01", "2021/2/1", "2/1/2021", "02/01/2021", "01/02/2021", "1/2/2021"],
+                ["2021/01/01", "2021/1/1", "1/1/2021", "01/01/2021", "01/01/2021", "1/1/2021"],
+                ["2020/01/01", "2020/1/1", "1/1/2020", "01/01/2020", "01/01/2020", "1/1/2020"],
+                ["2020/02/01", "2020/2/1", "2/1/2020", "02/01/2020", "01/02/2020", "1/2/2020"],
+                ["2019/02/01", "2019/2/1", "2/1/2019", "02/01/2019", "01/02/2019", "1/2/2019"],
+            ],
+            orderCellsTop: true,
+            colReorder: {
+                realtime: false
+            },
+            stateSave: true,
+            select: {
+                style: 'multi',
+                items: 'row'
+            },
+            columns: [
+                {
+                    title: "YYYY/MM/DD",
+                },{
+                    title: "YYYY/M/D",
+                },{
+                    title: "M/D/YYYY",
+                },{
+                    title: "MM/DD/YYYY",
+                },{
+                    title: "DD/MM/YYYY",
+                },{
+                    title: "D/M/YYYY",
+                }
+            ],
+            autoWidth: false,
+            order: [[3, 'asc']],
+            dom: 'Bfrt',
+            buttons: [
+                {
+                    text: '<i class="fas fa-star"></i>',
+                    action: function () {
+                        this.rows().select();
+                    }
+                },
+                {
+                    text: '<i class="far fa-star"></i>',
+                    action: function () {
+                        this.rows().deselect();
+                    }
+                },
+                {
+                    extend: 'copy',
+                },
+                {
+                    extend: 'colvis',
+                    columns: ':gt(0)',
+                    className: 'btn-primary',
+                    titleAttr: 'Columns visibility',
+                    text: 'Hide/Show Columns',
+                    init: function (api, node, config) {
+                        $(node).removeClass('btn-secondary')
+                    }
+                }
+            ]
+        };

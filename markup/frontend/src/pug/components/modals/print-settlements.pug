@@ -1,0 +1,35 @@
+.modal.modal--no-padding.modal--no-scroll#random-id-for-launch-by-button-1.fade(tabindex='-1')
+    .modal-dialog.modal-xl
+        .modal-content
+            .modal-header.bg-primary.text-white
+                h5.modal-title Print Settlements
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span.text-white &times;
+            .modal-body
+                .row
+                    .col-3.p-4.border-right
+                        form
+                            .custom-control.custom-radio
+                                input.form-check-input(type='radio' value='#' id='custom-radio' name="print-settlements-radio-buttons" checked)
+                                label.form-check-label(for='custom-radio') Batch No
+                            .custom-control.custom-radio
+                                input.form-check-input(type='radio' value='#' id='custom-radio-1' name="print-settlements-radio-buttons")
+                                label.form-check-label(for='custom-radio-1') Date Range
+                    .col-9.p-4
+                        .dt-toolbar
+                            .form-group
+                                label Batch No
+                                select.custom-select
+                                    option(value='#' selected) Choose...
+                                    option(value='#') 54
+                                    option(value='#') 01
+                                    option(value='#') 02
+                                    option(value='#') 03
+                        .table.table-responsive
+                            table.table.table-bordered.compact.js-datatable#payrollDT(cellspacing='0' data-var='payrollDT')
+                                thead
+                                    th
+                                    th
+            .modal-footer.bg-light
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary(type='button') Save changes

@@ -1,0 +1,143 @@
+extends pug/layouts/dashboard
+
+block title
+    title Chat
+
+block page
+    .container-fluid
+        .card.shadow.mb-4
+            .card-body
+                .row.chat
+                    .col-4
+                        .chat__list
+                            .card
+                                .card-header Chat list
+                                .card-body
+                                    .chat__list-inner
+                                        .chat__item.active.user-card
+                                            .chat__item-avatar
+                                                img.user-avatar(src='/images/svg/undraw_profile_1.svg')
+                                                span.user-status.user-status--online
+                                            .chat__item-info
+                                                h6.user-name Emily Fowler
+                                                p.chat__item-text
+                                                    span.user-sender You:
+                                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto dolor dolores doloribus ducimus enim, est itaque officiis quas quia quibusdam quidem quis veniam vero voluptatum? Culpa debitis dicta minima.
+                                                // -span.chat__item-date today
+                                            span.badge.badge-danger 3
+                                        .chat__item
+                                            .chat__item-avatar
+                                                img.user-avatar(src='/images/svg/undraw_profile_2.svg')
+                                                span.user-status.user-status--afk
+                                            .chat__item-info
+                                                h6.user-name Jae Chun
+                                                p.chat__item-text
+                                                    span.user-sender You:
+                                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque exercitationem nihil nulla quaerat quia quo reiciendis suscipit veniam, voluptates voluptatum? Dolor expedita inventore mollitia necessitatibus odit optio reprehenderit temporibus. Molestiae.
+                                                //- span.chat__item-date today
+                                            span.badge.badge-danger 3
+                                        .chat__item
+                                            .chat__item-avatar
+                                                img.user-avatar(src='/images/svg/undraw_profile_3.svg')
+                                                span.user-status.user-status--busy
+                                            .chat__item-info
+                                                h6.user-name Morgan Alvarez
+                                                p.chat__item-text Lorem ipsum dolor sit amet
+                                                span.chat__item-date a week ago
+                                            span.badge.badge-danger 3
+                                        .chat__item
+                                            .chat__item-avatar
+                                                img.user-avatar(src='https://source.unsplash.com/Mv9hjnEUHR4/60x60')
+                                                span.user-status.user-status--offline
+                                            .chat__item-info
+                                                h6.user-name Chicken the Dog
+                                                p.chat__item-text Lorem ipsum dolor sit amet, consectetur adipisicing.
+                                                span.chat__item-date 2 months ago
+                                            span.badge.badge-danger 3
+                            .card
+                                .card-header Archived
+                                .card-body
+                                    .chat__list-inner
+                                        .chat__item
+                                            .chat__item-avatar
+                                                img.user-avatar(src='https://cdn-icons-png.flaticon.com/512/149/149071.png')
+                                                span.user-status.user-status--deleted
+                                            .chat__item-info
+                                                h6.user-name Some old user
+                                                p.chat__item-text User's last post...
+                                            span.badge.badge-danger 3
+                    .col-8
+                        .card.chat__messages
+                            .card-header
+                                .chat__user
+                                    .chat__user-avatar
+                                        img.user-avatar(src='/images/svg/undraw_profile_1.svg')
+                                    .chat__user-info
+                                        h6.user-name Emily Fowler
+                                        span.user-status.user-status--online online
+                            .card-body
+                                .clearfix
+                                    .float-left.chat__message
+                                        .chat__message-author
+                                             span Emily Fowler
+                                             span 3:14 PM
+                                        .chat__message-text
+                                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias animi asperiores assumenda doloribus eos harum, id incidunt ipsum laborum, minus nisi officia quibusdam rerum sit ullam ut velit voluptatem.
+                                        //- .chat__message-footer
+                                            .chat__message-meta
+                                                p 3:14 PM
+                                .clearfix
+                                    .float-right.chat__message
+                                        .chat__message-author
+                                            span Douglas McGee
+                                            span 9:12 PM
+                                        .chat__message-text
+                                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias animi asperiores assumenda doloribus eos harum, id incidunt ipsum laborum, minus nisi officia quibusdam rerum sit ullam ut velit voluptatem.
+                                        //- .chat__message-footer
+                                            .chat__message-meta
+                                                p 9:12 PM
+                                            ul.chat__message-actions
+                                                li
+                                                    a(href='#') delete
+                                                li
+                                                    a(href='#') edit
+                                .chat__message-date
+                                    span Today
+                                .clearfix
+                                    .float-left.chat__message
+                                        .chat__message-author
+                                            span Emily Fowler
+                                            span 11:15 AM
+                                        .chat__message-text
+                                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias animi asperiores assumenda doloribus eos harum, id incidunt ipsum laborum, minus nisi officia quibusdam rerum sit ullam ut velit voluptatem.
+                                        //- .chat__message-footer
+                                            .chat__message-meta
+                                                p 11:15 AM
+                                .clearfix
+                                    .float-left.chat__message
+                                        .chat__message-author
+                                            span Emily Fowler
+                                            span 11:40 AM
+                                        .chat__message-text
+                                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias animi asperiores assumenda doloribus eos harum, id incidunt ipsum laborum, minus nisi officia quibusdam rerum sit ullam ut velit voluptatem.
+                                        //- .chat__message-footer
+                                            .chat__message-meta
+                                                p 11:40 AM
+                                    .float-right.chat__message
+                                        .chat__message-author
+                                            span Douglas McGee
+                                            span 4:52 PM
+                                        .chat__message-text
+                                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias animi asperiores assumenda doloribus eos harum, id incidunt ipsum laborum, minus nisi officia quibusdam rerum sit ullam ut velit voluptatem.
+                                        //- .chat__message-footer
+                                            .chat__message-meta
+                                                p 4:52 PM
+                                            ul.chat__message-actions
+                                                li
+                                                    a(href='#') delete
+                                                li
+                                                    a(href='#') edit
+                            .card-footer
+                                form
+                                    textarea.form-control(placeholder="Your message")
+                                    button.btn.btn-primary.btn-block Send

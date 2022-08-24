@@ -1,0 +1,152 @@
+.work-orders {
+  &__toolbar {
+    align-items: center;
+    &__link {
+      position: relative;
+      &:after {
+        content: '';
+        width: 1px;
+        height: 80%;
+        background-color: gray;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -7px;
+      }
+    }
+  }
+  &__field{
+    padding: 0 0 0 15px;
+    display: flex;
+    align-items: center;
+  }
+  &__label{
+    margin: 0 10px 0 0
+  }
+  //modal
+  &__toolbar-modal{
+    .btn {
+      line-height: 1;
+      i {
+        font-size: 19px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  &__settings{
+    padding: 15px 10px;
+    width: 100%;
+    border: 1px solid #d1d3e2;
+    border-radius: 4px;
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+  }
+  &__table{
+    padding: 15px 10px;
+    width: 100%;
+    border: 1px solid #d1d3e2;
+    border-radius: 4px;
+    position: relative;
+    min-height: 100%;
+    &--title{
+      text-transform: uppercase;
+      color: black;
+      text-align: center;
+    }
+  }
+  &__textarea{
+    border: none;
+    outline: none;
+    overflow-y: scroll;
+    resize: none;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+}
+#work-orders-modal, #equipment-service, #parts-used-modal{
+  .setting{
+    &__info{
+      display: flex;
+      justify-content: space-around;
+      align-items: start;
+      text-align: center;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #d1d3e2;
+      &-item--title{
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 2px;
+        line-height: 1;
+      }
+      &-item--val{
+        p{
+          margin: 0;
+          color: #4e73df;
+          line-height: 1;
+        }
+      }
+    }
+    &__fields--label{
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      &:not(:last-child){
+        margin-bottom: 10px;
+      }
+      p{
+        white-space: nowrap;
+        margin: 0 10px 0 0;
+        flex: 0 0 100px;
+        justify-content: flex-end;
+        text-align: end;
+      }
+    }
+  }
+  .help-block{
+    display: none;
+  }
+  .has-error{
+    position: relative;
+    margin-bottom: 25px !important;
+    p{
+      color: #e74a3b;
+    }
+    input{
+      color: #e74a3b;
+    }
+    .help-block{
+      display: block;
+      position: absolute;
+      bottom: -23px;
+      right: 0;
+      font-size: 12px;
+    }
+  }
+}
+#work-orders-modal, #equipment-service{
+  .modal-body{
+    padding: 20px;
+  }
+}
+#work-order-error{
+  .error-block{
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    i{
+      font-size: 24px;
+      margin-right: 20px;
+      color: #4e73df;
+    }
+    p{
+      margin: 0;
+      line-height: 1;
+      font-size: 18px;
+    }
+  }
+}

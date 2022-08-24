@@ -1,0 +1,38 @@
+form.form
+    .col-6
+        .form-group
+            label First name
+            input.form-control(type='text' name='firstname' placeholder='First name')
+        .form-group
+            label Date
+            input.form-control(type='date' name='date')
+        .form-group
+            label Select
+            select.custom-select
+                option(value='#') Option 1
+                option(value='#') Option 2
+                option(value='#') Option 3
+                option(value='#') Option 4
+                option(value='#') Option 5
+        .form-group
+            label.col-form-label Textarea
+            textarea.form-control
+        .form-group
+            label City, State, Zip
+            .form-row
+                .col-6
+                    input.form-control(type='text' name='city' placeholder='City')
+                .col
+                    input.form-control(type='text' name='state' placeholder='State')
+                .col
+                    input.form-control(type='text' name='zip' placeholder='Zip')
+        .form-group
+            label City, State, Zip
+            .input-group
+                input.form-control(type='text' name='city' placeholder='City')
+                select.form-control
+                    option(selected) Choose...
+                    option(value='#') New York
+                    option(value='#') LA
+                    option(value='#') Texas
+                input.form-control(type='text' name='zip' placeholder='Zip')

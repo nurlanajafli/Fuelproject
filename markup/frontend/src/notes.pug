@@ -1,0 +1,81 @@
+extends pug/layouts/dashboard
+
+block title
+    title Customers Contacts
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 Notes & Errors
+        .card.shadow.mb-4
+            .card-header.py-3
+                .edit-form-toolbar
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#customer-notes' data-placement='top' title='Customer Notes')
+                        i.fas.fa-pen
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#input-note' data-placement='top' title='Input Note')
+                        i.fas.fa-table
+                    button.btn.btn-link.js-ajax-modal(data-url='ajax.php')
+                        i.fas.fa-plus
+            .card-body
+                include pug/sections/forms/errors
+
+
+block modals
+    .modal#customer-notes.fade(tabindex='-1')
+        .modal-dialog.modal-xl.modal-dialog-centered
+            .modal-content
+                .modal-header.bg-primary.text-white
+                    h5.modal-title Customer Notes
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span.text-white &times;
+                .modal-toolbar.bg-light
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#input-note' data-placement='top' title='Input Note')
+                        i.fas.fa-plus
+                .modal-body
+                    include pug/sections/bootstrap-table
+                .modal-footer.bg-light
+                    button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                    button.btn.btn-primary(type='button') Save changes
+    .modal#input-note.fade(tabindex='-1')
+        .modal-dialog.modal-lg.modal-dialog-centered
+            .modal-content
+                .modal-header.bg-primary.text-white
+                    h5.modal-title Input Note
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span.text-white &times;
+                .modal-body
+                    form.form
+                        .form-fieldset.mb-2
+                            .form-group.row.align-items-center
+                                .col-2 Contact
+                                .col-5
+                                    input.form-control(type='text' placeholder='Contact')
+                                .col-5
+                                    span.text-primary GLOBAL TRANSSERVICE CORP
+                            .form-group.row.align-items-center
+                                .col-2 Code
+                                .col-5
+                                    select.form-control
+                                        option First Code
+                                        option Second Code
+                                        option Third Code
+                                .col-5
+                                    span.text-primary 12/28/2020 5:31:21 PM
+                            .form-group.row
+                                .col-2 Notes
+                                .col-10
+                                    textarea.form-control(placeholder='Message' rows='7')
+                            .form-group.row.align-items-center
+                                .col-7.offset-2
+                                    .form-row.align-items-center
+                                        .col-3 Next Contact
+                                        .col-6
+                                            input.form-control(type='text' placeholder='__/__/____' data-mask="00/00/0000")
+                                        .col-3
+                                            input.form-control(type='text' placeholder='__:__' data-mask="00:00")
+                                .col-3
+                                    .custom-control.custom-checkbox
+                                        input(type="checkbox" class="custom-control-input" id="post-reminder")
+                                        label(class="custom-control-label" for="post-reminder") Post Reminder?
+                .modal-footer.bg-light
+                    button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                    button.btn.btn-primary(type='button') Save changes

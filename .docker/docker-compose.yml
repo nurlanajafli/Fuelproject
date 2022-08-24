@@ -1,0 +1,62 @@
+version: "3.9"
+
+# uncomment for WINDOWS
+# volumes:
+#  database:
+
+services:
+  php:
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile
+      args:
+        APP_ENV: dev
+    env_file: dev.env
+    working_dir: /var/www/html
+    depends_on:
+      - redis
+      - database
+    volumes:
+      - ./..:/var/www/html
+    ports:
+      - "80:80"
+  redis:
+    image: redis
+    volumes:
+      - ./redis:/data
+    ports:
+      - "6379:6379"
+  database:
+    image: mdillon/postgis
+    env_file:
+      - db.env
+      - dev.env
+    volumes:
+      - ./database:/var/lib/postgresql/data
+# WINDOWS - comment upper line and uncomment lower line
+#      - database:/var/lib/postgresql/data
+      - ./init_db.sh:/docker-entrypoint-initdb.d/zinit-web-db.sh
+  pgadmin:
+    image: dpage/pgadmin4
+    env_file: pgadmin.env
+    depends_on:
+      - database
+    volumes:
+      - ./servers.json:/pgadmin4/servers.json
+      - ./config.py:/pgadmin4/config.py
+    ports:
+      - "8020:80"
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile-node
+    working_dir: /home/node/app
+    command: sleep 86400
+    volumes:
+      - ./../markup:/home/node/app
+#  ngrok:
+#    image: ngrok/ngrok
+#    env_file: ngrok.env
+#    depends_on:
+#      - php
+#    command: http php:100

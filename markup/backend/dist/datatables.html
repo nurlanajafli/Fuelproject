@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/fontawesome-all.css">
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Optional theme-->
+    <!--link(rel="stylesheet" href="css/bootstrap-theme.css")-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
+    <!--
+    [if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]
+    -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>DataTables</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <section class="content">
+          <div class="page-header">
+            <h1>DataTables</h1>
+          </div>
+          <ol class="breadcrumb">
+            <li><a href="./">Home</a></li>
+            <li class="active">DataTables</li>
+          </ol>
+          <div class="dt-toolbar">
+            <div class="dt-toolbar-actions"><a class="btn btn-success" href="#">New</a></div>
+            <div class="dt-toolbar-filter js-table-filter">
+              <div class="dt-toolbar-filter-item">
+                <select class="form-control" data-column-index="1"></select>
+              </div>
+              <div class="dt-toolbar-filter-item">
+                <select class="form-control" data-column-index="2"></select>
+              </div>
+            </div>
+            <ul class="dt-toolbar-legend">
+              <li class="dt-legend-load--yellow" data-toggle="tooltip" data-placement="top" title="Load is 'Droppped', that is, it has been picked up by a driver/carrier and dropped at a location other than the final consignee."></li>
+              <li class="dt-legend-load--blue" data-toggle="tooltip" data-placement="top" title="Load is 'Reserved' for a driver or carrier."></li>
+              <li class="dt-legend-load--light-gray" data-toggle="tooltip" data-placement="top" title="'Possible load - a 'Possible' load is just that - one that may or may not happen.'"></li>
+              <li class="dt-legend-load--gray" data-toggle="tooltip" data-placement="top" title="'Pending' load - a 'Pending' load is visible only to the user who created it. A Pending load is one that you do not want released until a specific date, at which point the load becomes visible to all."></li>
+              <li class="dt-legend-load--light-orange" data-toggle="tooltip" data-placement="top" title="Load is 2-8 hours out from Pickup or Delivery."></li>
+              <li class="dt-legend-load--medium-orange" data-toggle="tooltip" data-placement="top" title="Load is 1-2 hours out from Pickup or Delivery."></li>
+              <li class="dt-legend-load--dark-orange" data-toggle="tooltip" data-placement="top" title="Load is within 1 hour of Pickup or Delivery."></li>
+              <li class="dt-legend-load--red" data-toggle="tooltip" data-placement="top" title="Load is 'Late' for Pickup or Delivery."></li>
+              <li class="dt-legend-load--white" data-toggle="tooltip" data-placement="top" title="Load is 'Available' and is not assigned nor has it been dropped."></li>
+            </ul>
+          </div>
+          <div class="table table-responsive">
+            <table class="table table-bordered compact js-datatable" id="first" cellspacing="0" data-var="firstTable">
+              <thead>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </thead>
+              <tfoot>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tfoot>
+              <tbody></tbody>
+            </table>
+          </div>
+          <hr>
+          <div class="dt-toolbar">
+            <div class="dt-toolbar-actions"><a class="btn btn-success" href="#">New</a></div>
+            <div class="dt-toolbar-filter js-table-filter">
+              <div class="dt-toolbar-filter-item">
+                <select class="form-control" data-column-index="1"></select>
+              </div>
+              <div class="dt-toolbar-filter-item">
+                <select class="form-control" data-column-index="2"></select>
+              </div>
+            </div>
+            <ul class="dt-toolbar-legend">
+              <li class="dt-legend-load--yellow" data-toggle="tooltip" data-placement="top" title="Load is 'Droppped', that is, it has been picked up by a driver/carrier and dropped at a location other than the final consignee."></li>
+              <li class="dt-legend-load--blue" data-toggle="tooltip" data-placement="top" title="Load is 'Reserved' for a driver or carrier."></li>
+              <li class="dt-legend-load--light-gray" data-toggle="tooltip" data-placement="top" title="'Possible load - a 'Possible' load is just that - one that may or may not happen.'"></li>
+              <li class="dt-legend-load--gray" data-toggle="tooltip" data-placement="top" title="'Pending' load - a 'Pending' load is visible only to the user who created it. A Pending load is one that you do not want released until a specific date, at which point the load becomes visible to all."></li>
+              <li class="dt-legend-load--light-orange" data-toggle="tooltip" data-placement="top" title="Load is 2-8 hours out from Pickup or Delivery."></li>
+              <li class="dt-legend-load--medium-orange" data-toggle="tooltip" data-placement="top" title="Load is 1-2 hours out from Pickup or Delivery."></li>
+              <li class="dt-legend-load--dark-orange" data-toggle="tooltip" data-placement="top" title="Load is within 1 hour of Pickup or Delivery."></li>
+              <li class="dt-legend-load--red" data-toggle="tooltip" data-placement="top" title="Load is 'Late' for Pickup or Delivery."></li>
+              <li class="dt-legend-load--white" data-toggle="tooltip" data-placement="top" title="Load is 'Available' and is not assigned nor has it been dropped."></li>
+            </ul>
+          </div>
+          <div class="table table-responsive">
+            <table class="table table-bordered compact js-datatable" id="second" cellspacing="0" data-var="secondTable">
+              <thead>
+                <th></th>
+                <th></th>
+                <th></th>
+              </thead>
+              <tfoot>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tfoot>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="modal fade" id="js-row-remove" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="modal-body my-4">
+            <p class="text-lg text-center">Are you sure to delete this item?</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary" type="submit">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="js/dataTables.bootstrap.js" type="text/javascript"></script>
+    <script src="js/vendor.js" type="text/javascript"></script>
+    <script src="js/scripts.js" type="text/javascript"></script>
+    <script>
+      var firstTable = {
+          data: [
+              ["Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800"],
+              ["Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750"],
+              ["Ashton Cox", "Junior Technical Author", "San Francisco", "1562", "2009/01/12", "$86,000"],
+              ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh", "6224", "2012/03/29", "$433,060"],
+              ["Airi Satou", "Accountant", "Tokyo", "5407", "2008/11/28", "$162,700"],
+              ["Brielle Williamson", "Integration Specialist", "New York", "4804", "2012/12/02", "$372,000"],
+              ["Herrod Chandler", "Sales Assistant", "San Francisco", "9608", "2012/08/06", "$137,500"],
+              ["Rhona Davidson", "Integration Specialist", "Tokyo", "6200", "2010/10/14", "$327,900"],
+              ["Colleen Hurst", "Javascript Developer", "San Francisco", "2360", "2009/09/15", "$205,500"],
+              ["Sonya Frost", "Software Engineer", "Edinburgh", "1667", "2008/12/13", "$103,600"],
+              ["Jena Gaines", "Office Manager", "London", "3814", "2008/12/19", "$90,560"],
+              ["Quinn Flynn", "Support Lead", "Edinburgh", "9497", "2013/03/03", "$342,000"],
+              ["Charde Marshall", "Regional Director", "San Francisco", "6741", "2008/10/16", "$470,600"],
+              ["Haley Kennedy", "Senior Marketing Designer", "London", "3597", "2012/12/18", "$313,500"],
+              ["Tatyana Fitzpatrick", "Regional Director", "London", "1965", "2010/03/17", "$385,750"],
+              ["Michael Silva", "Marketing Designer", "London", "1581", "2012/11/27", "$198,500"],
+              ["Paul Byrd", "Chief Financial Officer (CFO)", "New York", "3059", "2010/06/09", "$725,000"],
+              ["Gloria Little", "Systems Administrator", "New York", "1721", "2009/04/10", "$237,500"],
+              ["Bradley Greer", "Software Engineer", "London", "2558", "2012/10/13", "$132,000"],
+              ["Dai Rios", "Personnel Lead", "Edinburgh", "2290", "2012/09/26", "$217,500"],
+              ["Jenette Caldwell", "Development Lead", "New York", "1937", "2011/09/03", "$345,000"],
+              ["Yuri Berry", "Chief Marketing Officer (CMO)", "New York", "6154", "2009/06/25", "$675,000"],
+              ["Caesar Vance", "Pre-Sales Support", "New York", "8330", "2011/12/12", "$106,450"],
+              ["Doris Wilder", "Sales Assistant", "Sydney", "3023", "2010/09/20", "$85,600"],
+              ["Angelica Ramos", "Chief Executive Officer (CEO)", "London", "5797", "2009/10/09", "$1,200,000"],
+              ["Gavin Joyce", "Developer", "Edinburgh", "8822", "2010/12/22", "$92,575"],
+              ["Jennifer Chang", "Regional Director", "Singapore", "9239", "2010/11/14", "$357,650"],
+              ["Brenden Wagner", "Software Engineer", "San Francisco", "1314", "2011/06/07", "$206,850"],
+              ["Fiona Green", "Chief Operating Officer (COO)", "San Francisco", "2947", "2010/03/11", "$850,000"],
+              ["Shou Itou", "Regional Marketing", "Tokyo", "8899", "2011/08/14", "$163,000"],
+              ["Michelle House", "Integration Specialist", "Sydney", "2769", "2011/06/02", "$95,400"],
+              ["Suki Burks", "Developer", "London", "6832", "2009/10/22", "$114,500"],
+              ["Prescott Bartlett", "Technical Author", "London", "3606", "2011/05/07", "$145,000"],
+              ["Gavin Cortez", "Team Leader", "San Francisco", "2860", "2008/10/26", "$235,500"],
+              ["Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050"],
+              ["Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009/12/09", "$85,675"]
+          ],
+          orderCellsTop: true,
+          colReorder: {
+              realtime: false
+          },
+          select: {
+              style: 'multi',
+              items: 'row'
+          },
+          stateSave: true,
+          initComplete: function () {
+              $('.table tbody tr:nth-child(3)').addClass('load-light-gray');
+              $('.table tbody tr:nth-child(6)').addClass('load-blue');
+              $('.table tbody tr:nth-child(9)').addClass('load-red');
+              $('.table tbody tr:nth-child(12)').addClass('load-light-orange');
+              $('.table tbody tr:nth-child(15)').addClass('load-medium-orange');
+              $('.table tbody tr:nth-child(18)').addClass('load-dark-orange');
+              $('.table tbody tr:nth-child(21)').addClass('load-gray');
+              $('.table tbody tr:nth-child(24)').addClass('load-yellow');
+          },
+          columns: [
+              {
+                  title: "Name",
+                  orderable: false,
+              },{
+                  title: "Position",
+              },{
+                  title: "Office",
+              },{
+                  title: "Extn.",
+                  orderable: false,
+                  searchable: false,
+              },{
+                  title: "Start Date",
+              },{
+                  title: "Salary",
+                  orderable: false,
+                  searchable: false,
+              }
+          ],
+          autoWidth: false,
+          order: [[3, 'asc']],
+          dom: 'Bfrtip',
+          conditionalPaging: true,
+          buttons: [
+              {
+                  text: '<i class="glyphicon glyphicon-star"></i>',
+                  action: function () {
+                      this.rows().select();
+                  }
+              },
+              {
+                  text: '<i class="glyphicon glyphicon-star-empty"></i>',
+                  action: function () {
+                      this.rows().deselect();
+                  }
+              },
+              {
+                  extend: 'copy',
+              },
+              {
+                  extend: 'colvis',
+                  className: 'btn-primary',
+                  titleAttr: 'Columns visibility',
+                  text: 'Hide/Show Columns',
+                  init: function (api, node, config) {
+                      $(node).removeClass('btn-secondary')
+                  }
+              }
+          ]
+          // columnDefs: [{
+          //     targets: -1,
+          //     data: null,
+          //     defaultContent: '<a href="https://google.com" class="btn btn-danger js-row-remove" data-method="post">Remove</button>',
+          // }]
+      };
+      
+      var secondTable = {
+          data: [
+              ["Tiger Nixon", "System Architect", "Edinburgh"],
+              ["Garrett Winters", "Accountant", "Tokyo"],
+              ["Ashton Cox", "Junior Technical Author", "San Francisco"],
+              ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh"],
+              ["Airi Satou", "Accountant", "Tokyo"],
+          ],
+          orderCellsTop: true,
+          colReorder: {
+              realtime: false,
+              // fixedColumnsRight: 1
+          },
+          stateSave: true,
+          initComplete: function () {
+          },
+          columns: [
+              {
+                  title: "Name",
+                  orderable: false,
+                  // searchable: false,
+              },{
+                  title: "Position",
+                  // orderable: false,
+                  // searchable: false,
+              },{
+                  title: "Office",
+                  // orderable: false,
+                  // searchable: false,
+              },
+          ],
+          buttons: [
+              {
+                  text: 'Select all',
+                  action: function () {
+                      this.rows().select();
+                  }
+              },
+              {
+                  text: 'Select none',
+                  action: function () {
+                      this.rows().deselect();
+                  }
+              },
+              {
+                  extend: 'colvis',
+                  columns: ':gt(0)'
+              }
+          ],
+          dom: 'Bfrtip',
+          order: [[1, 'asc']],
+          autoWidth: false,
+          conditionalPaging: true,
+      };
+      var thirdTable = {
+          data: [
+              ["Tiger Nixon", "System Architect", "Edinburgh"],
+              ["Garrett Winters", "Accountant", "Tokyo"],
+              ["Ashton Cox", "Junior Technical Author", "San Francisco"],
+              ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh"],
+              ["Airi Satou", "Accountant", "Tokyo"],
+          ],
+          orderCellsTop: true,
+          colReorder: {
+              // fixedColumnsLeft: 1,
+          },
+          stateSave: true,
+          initComplete: function () {
+          },
+          columns: [
+              {
+                  title: "Name",
+                  searchable: false,
+              },{
+                  title: "Position",
+              },{
+                  title: "Office",
+              },
+          ],
+          buttons: [
+              {
+                  extend: 'colvis',
+                  columns: ':gt(0)'
+              }
+          ],
+          dom: 'Bfrtip',
+          autoWidth: false,
+          conditionalPaging: true,
+      };
+    </script>
+    <script>
+      $.contextMenu({
+          selector: '.js-datatable[data-dt-index] tbody td',
+          items: {
+              'Open InDispatch': {
+                  name: '<a href="https://indispatch.com" target="_blank">Open InDispatch</a>',
+                  isHtmlName: true,
+                  icon: 'fas fa-link'
+              },
+              'Alert Click': {
+                  name: 'Alert Click',
+                  icon: 'fas fa-exclamation',
+                  callback: function (itemKey, opt, e) {
+                      // Alert the key of the item and the trigger element's id.
+                      alert('Clicked on ' + itemKey + ' on element ' + opt.$trigger.id);
+      
+                      // Do not close the menu after clicking an item
+                      return false;
+                  }
+              },
+              '-': '-',
+              'sort-asc': {
+                  name: 'Ascending Sort',
+                  icon: 'fas fa-sort-amount-down-alt',
+                  className: 'js-dt-sort-asc'
+              },
+              'sort-desc': {
+                  name: 'Descending Sort',
+                  icon: 'fas fa-sort-amount-down',
+                  className: 'js-dt-sort-desc'
+              },
+              'show-all': {
+                  name: 'Show All',
+                  icon: 'fas fa-border-all',
+                  className: 'js-dt-show-all'
+              },
+              'filter-by': {
+                  name: 'Filter By',
+                  icon: 'fas fa-crosshairs',
+                  className: 'js-dt-filter-by'
+              },
+              'filter-out': {
+                  name: 'Filter Out',
+                  icon: 'fas fa-search-minus',
+                  className: 'js-dt-filter-out'
+              },
+              '-': '-',
+              'fold1': {
+                  name: "Sub menu",
+                  icon: 'fas fa-chevron-right',
+                  items: {
+                      'fold1-key1': {
+                          name: 'Item 1',
+                          icon: 'fas fa-check',
+                      },
+                      'fold1-key2': {
+                          name: 'Item 2',
+                          icon: 'fas fa-check',
+                      },
+                      'fold2': {
+                          name: 'Item 3',
+                          icon: 'fas fa-chevron-right',
+                          'items': {
+                              'fold2-key1': {
+                                  name: 'Item 1',
+                              },
+                              'fold2-key2': {
+                                  name: 'Item 2',
+                              },
+                              'fold2-key3': {
+                                  name: 'Item 3',
+                              }
+                          }
+                      },
+                      'fold1-key3': {
+                          name: 'Item 3',
+                          icon: 'fas fa-check',
+                      }
+                  }
+              },
+              'Exit': {
+                  name: 'Close',
+                  icon: 'fas fa-times',
+                  callback: function () {
+                      return true;
+                  }
+              }
+          }
+      });
+    </script>
+  </body>
+</html>

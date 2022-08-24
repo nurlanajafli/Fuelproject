@@ -1,0 +1,13 @@
+.modal#work-order-error.fade(tabindex='-1')
+    .modal-dialog
+        .modal-content
+            .modal-header
+                h5.modal-title Express
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span &times;
+            .modal-body
+                div.error-block
+                    i.fas.fa-exclamation-circle
+                    p Entry Required
+            .modal-footer
+                button.btn.btn-primary(type='button' data-dismiss='modal') Okay

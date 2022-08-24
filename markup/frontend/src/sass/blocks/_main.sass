@@ -1,0 +1,81 @@
+html,
+body
+	min-width: 320px
+	min-height: 100vh
+	color: #303030
+
+html
+	overflow: auto
+
+body
+	overflow: hidden
+	min-width: 320px
+
+*,
+*:before,
+*:after
+	box-sizing: border-box
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+	-moz-tap-highlight-color: rgba(0, 0, 0, 0)
+
+svg
+	fill: currentColor !important
+	pointer-events: none
+
+img
+	display: block
+	max-width: 100%
+	height: auto
+
+.wrapper
+	display: flex
+	position: relative
+	min-height: 100vh
+	min-width: 320px
+	background: #ffffff
+	overflow: hidden
+
+	&__inner
+		display: flex
+		flex-direction: column
+		width: 100%
+		min-height: 100vh
+
+	&__content
+		flex-grow: 1
+		flex-shrink: 1
+		flex-basis: auto
+
+.overflow-hidden
+	overflow: hidden
+
+.svgSprite
+	position: absolute
+	left: 0
+	top: 0
+	height: 0
+	width: 0
+	visibility: hidden
+
+a
+	//text-decoration: underline
+	color: inherit
+	transition: all 0.2s
+
+	&:hover
+		text-decoration: none
+
+// .ajax-alert
+.ajax-alert
+	position: absolute
+	right: 40px
+	top: 162px
+
+	.close:focus
+		outline: none
+
+select[readonly]
+	pointer-events: none
+
+.dropdown-toggle[readonly]
+	background-color: #ffffff

@@ -1,0 +1,351 @@
+extends pug/layouts/dashboard
+
+block title
+    title Work Order
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 Work Order
+        .card.shadow.mb-4
+            .card-header.py-3
+                .edit-form-toolbar.work-orders__toolbar
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Update')
+                        i.fas.fa-sync
+                    button.btn.btn-link.work-orders__toolbar__link(data-tooltip='tooltip' data-placement='top' title='Add' data-toggle='modal' data-target='#work-orders-modal')
+                        i.fas.fa-plus-square
+                    .field.row(style="margin: 0")
+                        div.work-orders__field
+                            label.work-orders__label Type:
+                            select.form-control(name='typeWorkOrders' style='padding: 3px 5px')
+                                option(selected) Trucks
+                                option(value='Trailers') Trailers
+                    .field.row(style="margin: 0;")
+                        div.work-orders__field
+                            label.work-orders__label Status:
+                            select.form-control(name='typeWorkOrders' style='padding: 3px 5px; width: 120%')
+                                option(selected) Open
+                                option(value='Completed') Completed
+            .card-body
+                .table.table-responsive
+                    table.table.table-bordered.compact.js-datatable#workOrders(cellspacing='0')
+                        thead
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                        tfoot
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+block modals
+    include pug/components/modals/work-orders
+    include pug/components/modals/equipmennt-service
+    include pug/components/modals/parts-used
+block scripts
+    script.
+      var workOrders = $('#workOrders').DataTable({
+        data: [
+          ["1765","", "12/03/19","809848","0.00","", "","RYDER ORLANDO", "James: 01.03.20 ESTIMATE IS READY AND APPROVED FOR REPAIR"],
+          ["1765","", "12/03/19","809848","0.00","", "","RYDER ORLANDO", "James: 01.03.20 ESTIMATE IS READY AND APPROVED FOR REPAIR"],
+          ["1765","", "12/03/19","809848","0.00","", "","RYDER ORLANDO", "James: 01.03.20 ESTIMATE IS READY AND APPROVED FOR REPAIR"],
+          ["1765","", "12/03/19","809848","0.00","", "","RYDER ORLANDO", "James: 01.03.20 ESTIMATE IS READY AND APPROVED FOR REPAIR"],
+          ["1765","", "12/03/19","809848","0.00","", "","RYDER ORLANDO", "James: 01.03.20 ESTIMATE IS READY AND APPROVED FOR REPAIR"],
+          ["1765","", "12/03/19","809848","0.00","", "","RYDER ORLANDO", "James: 01.03.20 ESTIMATE IS READY AND APPROVED FOR REPAIR"],
+        ],
+        orderCellsTop: true,
+        colReorder: true,
+        stateSave: true,
+        // initComplete: function () {
+        // },
+        columns: [
+          {
+            title: "WO No",
+            orderable: false,
+          },
+          {
+            title: "PO No",
+          },
+          {
+            title: "Date",
+          },
+          {
+            title: "Unit No",
+          },
+          {
+            title: "Cost",
+          },
+          {
+            title: "Charged",
+          },
+          {
+            title: "Mem",
+            orderable: false,
+          },
+          {
+            title: "Serviced By",
+          },
+          {
+            title: "Description",
+            orderable: false,
+          },
+        ],
+        buttons: [
+          {
+            extend: 'colvis',
+            columns: ':gt(0)'
+          }
+        ],
+        dom: 'tp',
+        autoWidth: false,
+        conditionalPaging: true,
+        draw: false,
+      });
+      var TruckDrop = $('#truckDrop').DataTable({
+        data: [
+          ['222947', 'CS'],
+          ['222947', 'CS'],
+          ['222917', 'CS'],
+          ['222927', 'CS'],
+          ['234557', 'CS'],
+          ['222337', 'CS'],
+          ['211237', 'CS'],
+          ['222947', 'CS'],
+        ],
+        dom: 'tp',
+        orderCellsTop: true,
+        // initComplete: function () {
+        // },
+        scrollY: '350px',
+        scrollCollapse: true,
+        paging: false,
+        conditionalPaging: true,
+        columns: [
+          {
+            title: 'Truck No',
+            orderable: false,
+          },
+          {
+            title: 'Type',
+            orderable: false,
+          }
+        ],
+      });
+      var ServCode = $('#ServCode').DataTable({
+        data: [
+          ['AC', 'A/C'],
+          ['ACCREP TRK ', 'Alignment'],
+          ['Tires', 'TIRES'],
+          ['AC', 'A/C'],
+          ['ACCREP TRK ', 'Alignment'],
+          ['Tires', 'TIRES'],
+          ['AC', 'A/C'],
+          ['ACCREP TRK ', 'Alignment'],
+          ['Tires', 'TIRES'],
+          ['AC', 'A/C'],
+          ['ACCREP TRK ', 'Alignment'],
+          ['Tires', 'TIRES'],
+        ],
+        dom: 'tp',
+        orderCellsTop: true,
+        // initComplete: function () {
+        // },
+        scrollY: '350px',
+        scrollCollapse: true,
+        paging: false,
+        conditionalPaging: true,
+        columns: [
+          {
+            title: 'Code',
+            orderable: false,
+          },
+          {
+            title: 'Description',
+            orderable: false,
+          }
+        ],
+      });
+      var ServBy = $('#ServBy').DataTable({
+        data: [
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['112 MKR INC', 'Omaha', 'Ne', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['112 MKR INC', 'Omaha', 'Ne', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['112 MKR INC', 'Omaha', 'Ne', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['112 MKR INC', 'Omaha', 'Ne', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['112 MKR INC', 'Omaha', 'Ne', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['112 MKR INC', 'Omaha', 'Ne', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['112 MKR INC', 'Omaha', 'Ne', 'Vendor'],
+        ],
+        dom: 'tp',
+        orderCellsTop: true,
+        // initComplete: function () {
+        // },
+        scrollY: '350px',
+        scrollCollapse: true,
+        paging: false,
+        conditionalPaging: true,
+        columns: [
+          {
+            title: 'Name',
+            orderable: false,
+          },
+          {
+            title: 'City',
+          },
+          {
+            title: 'St',
+          },
+          {
+            title: 'Type',
+          }
+        ],
+      });
+      var servicedDrop = $('#servicedDrop').DataTable({
+        data: [
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+          ['1 ANT LLC', 'HOLLYWOOD', 'FL', 'Vendor'],
+        ],
+        dom: 'tp',
+        orderCellsTop: true,
+        // initComplete: function () {
+        // },
+        scrollY: '350px',
+        scrollCollapse: true,
+        paging: false,
+        conditionalPaging: true,
+        columns: [
+          {
+            title: 'Name',
+          },
+          {
+            title: 'City',
+          },
+          {
+            title: 'St',
+          },
+          {
+            title: 'Type',
+          }
+        ],
+      });
+      var workOrderRes = $('#workOrderRes').DataTable({
+        data: [],
+        orderCellsTop: true,
+        colReorder: true,
+        stateSave: true,
+        // initComplete: function () {
+        // },
+        columns: [
+          {
+            title: "Svc No",
+          },
+          {
+            title: "Date",
+          },
+          {
+            title: "Code",
+          },
+          {
+            title: "Description",
+          },
+          {
+            title: "Cost",
+          },
+          {
+            title: "Comp",
+          },
+          {
+            title: "Notes",
+          },
+        ],
+        buttons: [
+          {
+            extend: 'colvis',
+            columns: ':gt(0)'
+          }
+        ],
+        dom: 'tp',
+        autoWidth: false,
+        conditionalPaging: true,
+        draw: false,
+      });
+      var equipmentServiceRes = $('#equipmentServiceRes').DataTable({
+        data: [],
+        dom: 'tp',
+        autoWidth: false,
+        colReorder: true,
+        stateSave: true,
+        orderCellsTop: true,
+        // initComplete: function () {
+        // },
+        buttons: [
+          {
+            extend: 'colvis',
+            columns: ':gt(0)'
+          }
+        ],
+        scrollCollapse: true,
+        draw: false,
+        paging: false,
+        conditionalPaging: true,
+        columns: [
+            {
+              title: "Item No",
+            },
+            {
+              title: "Description",
+            },
+            {
+              title: "PO",
+            },
+            {
+              title: "Qly Used",
+            },
+            {
+              title: "Cost Ea",
+            },
+            {
+              title: "Line Total",
+            }
+        ],
+      });
+
+

@@ -1,0 +1,114 @@
+.modal#work-orders-modal.fade(tabindex='-1')
+    .modal-dialog.modal-xl
+        .modal-content
+            .modal-header
+                h5.modal-title Work Order
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span &times;
+            .card-header
+                .edit-form-toolbar.work-orders__toolbar-modal
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='New Service' data-toggle='modal' data-target='#equipment-service')
+                        i.fas.fa-plus-square
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Import')
+                        i.fas.fa-cloud-download-alt
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Print')
+                        i.fas.fa-print
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Memorize')
+                        i.fas.fa-lightbulb
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Take Equipment Down')
+                        i.fas.fa-briefcase
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Create Purchase Order')
+                        i.fas.fa-file-medical
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Scans')
+                        i.fas.fa-image
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Cancel')
+                        i.fas.fa-eraser
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Complete')
+                        i.fas.fa-check
+            .modal-body
+                .row
+                    .col-7
+                        .work-orders__settings.setting
+                            .setting__info
+                                .setting__info-item
+                                    .setting__info-item--title
+                                        p WO No
+                                    .setting__info-item--val
+                                        p 1991
+                                .setting__info-item
+                                    .setting__info-item--title
+                                        p Completed
+                                    .setting__info-item--val
+                                        p No
+                                .setting__info-item
+                                    .setting__info-item--title
+                                        p Total
+                                    .setting__info-item--val
+                                        p 0.00
+                            .row
+                                .col-6
+                                    label.setting__fields--label
+                                        p WO Date
+                                        input.form-control(type='date' required)
+                                    label.setting__fields--label.has-error
+                                        p WO Date
+                                        input.form-control(type='date' required)
+                                        .help-block Неправильно заполненное поле
+                                    label.setting__fields--label
+                                        p Unit Type
+                                        select.custom-select
+                                            option(value='Truck') Truck
+                                            option(value='Trailer') Trailer
+                                    label.setting__fields--label
+                                        p Unit No
+                                        input.form-control.dropdown-toggle(type='text' data-toggle='dropdown')
+                                        .dropdown-menu.dropdown-menu-right.dropdown-menu--table(style="min-width: 12rem")
+                                            .table.table-responsive
+                                                table.table.table-bordered.compact.js-datatable#truckDrop(width='100%' cellspacing='0' data-var='truckDrop')
+                                                    thead
+                                                        th
+                                                        th
+                                .col-6
+                                    label.setting__fields--label
+                                        p Serviced By
+                                        input.form-control.dropdown-toggle(type='text' data-toggle='dropdown')
+                                        .dropdown-menu.dropdown-menu-right.dropdown-menu--table
+                                            .table.table-responsive
+                                                table.table.table-bordered.compact.js-datatable#servicedDrop(width='100%' cellspacing='0' data-var='ServicedDrop')
+                                                    thead
+                                                        th
+                                                        th
+                                                        th
+                                                        th
+                                    label.setting__fields--label
+                                        p Authorized By
+                                        input.form-control(type='text')
+                                    label.setting__fields--label
+                                        p Odometer
+                                        input.form-control(type='number' value="0")
+                        //.work-orders__settings
+                        //    p нижнаяя
+                    .col-5
+                        .work-orders__settings.p-0
+                            span.form-legend Description of Problem or Condition
+                            div(style="height: 100%")
+                                textarea.work-orders__textarea(placeholder='Enter a description...')
+                    .col-12(style='margin: 20px 0 0 0')
+                        .work-orders__table
+                            div.work-orders__table--title Services performed on this work order
+                            .table.table-responsive
+                                table.table.table-bordered.compact.js-datatable#workOrderRes(cellspacing='0', data-var="workOrderRes")
+                                    thead
+                                        th
+                                        th
+                                        th
+                                        th
+                                        th
+                                        th
+                                        th
+
+            .modal-footer
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary(type='button') Save changes
+
+

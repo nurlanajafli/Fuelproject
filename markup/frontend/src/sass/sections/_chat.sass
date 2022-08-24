@@ -1,0 +1,245 @@
+.chat
+
+	&__messages
+
+		.card-header
+			box-shadow: 0 5px 5px -5px rgba($clr-blue, 0.2)
+			position: relative
+			z-index: 2
+
+		.card-body
+			max-height: 53vh
+			overflow-y: auto
+
+		.card-footer
+			textarea
+				margin-bottom: 6px
+
+	&__user
+		display: flex
+		align-items: center
+
+		&-avatar
+			width: 40px
+			height: 40px
+			margin-right: 10px
+			position: relative
+			top: -4px
+
+	&__message
+		width: 75%
+		border-radius: 4px
+		overflow: hidden
+		margin-bottom: 10px
+
+		&-author
+			background-color: $clr-gray
+			padding: 4px 10px
+			color: $clr-white
+			font-weight: 500
+			letter-spacing: 0.04em
+			font-size: 14px
+			display: flex
+			justify-content: space-between
+
+		&-text
+			padding: 5px 10px
+			background-color: rgba($clr-gray, 0.2)
+			letter-spacing: 0.02em
+
+			p
+				margin-bottom: 0
+
+		&.float-right
+			.chat__message
+				&-author
+					text-align: right
+					background-color: $clr-blue
+				&-text
+					background-color: rgba($clr-primary, 0.2)
+
+		&-date
+			margin: 5px 0 10px
+			text-align: center
+			font-size: 14px
+			letter-spacing: 0.04em
+			position: relative
+
+			span
+				display: inline-block
+				padding: 0 20px
+				background-color: #ffffff
+				position: relative
+				z-index: 2
+
+			&:before,
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				height: .5px
+				width: 50%
+				background-color: rgba($clr-gray, 0.5)
+				top: 50%
+				transform: translateY(-50%)
+
+			&:after
+				right: 0
+
+		&-footer
+			display: flex
+			justify-content: space-between
+			font-size: 14px
+			font-weight: 500
+			letter-spacing: 0.02em
+			padding: 4px 10px
+			p
+				margin: 0
+
+		&-actions
+			display: flex
+			padding: 0
+			margin: 0
+			list-style-type: none
+
+			li
+				&:not(:last-child)
+					margin-right: 14px
+					position: relative
+
+					&:after
+						content: '|'
+						display: block
+						position: absolute
+						top: 0
+						right: -9px
+
+		&-divider
+			width: 25%
+			border-top: 1px solid lighten($clr-blue, 20)
+			margin: 0 auto
+
+	&__item
+		display: flex
+		align-items: flex-start
+		position: relative
+		padding: 15px
+		cursor: pointer
+		&:not(:last-child)
+			border-bottom: 1px solid rgba(#224abe, .25)
+
+
+		&.active,
+		&:hover
+			background-color: rgba(#224abe, 0.1)
+			color: #224abe
+
+			.user-sender
+				color: $clr-gray
+
+		&-avatar
+			flex: 0 0 40px
+			width: 40px
+			height: 40px
+			margin-right: 10px
+
+			.user-status
+				&:before
+					top: -10px
+					width: 10px
+					height: 10px
+					left: 30px
+
+		&-info
+
+			p
+				margin: 0
+				font-size: 15px
+				font-weight: 500
+				white-space: nowrap
+				overflow: hidden
+				text-overflow: ellipsis
+				width: 20vw
+
+		.badge
+			position: absolute
+			right: 15px
+			margin-top: 2px
+
+		&-date
+			font-size: 14px
+			color: $clr-secondary
+			margin-left: 1px
+			font-weight: 500
+			line-height: 1
+			display: block
+
+	&__list
+		.card-body
+			padding: 0
+
+		.card-header
+			padding: 10px 15px
+
+		> div
+			&:not(:last-child)
+				margin-bottom: 15px
+
+.user
+	&-avatar
+		width: 40px
+		height: 40px
+		display: block
+		border-radius: 50%
+
+	&-name
+		font-weight: 700
+		margin: 0
+		font-size: 14px
+
+	&-sender
+		margin-right: 5px
+		color: #224abe
+		font-weight: 500
+		letter-spacing: 0.02em
+
+	&-status
+		font-size: 14px
+		font-weight: 500
+		padding-left: 12px
+		display: block
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			display: block
+			width: 6px
+			height: 6px
+			border-radius: 50%
+			top: 8px
+			left: 0
+
+		&--online
+			color: $clr-success
+			&:before
+				background-color: $clr-success
+
+		&--afk
+			color: $clr-yellow
+			&:before
+				background-color: $clr-yellow
+
+		&--busy
+			color: $clr-danger
+			&:before
+				background-color: $clr-danger
+
+		&--offline
+			color: $clr-secondary
+			&:before
+				background-color: $clr-secondary
+
+		&--deleted
+			color: $clr-black
+			&:before
+				background-color: $clr-black

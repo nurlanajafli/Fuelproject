@@ -1,0 +1,1 @@
+*/5 * * * * /var/www/app/yii cron/run

@@ -1,0 +1,151 @@
+.col-8
+
+    // Inputs
+    h4.text-dark#all-input Inputs
+    hr.mb-3
+    .form-group.has-error
+        label Text input
+        input.form-control(type='text' placeholder='Text input')
+        .help-block This point cannot be empty.
+    hr
+    .form-group.has-error
+        label Text input with small help text
+        input.form-control(type='text' placeholder='Text input')
+        small.form-text.text-muted Lorem ipsum dolor sit amet.
+        .help-block This point cannot be empty.
+    hr
+    .form-group.has-error
+        label File input
+        input.form-control-file(type='file')
+        .help-block This point cannot be empty.
+    hr
+    .custom-file.has-error
+        input(type="file" class="custom-file-input" id="custom-file")
+        label(class="custom-file-label" for="custom-file") Choose file
+        .help-block This point cannot be empty.
+    hr.mb-5
+
+    // Select
+    h4.text-dark#all-select Select, dropdown
+    .form-group.has-error
+        label Select
+        select.form-control
+            option(value='#') Option 1
+            option(value='#') Option 2
+            option(value='#') Option 3
+            option(value='#') Option 4
+            option(value='#') Option 5
+            .help-block This point cannot be empty.
+    hr
+    .form-group.has-error
+        label Custom select
+        select.custom-select
+            option(value='#' selected) Choose...
+            option(value='#') Option 1
+            option(value='#') Option 2
+            option(value='#') Option 3
+            option(value='#') Option 4
+            .help-block This point cannot be empty.
+    hr.mb-5
+
+    // Checkbox
+    h4.text-dark#all-checkbox Checkbox & Radio buttons
+    hr
+    // Custom checkbox
+    h6 Custom checkbox
+    .custom-control.custom-checkbox.has-error
+        input(type="checkbox" class="custom-control-input" id="custom-check")
+        label(class="custom-control-label" for="custom-check") Check this custom checkbox
+        .help-block This point cannot be empty.
+    .custom-control.custom-checkbox.has-error
+        input(type="checkbox" class="custom-control-input" id="custom-check-1" disabled)
+        label(class="custom-control-label" for="custom-check-1") Disabled custom checkbox
+        .help-block This point cannot be empty.
+    hr
+
+    // Custom checkbox inline
+    h6 Custom checkbox inline
+    .custom-control.custom-checkbox.custom-control-inline.has-error
+        input(type="checkbox" class="custom-control-input" id="custom-check-inline")
+        label(class="custom-control-label" for="custom-check-inline") Check this custom checkbox
+        .help-block This point cannot be empty.
+    .custom-control.custom-checkbox.custom-control-inline.has-error
+        input(type="checkbox" class="custom-control-input" id="custom-check-inline-2" disabled)
+        label(class="custom-control-label" for="custom-check-inline-2") Disabled custom checkbox
+        .help-block This point cannot be empty.
+    hr
+
+
+    // Radio buttons
+    // Custom radio
+    h6 Custom radio
+    .custom-control.custom-radio.has-error
+        input.form-check-input(type='radio' value='#' id='custom-radio')
+        label.form-check-label(for='custom-radio') Default radio button
+        .help-block This point cannot be empty.
+    .custom-control.custom-radio.has-error
+        input.form-check-input(type='radio' value='#' id='custom-radio-2' disabled)
+        label.form-check-label(for='custom-radio-2') Disabled radio button
+        .help-block This point cannot be empty.
+    hr
+
+    // Custom radio inline
+    h6 Custom radio
+    .custom-control.custom-radio.custom-control-inline.has-error
+        input.form-check-input(type='radio' value='#' id='custom-radio-inline')
+        label.form-check-label(for='custom-radio-inline') Default radio button
+        .help-block This point cannot be empty.
+    .custom-control.custom-radio.custom-control-inline.has-error
+        input.form-check-input(type='radio' value='#' id='custom-radio-inline-2' disabled)
+        label.form-check-label(for='custom-radio-inline-2') Disabled radio button
+        .help-block This point cannot be empty.
+    hr
+
+    // Custom switch
+    h6 Custom switch
+    .custom-control.custom-switch.has-error
+        input(type="checkbox" class="custom-control-input" id="custom-switch")
+        label(class="custom-control-label" for="custom-switch") Switch
+        .help-block This point cannot be empty.
+    .custom-control.custom-switch.has-error
+        input(type="checkbox" class="custom-control-input" id="custom-switch-1" disabled)
+        label(class="custom-control-label" for="custom-switch-1") Disabled switch
+        .help-block This point cannot be empty.
+    hr
+
+
+    hr.mb-5
+
+    // Form grid
+    h4.text-dark#all-grid Form grid
+
+    // form grid example
+    .form-group.has-error
+        label Form grid example
+        .form-row
+            .col-6.has-error
+                input.form-control(type='text' name='city' placeholder='City')
+                .help-block This point cannot be empty.
+            .col.has-error
+                select.form-control
+                    option(selected) Choose...
+                    option(value='#') New York
+                    option(value='#') LA
+                    option(value='#') Texas
+                    .help-block This point cannot be empty.
+            .col.has-error
+                input.form-control(type='text' name='zip' placeholder='Zip')
+                .help-block This point cannot be empty.
+    hr
+
+    // input group example
+    .form-group.has-error
+        label Input group example
+        .input-group
+            input.form-control(type='text' name='city' placeholder='City')
+            select.form-control
+                option(selected) Choose...
+                option(value='#') New York
+                option(value='#') LA
+                option(value='#') Texas
+            input.form-control(type='text' name='zip' placeholder='Zip')

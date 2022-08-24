@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/fontawesome-all.css">
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Optional theme-->
+    <!--link(rel="stylesheet" href="css/bootstrap-theme.css")-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
+    <!--
+    [if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]
+    -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Table dropdown</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <section class="content">
+          <div class="page-header">
+            <h1>Table dropdown</h1>
+          </div>
+          <ol class="breadcrumb">
+            <li><a href="./">Home</a></li>
+            <li class="active">Table dropdown</li>
+          </ol>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h2>Table dropdown</h2>
+                </div>
+                <div class="panel-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>Truck No</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown">
+                            <div class="dropdown-menu dropdown-menu--table">
+                              <div class="table table-responsive">
+                                <table class="table table-bordered compact js-datatable" width="100%" cellspacing="0" data-var="dataTableDropdown">
+                                  <thead>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                  </thead>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>Name</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <input class="form-control" type="text" name="name">
+                          </div>
+                        </div>
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>Address</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <input class="form-control" type="text" name="address">
+                          </div>
+                        </div>
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>City</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <input class="form-control" type="text" name="city">
+                          </div>
+                        </div>
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>State</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <select class="form-control" name="st">
+                              <option selected>NY</option>
+                              <option value="TX">TX</option>
+                              <option value="LA">LA</option>
+                              <option value="IL">IL</option>
+                              <option value="FL">FL</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>Type</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <input class="form-control" type="text" name="type">
+                          </div>
+                        </div>
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>Date</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <input class="form-control" type="date" name="date">
+                          </div>
+                        </div>
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>Inactive</label>
+                          </div>
+                          <div class="col-sm-9">
+                            <div class="custom-control custom-checkbox">
+                              <input class="custom-control-input" type="checkbox" name="inactive" id="inactive-check2" onclick="return false;" checked>
+                              <label class="custom-control-label" for="inactive-check2"></label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>Truck No</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown">
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu--table">
+                              <div class="table table-responsive">
+                                <table class="table table-bordered compact js-datatable" width="100%" cellspacing="0" data-var="dataTableDropdown2">
+                                  <thead>
+                                    <th></th>
+                                  </thead>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>Name</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <input class="form-control" type="text" name="name">
+                          </div>
+                        </div>
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>Address</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <input class="form-control" type="text" name="address">
+                          </div>
+                        </div>
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>City</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <input class="form-control" type="text" name="city">
+                          </div>
+                        </div>
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>State</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <select class="form-control" name="st">
+                              <option selected>NY</option>
+                              <option value="TX">TX</option>
+                              <option value="LA">LA</option>
+                              <option value="IL">IL</option>
+                              <option value="FL">FL</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>Type</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <input class="form-control" type="text" name="type">
+                          </div>
+                        </div>
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>Date</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <input class="form-control" type="date" name="date">
+                          </div>
+                        </div>
+                        <div class="field row">
+                          <div class="col-sm-3">
+                            <label>Inactive</label>
+                          </div>
+                          <div class="col-sm-9">
+                            <div class="custom-control custom-checkbox">
+                              <input class="custom-control-input" type="checkbox" name="inactive" id="inactive-check" onclick="return false;" checked>
+                              <label class="custom-control-label" for="inactive-check"></label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="js/dataTables.bootstrap.js" type="text/javascript"></script>
+    <script src="js/vendor.js" type="text/javascript"></script>
+    <script src="js/scripts.js" type="text/javascript"></script>
+    <script>
+      var dataTableDropdown = {
+          data: [
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+              ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+              ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+              ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+              ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+          ],
+          pagingType: 'simple_numbers',
+          orderCellsTop: true,
+          initComplete: function () {
+          },
+          dom: 'tp',
+          columns: [
+              {
+                  title: 'Name',
+              },{
+                  title:  'Address',
+              },{
+                  title: 'City',
+              },{
+                  title: 'St',
+              },{
+                  title: 'Type/',
+              },{
+                  title: "Inactive",
+                  searchable: false,
+                  bSortable: false,
+                  render: function (data, type, row) {
+                      if (data) {
+                          return '<input type="checkbox" class="editor-active" onclick="return false;" checked>';
+                      } else {
+                          return '<input type="checkbox" class="editor-active" onclick="return false;">';
+                      }
+                  },
+                  className: "dt-body-center text-center"
+              },{
+                  title: "Date",
+                  searchable: false,
+              }
+          ],
+          conditionalPaging: true,
+      };
+      
+      
+      var dataTableDropdown2 = {
+          data: [
+              ['1'],
+              ['2'],
+              ['3'],
+              ['4'],
+              ['1'],
+              ['2'],
+              ['3'],
+              ['4'],
+              ['1'],
+              ['2'],
+              ['3'],
+              ['4'],
+              ['1'],
+              ['2'],
+              ['3'],
+              ['4'],
+          ],
+          dom: 'tp',
+          orderCellsTop: true,
+          initComplete: function () {
+          },
+          conditionalPaging: true,
+          columns: [
+              {
+                  title: 'Name',
+              }
+          ],
+      };
+    </script>
+  </body>
+</html>

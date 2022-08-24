@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/css/fontawesome-all.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <title>Modals</title>
+  </head>
+  <body>
+    <script>
+      var svgArray = [
+          '/svgmin/sprite_icons.svg'
+      ];
+    </script>
+    <div class="svgSprite"></div>
+    <div class="wrapper">
+      <div class="wrapper__inner">
+        <div class="wrapper__content">
+          <div id="wrapper">
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+              <!-- Sidebar - Brand--><a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-truck"></i></div>
+                <div class="sidebar-brand-text mx-3">TMS Markup</div></a>
+              <!-- Divider-->
+              <hr class="sidebar-divider my-0">
+              <!-- Nav Item - Tables-->
+              <li class="nav-item active"><a class="nav-link" href="tables.html"><i class="fas fa-fw fa-table"></i><span>Tables</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="edit.html"><i class="fas fa-fw fa-pen"></i><span>Edit</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="forms.html"><i class="fas fa-fw fa-list"></i><span>Forms</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="notes.html"><i class="fas fa-fw fa-sticky-note"></i><span>Notes</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="compliance.html"><i class="fas fa-fw fa-car"></i><span>Compliance</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="load.html"><i class="fas fa-fw fa-truck-loading"></i><span>Load</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="truck-information.html"><i class="fas fa-fw fa-info"></i><span>Truck information</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="table-dropdown.html"><i class="fas fa-fw fa-table"></i><span>Table dropdown</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="modals.html"><i class="far fa-fw fa-window-maximize"></i><span>Modals</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="location.html"><i class="fas fa-fw fa-search-location"></i><span>Location</span></a></li>
+              <!-- Divider-->
+              <hr class="sidebar-divider d-none d-md-block">
+              <!-- Sidebar Toggler (Sidebar)-->
+              <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+              </div>
+            </ul>
+            <div class="d-flex flex-column" id="content-wrapper">
+              <div id="content">
+                <!-- Topbar-->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                  <!-- Sidebar Toggle (Topbar)-->
+                  <form class="form-inline">
+                    <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop"><i class="fa fa-bars"></i></button>
+                  </form>
+                  <!-- Topbar Search-->
+                  <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div class="input-group">
+                      <input class="form-control bg-light border-0 small" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button"><i class="fas fa-search fa-sm"></i></button>
+                      </div>
+                    </div>
+                  </form>
+                  <!-- Topbar Navbar-->
+                  <ul class="navbar-nav ml-auto">
+                    <!-- Nav Item - Search Dropdown (Visible Only XS)-->
+                    <li class="nav-item dropdown no-arrow d-sm-none"><a class="nav-link dropdown-toggle" id="searchDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-search fa-fw"></i></a>
+                      <!-- Dropdown - Messages-->
+                      <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                        <form class="form-inline mr-auto w-100 navbar-search">
+                          <div class="input-group">
+                            <input class="form-control bg-light border-0 small" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                              <button class="btn btn-primary" type="button"><i class="fas fa-search fa-sm"></i></button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </li>
+                    <!-- Nav Item - Alerts-->
+                    <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" id="alertsDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell fa-fw"></i>
+                        <!-- Counter - Alerts--><span class="badge badge-danger badge-counter">3+</span></a>
+                      <!-- Dropdown - Alerts-->
+                      <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in ntf-list" aria-labelledby="alertsDropdown">
+                        <div class="dropdown-header">
+                          <h6>Notifications</h6>
+                          <button class="ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                        </div><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a>
+                      </div>
+                    </li>
+                    <!-- Nav Item - Messages-->
+                    <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" id="messagesDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-envelope fa-fw"></i>
+                        <!-- Counter - Messages--><span class="badge badge-danger badge-counter">7</span></a>
+                      <!-- Dropdown - Messages-->
+                      <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                        <h6 class="dropdown-header">Message Center</h6><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="images/svg/undraw_profile_1.svg" alt="">
+                            <div class="status-indicator bg-success"></div>
+                          </div>
+                          <div class="font-weight-bold">
+                            <div class="text-truncate">
+                              Hi there! I am wondering if you can help me with a
+                              problem I&apos;ve been having.
+                            </div>
+                            <div class="small text-gray-500">Emily Fowler &middot; 58m</div>
+                          </div></a><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="images/svg/undraw_profile_2.svg" alt="">
+                            <div class="status-indicator"></div>
+                          </div>
+                          <div>
+                            <div class="text-truncate">
+                              I have the photos that you ordered last month, how
+                              would you like them sent to you?
+                            </div>
+                            <div class="small text-gray-500">Jae Chun &middot; 1d</div>
+                          </div></a><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="images/svg/undraw_profile_3.svg" alt="">
+                            <div class="status-indicator bg-warning"></div>
+                          </div>
+                          <div>
+                            <div class="text-truncate">
+                              Last month&apos;s report looks great, I am very happy with
+                              the progress so far, keep up the good work!
+                            </div>
+                            <div class="small text-gray-500">Morgan Alvarez &middot; 2d</div>
+                          </div></a><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                            <div class="status-indicator bg-success"></div>
+                          </div>
+                          <div>
+                            <div class="text-truncate">
+                              Am I a good boy? The reason I ask is because someone
+                              told me that people say this to all dogs, even if they aren&apos;t good...
+                            </div>
+                            <div class="small text-gray-500">Chicken the Dog &middot; 2w</div>
+                          </div></a><a class="dropdown-item text-center small text-gray-500" href="/chat.html">Read More Messages</a>
+                      </div>
+                    </li>
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <!-- Nav Item - User Information-->
+                    <li class="nav-item dropdown no-arrow"><a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span><img class="img-profile rounded-circle" src="images/svg/undraw_profile.svg"></a>
+                      <!-- Dropdown - User Information-->
+                      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>                                    Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>                                    Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>                                    Activity Log</a>
+                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>                                    Logout</a>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- End of Topbar-->
+                <!-- Begin Page Content-->
+                <div class="container-fluid">
+                  <h1 class="h3 mb-4 text-gray-800">Modals</h1>
+                  <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                      <div class="edit-form-toolbar">
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target="#no-paddings-modal" data-placement="top" title="Without paddings"><i class="fas fa-battery-empty"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target="#default-modal" data-placement="top" title="Default Modal"><i class="fas fa-battery-quarter"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target="#medium-modal" data-placement="top" title="Medium modal"><i class="fas fa-battery-half"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target="#large-modal" data-placement="top" title="Large Modal"><i class="fas fa-battery-full"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target="#map-modal" data-placement="top" title="Map Modal"><i class="fas fa-map"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target="#load-notes-modal" data-placement="top" title="Load Notes Modal"><i class="fas fa-sticky-note"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target=".mer-modal" data-placement="top" title="Mobile Express Registration Modal"><i class="fas fa-mobile-alt"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target=".modify-location-modal" data-placement="top" title="Modify Location Modal"><i class="fas fa-location-arrow"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target=".clear-load-modal" data-placement="top" title="Clear Load"><i class="fas fa-eraser"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target=".send-modal" data-placement="top" title="Send"><i class="fas fa-paper-plane"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target="#random-id-for-launch-by-button-0" data-placement="top" title="Search"><i class="fas fa-table"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target=".modal-slider" data-placement="top" title="Modal Slider"><i class="fab fa-hive"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target="#random-id-for-launch-by-button-1" data-placement="top" title="Payroll Settlement"><i class="fas fa-print"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target="#random-id-for-launch-by-button-2" data-placement="top" title="Rate Calc"><i class="fas fa-calculator"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target="#random-id-for-launch-by-button-3" data-placement="top" title="Adjust Balance"><i class="fas fa-balance-scale"></i></button>
+                        <button class="btn btn-link" style="margin-left: auto" data-toggle="modal" data-target="#work-order-error">Error modal</button>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <ol>
+                        <li> <code>style='padding: 0;'</code> attribute for .modal-body/header/footer</li>
+                        <li> <code>.modal-dialog</code> default size ( small )</li>
+                        <li> <code>.modal-dialog.modal-lg</code> for medium size</li>
+                        <li> <code>.modal-dialog.modal-xl</code> for big size</li>
+                        <li> <code>.modal-dialog.modal-map</code> for map (max-width: 800px)</li>
+                        <li> Load Notes</li>
+                        <li> Mobile Express Registration ( MER )</li>
+                        <li> Location modify</li>
+                        <li> Clear Load</li>
+                        <li> Send</li>
+                        <li> Modal DT example</li>
+                        <li> Modal Slider</li>
+                        <li> Print Settlements</li>
+                        <li> Rate By</li>
+                        <li> Adjust Balance</li>
+                        <li> Work order error</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                  <div class="copyright text-center my-auto"><span>Copyright &copy; Your Website 2020</span></div>
+                </div>
+              </footer>
+            </div><a class="scroll-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="no-paddings-modal" tabindex="-1">
+      <div class="modal-dialog modal-xl modal--no-padding">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Default modal</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="table table-responsive m-0">
+              <table class="table table-bordered compact js-datatable" id="zero" cellspacing="0" data-var="zeroTable" style="margin: 0 !important;">
+                <thead>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </thead>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="default-modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Default modal</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium atque, autem ducimus esse in ipsum, laborum maxime mollitia nostrum omnis optio porro praesentium quae quasi quod reprehenderit ut, veniam veritatis.</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="medium-modal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Medium modal</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col">
+                <table class="table">
+                  <thead class="thead-light">
+                    <tr>
+                      <th>#</th>
+                      <th>First</th>
+                      <th>Last</th>
+                      <th>Handle</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <th>2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th>3</th>
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="large-modal" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Big modal</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <form class="form">
+                <div class="col-4">
+                  <div class="form-fieldset"><span class="form-legend">Col 4</span>
+                    <div class="form-group">
+                      <label>First name</label>
+                      <input class="form-control" type="text" name="firstname" placeholder="First name">
+                    </div>
+                    <div class="form-group">
+                      <label>Date</label>
+                      <input class="form-control" type="date" name="date">
+                    </div>
+                    <div class="form-group">
+                      <label>Select</label>
+                      <select class="custom-select">
+                        <option value="#">Option 1</option>
+                        <option value="#">Option 2</option>
+                        <option value="#">Option 3</option>
+                        <option value="#">Option 4</option>
+                        <option value="#">Option 5</option>
+                      </select>
+                    </div><span class="form-hr-text">Backup Required With Every Invoice</span>
+                    <div class="form-group">
+                      <label class="col-form-label">Textarea</label>
+                      <textarea class="form-control"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="form-fieldset"><span class="form-legend">Col 8 with two inner cols</span>
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <label>First name</label>
+                          <input class="form-control" type="text" name="firstname" placeholder="First name">
+                        </div>
+                        <div class="form-group">
+                          <label>Date</label>
+                          <input class="form-control" type="date" name="date">
+                        </div>
+                        <div class="form-group">
+                          <label>Select</label>
+                          <select class="custom-select">
+                            <option value="#">Option 1</option>
+                            <option value="#">Option 2</option>
+                            <option value="#">Option 3</option>
+                            <option value="#">Option 4</option>
+                            <option value="#">Option 5</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-form-label">Textarea</label>
+                          <textarea class="form-control"></textarea>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-group">
+                          <label>Last name</label>
+                          <input class="form-control" type="text" name="lastname" placeholder="Last name">
+                        </div>
+                        <div class="form-group">
+                          <label>End date</label>
+                          <input class="form-control" type="date" name="enddate">
+                        </div>
+                        <div class="form-group">
+                          <label>Select</label>
+                          <select class="custom-select">
+                            <option value="#">Option 1</option>
+                            <option value="#">Option 2</option>
+                            <option value="#">Option 3</option>
+                            <option value="#">Option 4</option>
+                            <option value="#">Option 5</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-form-label">Textarea</label>
+                          <textarea class="form-control"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-fieldset"><span class="form-legend">Col 4</span>
+                    <div class="form-group">
+                      <label>First name</label>
+                      <input class="form-control" type="text" name="firstname" placeholder="First name">
+                    </div>
+                    <div class="form-group">
+                      <label>Date</label>
+                      <input class="form-control" type="date" name="date">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-5">
+                  <div class="form-fieldset"><span class="form-legend">Col 5</span>
+                    <div class="form-group">
+                      <label>First name</label>
+                      <input class="form-control" type="text" name="firstname" placeholder="First name">
+                    </div>
+                    <div class="form-group">
+                      <label>City, State, Zip</label>
+                      <div class="form-row">
+                        <div class="col-6">
+                          <input class="form-control" type="text" name="city" placeholder="City">
+                        </div>
+                        <div class="col">
+                          <input class="form-control" type="text" name="state" placeholder="State">
+                        </div>
+                        <div class="col">
+                          <input class="form-control" type="text" name="zip" placeholder="Zip">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="form-fieldset"><span class="form-legend">Col 3</span>
+                    <div class="form-group">
+                      <label>First name</label>
+                      <input class="form-control" type="text" name="firstname" placeholder="First name">
+                    </div>
+                    <div class="form-group">
+                      <label>Select</label>
+                      <select class="custom-select">
+                        <option value="#">Option 1</option>
+                        <option value="#">Option 2</option>
+                        <option value="#">Option 3</option>
+                        <option value="#">Option 4</option>
+                        <option value="#">Option 5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="map-modal" tabindex="-1">
+      <div class="modal-dialog modal-map">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Map modal</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="modal-body"><img src="https://via.placeholder.com/800x600" alt="800x600"></div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="load-notes-modal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Load Notes</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form class="modal-form">
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label>Date/Time</label>
+                    <div class="input-group">
+                      <input class="form-control" type="date">
+                      <input class="form-control" type="text" data-mask="00:00" placeholder="00:00">
+                    </div>
+                  </div><span>or</span>
+                  <div class="form-group">
+                    <label>Date/Time</label>
+                    <div class="input-group">
+                      <input class="form-control" type="text" data-mask="00/00/0000" placeholder="00/00/0000">
+                      <input class="form-control" type="text" data-mask="00:00" placeholder="00:00">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Last Action</label>
+                    <select class="form-control">
+                      <option value="#">Assigned</option>
+                      <option value="#">Confirmed</option>
+                      <option value="#">At Origin</option>
+                      <option value="#">Loading</option>
+                      <option value="#">Moving</option>
+                      <option value="#">At Destination</option>
+                      <option value="#">Unloading</option>
+                      <option value="#">Dropped</option>
+                      <option value="#">Hold</option>
+                      <option value="#">Rejected</option>
+                      <option value="#">Custom Hold</option>
+                      <option value="#">Custom Released</option>
+                      <option value="#">Out For Delivery</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label>Notes</label>
+                    <textarea class="form-control" rows="9"></textarea>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal mer-modal fade" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Mobile Express Registration</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form class="form-fieldset mb-0"><span class="form-legend">Mobile Express</span>
+              <div class="mer-modal-content">
+                <div class="row">
+                  <div class="col ml-4">
+                    <p class="form-readonly-text">
+                      Mobile Express is an advanced system that enables full two-way communication between dispatchpersonnel and drivers. Mobile Express is a fee based service, contact PCS Software directly for current pricing.</p>
+                    <ul>
+                      <li>Works with any smart phone</li>
+                      <li>2-Way Dispatch Messaging</li>
+                      <li>2-Way Document Transfers</li>
+                      <li>Driver Submitted Check Calls</li>
+                      <li>Driver Submitted Load Status Updates</li>
+                      <li>GPS Verified Driver Location Tracking</li>
+                      <li>Document Image Capture and Transfer</li>
+                      <li>Delivery Signature Capture and Transfer</li>
+                    </ul>
+                  </div>
+                </div>
+                <hr class="mer-modal-hr">
+                <div class="row align-items-center">
+                  <div class="col-9 ml-4">
+                    <div class="custom-control custom-checkbox mb-1">
+                      <input class="custom-control-input" type="checkbox" id="some-id">
+                      <label class="custom-control-label" for="some-id">I Understand These Services as Described</label>
+                    </div>
+                    <p class="form-readonly-text">Driver Is Not Registered For Mobile Express</p>
+                  </div>
+                  <div class="col text-right">
+                    <button class="btn btn-primary" type="button">Register</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal modify-location-modal fade" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modify Location</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row field">
+                <div class="col-2">
+                  <label>Date</label>
+                </div>
+                <div class="col-3">
+                  <input class="form-control" type="text" placeholder="__/__/____" data-mask="00/00/0000">
+                </div>
+              </div>
+              <div class="row field">
+                <div class="col-2">
+                  <label>Location</label>
+                </div>
+                <div class="col-7">
+                  <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown">
+                  <div class="dropdown-menu dropdown-menu--table">
+                    <div class="table table-responsive">
+                      <table class="table table-bordered compact js-datatable" width="100%" cellspacing="0" data-var="dataTableDropdown"></table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row field">
+                <div class="col-2">
+                  <label>City St Zip</label>
+                </div>
+                <div class="col-7 row">
+                  <div class="col"><span class="form-readonly-text">BROOKLYN</span></div>
+                  <div class="col"><span class="form-readonly-text">NY</span></div>
+                  <div class="col"><span class="form-readonly-text">11232-1925</span></div>
+                </div>
+              </div>
+              <div class="row field">
+                <div class="col-2">
+                  <label>Zone</label>
+                </div>
+                <div class="col-3">
+                  <select class="form-control">
+                    <option value="">Select</option>
+                    <option value="IS">IS</option>
+                    <option value="MW">MW</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary" type="button" data-target=".location-confirm-modal" data-toggle="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal location-confirm-modal fade" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Express</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="location-confirm-inner py-4">
+              <div class="location-confirm-left"><i class="fas fa fa-question-circle fa-3x"></i></div>
+              <div class="location-confirm-right">
+                <p>Location required for trailer tracking, update now?</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" type="button">Yes</button>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal clear-load-modal fade" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Clear Load 129853 - TL</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="text-white">&times;</span></button>
+          </div>
+          <div class="modal-toolbar bg-light">
+            <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Plus"><i class="fas fa-plus"></i></button>
+            <button class="btn btn-link js-show-load-cleaning" data-tooltip="tooltip" data-placement="top" title="Image"><i class="fas fa-image"></i></button>
+            <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Check"><i class="fas fa-check"></i></button>
+            <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Undo"><i class="fas fa-undo"></i></button>
+            <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Info"><i class="fas fa-info"></i></button>
+            <button class="btn btn-link" data-tooltip="tooltip" data-placement="top" title="Times"><i class="fas fa-times"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-border">
+              <div class="row">
+                <div class="col-6">
+                  <div class="field row">
+                    <div class="col-2">
+                      <label>Carrier</label>
+                    </div>
+                    <div class="col-10"><span class="form-readonly-text">DM WORLD TRANSPORTATION LLC</span></div>
+                  </div>
+                  <div class="field row">
+                    <div class="col-2">
+                      <label>Truck</label>
+                    </div>
+                    <div class="col-10"><span class="form-readonly-text">123456</span></div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="field row">
+                    <div class="col-4">
+                      <label>Dispatches</label>
+                    </div>
+                    <div class="col-8"><span class="form-readonly-text">1</span></div>
+                  </div>
+                  <div class="field row">
+                    <div class="col-4">
+                      <label>Scans</label>
+                    </div>
+                    <div class="col-4"><span class="form-readonly-text">5</span></div>
+                    <div class="col-4">
+                      <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" id="custom-check">
+                        <label class="custom-control-label" for="custom-check"></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 border-left-secondary">
+                  <div class="text-center mb-1">
+                    <label>Load Cleared?</label>
+                    <p class="form-readonly-text">No</p>
+                  </div>
+                  <div class="text-center">
+                    <label>Backup Cleared?</label>
+                    <p class="form-readonly-text">Yes</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="js-load-cleaning" style="display: none;">
+              <div class="row">
+                <div class="col-6">
+                  <div class="d-flex">
+                    <p>Now Clearing:</p><span class="form-readonly-text"> Backup</span>
+                  </div>
+                  <div class="table table-responsive">
+                    <table class="table table-bordered compact js-datatable w-100" data-var="clearData" style="margin:0 !important;">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="field">
+                    <p>Scans</p>
+                  </div>
+                  <div class="table table-responsive">
+                    <table class="table table-bordered compact js-datatable w-100" data-var="scansData" style="margin:0 !important;">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="field">
+                    <p>&nbsp;</p>
+                  </div>
+                  <div class="border">
+                    <table class="table table-sm text-center border-0">
+                      <thead>
+                        <tr>
+                          <td>Required Backup</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="border-0 form-readonly-text">Bill of Lading</td>
+                        </tr>
+                        <tr>
+                          <td class="border-0 form-readonly-text">Rate Confirmations</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-6 clearfix">
+                  <div class="float-right">
+                    <button class="btn btn-primary" data-tooltip="tooltip" data-placement="top" title="Save"><i class="fas fa-save"></i></button>
+                    <button class="btn btn-primary" data-tooltip="tooltip" data-placement="top" title="Save"><i class="far fa-save"></i></button>
+                    <button class="btn btn-primary" data-tooltip="tooltip" data-placement="top" title="Save"><i class="fas fa-star"></i></button>
+                    <button class="btn btn-primary" data-tooltip="tooltip" data-placement="top" title="Star"><i class="far fa-star"></i></button>
+                  </div>
+                </div>
+                <div class="col-3 clearfix">
+                  <div class="float-right">
+                    <button class="btn btn-primary" data-tooltip="tooltip" data-placement="top" title="Image"><i class="fas fa-image"></i></button>
+                  </div>
+                </div>
+                <div class="col-3 clearfix">
+                  <div class="float-right">
+                    <button class="btn btn-primary" data-tooltip="tooltip" data-placement="top" title="Left"><i class="fas fa-arrow-left"></i></button>
+                    <button class="btn btn-primary" data-tooltip="tooltip" data-placement="top" title="Right"><i class="fas fa-arrow-right"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-light">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal send-modal fade" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Send Message</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="text-white">&times;</span></button>
+          </div>
+          <div class="modal-toolbar bg-light">
+            <button class="btn btn-link text-decoration-none" data-tooltip="tooltip" data-placement="top" title="Send"><i class="fas fa-paper-plane mr-2"></i>Send</button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <input class="form-control form-readonly-text" value="LEGERME, JEAN">
+                </div>
+                <div class="form-group">
+                  <label>Message:</label>
+                  <textarea class="form-control" rows="10"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-light">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal--no-scroll fade" id="random-id-for-launch-by-button-0" tabindex="-1">
+      <div class="modal-dialog modal-full">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">DT Column search</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="text-white">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-between">
+              <h6>from left</h6>
+              <h6>and right</h6>
+            </div>
+                        <div class="dt-toolbar justify-content-between">
+                          <div class="dt-toolbar__left">
+                            <div class="dt-toolbar-actions"><a class="btn btn-success" href="#">New</a></div>
+                            <div class="dt-toolbar-filter js-table-filter">
+                              <div class="dt-toolbar-filter-item">
+                                <select class="form-control" data-column-index="1"></select>
+                              </div>
+                              <div class="dt-toolbar-filter-item">
+                                <select class="custom-select" data-column-index="2"></select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="dt-toolbar__right">
+                            <ul class="dt-toolbar-legend">
+                              <li class="dt-legend-load--yellow" data-toggle="tooltip" data-placement="top" title="Load is 'Droppped', that is, it has been picked up by a driver/carrier and dropped at a location other than the final consignee."></li>
+                              <li class="dt-legend-load--blue" data-toggle="tooltip" data-placement="top" title="Load is 'Reserved' for a driver or carrier."></li>
+                              <li class="dt-legend-load--light-gray" data-toggle="tooltip" data-placement="top" title="'Possible load - a 'Possible' load is just that - one that may or may not happen.'"></li>
+                              <li class="dt-legend-load--gray" data-toggle="tooltip" data-placement="top" title="'Pending' load - a 'Pending' load is visible only to the user who created it. A Pending load is one that you do not want released until a specific date, at which point the load becomes visible to all."></li>
+                              <li class="dt-legend-load--light-orange" data-toggle="tooltip" data-placement="top" title="Load is 2-8 hours out from Pickup or Delivery."></li>
+                              <li class="dt-legend-load--medium-orange" data-toggle="tooltip" data-placement="top" title="Load is 1-2 hours out from Pickup or Delivery."></li>
+                              <li class="dt-legend-load--dark-orange" data-toggle="tooltip" data-placement="top" title="Load is within 1 hour of Pickup or Delivery."></li>
+                              <li class="dt-legend-load--red" data-toggle="tooltip" data-placement="top" title="Load is 'Late' for Pickup or Delivery."></li>
+                              <li class="dt-legend-load--white" data-toggle="tooltip" data-placement="top" title="Load is 'Available' and is not assigned nor has it been dropped."></li>
+                            </ul>
+                          </div>
+                        </div>
+            <div class="table table-responsive">
+              <table class="table table-bordered compact js-datatable" id="first" cellspacing="0" data-var="firstTable">
+                <thead>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </thead>
+                <tfoot>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tfoot>
+              </table>
+            </div>
+            <hr class="m-5">
+            <h6>only left</h6>
+                        <div class="dt-toolbar">
+                          <div class="dt-toolbar-actions"><a class="btn btn-success" href="#">New</a></div>
+                          <div class="dt-toolbar-filter js-table-filter">
+                            <div class="dt-toolbar-filter-item">
+                              <select class="form-control" data-column-index="1"></select>
+                            </div>
+                            <div class="dt-toolbar-filter-item">
+                              <select class="custom-select" data-column-index="2"></select>
+                            </div>
+                          </div>
+                          <ul class="dt-toolbar-legend">
+                            <li class="dt-legend-load--yellow" data-toggle="tooltip" data-placement="top" title="Load is 'Droppped', that is, it has been picked up by a driver/carrier and dropped at a location other than the final consignee."></li>
+                            <li class="dt-legend-load--blue" data-toggle="tooltip" data-placement="top" title="Load is 'Reserved' for a driver or carrier."></li>
+                            <li class="dt-legend-load--light-gray" data-toggle="tooltip" data-placement="top" title="'Possible load - a 'Possible' load is just that - one that may or may not happen.'"></li>
+                            <li class="dt-legend-load--gray" data-toggle="tooltip" data-placement="top" title="'Pending' load - a 'Pending' load is visible only to the user who created it. A Pending load is one that you do not want released until a specific date, at which point the load becomes visible to all."></li>
+                            <li class="dt-legend-load--light-orange" data-toggle="tooltip" data-placement="top" title="Load is 2-8 hours out from Pickup or Delivery."></li>
+                            <li class="dt-legend-load--medium-orange" data-toggle="tooltip" data-placement="top" title="Load is 1-2 hours out from Pickup or Delivery."></li>
+                            <li class="dt-legend-load--dark-orange" data-toggle="tooltip" data-placement="top" title="Load is within 1 hour of Pickup or Delivery."></li>
+                            <li class="dt-legend-load--red" data-toggle="tooltip" data-placement="top" title="Load is 'Late' for Pickup or Delivery."></li>
+                            <li class="dt-legend-load--white" data-toggle="tooltip" data-placement="top" title="Load is 'Available' and is not assigned nor has it been dropped."></li>
+                          </ul>
+                        </div>
+            <div class="table table-responsive">
+              <table class="table table-bordered compact js-datatable" id="second" cellspacing="0" data-var="secondTable">
+                <thead>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </thead>
+                <tfoot>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tfoot>
+              </table>
+            </div>
+            <hr class="m-5">
+            <h6 class="text-right">only right</h6>
+                        <div class="dt-toolbar justify-content-end">
+                          <div class="dt-toolbar-actions"><a class="btn btn-success" href="#">New</a></div>
+                          <div class="dt-toolbar-filter js-table-filter">
+                            <div class="dt-toolbar-filter-item">
+                              <select class="form-control" data-column-index="1"></select>
+                            </div>
+                            <div class="dt-toolbar-filter-item">
+                              <select class="custom-select" data-column-index="2"></select>
+                            </div>
+                          </div>
+                          <ul class="dt-toolbar-legend">
+                            <li class="dt-legend-load--yellow" data-toggle="tooltip" data-placement="top" title="Load is 'Droppped', that is, it has been picked up by a driver/carrier and dropped at a location other than the final consignee."></li>
+                            <li class="dt-legend-load--blue" data-toggle="tooltip" data-placement="top" title="Load is 'Reserved' for a driver or carrier."></li>
+                            <li class="dt-legend-load--light-gray" data-toggle="tooltip" data-placement="top" title="'Possible load - a 'Possible' load is just that - one that may or may not happen.'"></li>
+                            <li class="dt-legend-load--gray" data-toggle="tooltip" data-placement="top" title="'Pending' load - a 'Pending' load is visible only to the user who created it. A Pending load is one that you do not want released until a specific date, at which point the load becomes visible to all."></li>
+                            <li class="dt-legend-load--light-orange" data-toggle="tooltip" data-placement="top" title="Load is 2-8 hours out from Pickup or Delivery."></li>
+                            <li class="dt-legend-load--medium-orange" data-toggle="tooltip" data-placement="top" title="Load is 1-2 hours out from Pickup or Delivery."></li>
+                            <li class="dt-legend-load--dark-orange" data-toggle="tooltip" data-placement="top" title="Load is within 1 hour of Pickup or Delivery."></li>
+                            <li class="dt-legend-load--red" data-toggle="tooltip" data-placement="top" title="Load is 'Late' for Pickup or Delivery."></li>
+                            <li class="dt-legend-load--white" data-toggle="tooltip" data-placement="top" title="Load is 'Available' and is not assigned nor has it been dropped."></li>
+                          </ul>
+                        </div>
+            <div class="table table-responsive">
+              <table class="table table-bordered compact js-datatable" id="third" cellspacing="0" data-var="thirdTable">
+                <thead>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </thead>
+                <tfoot>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tfoot>
+              </table>
+            </div>
+            <hr class="m-5">
+            <!--h2 rowGroup-->
+            <!--.table.table-responsive-->
+            <!--    table.table.table-bordered.compact.js-datatable#fourth(cellspacing='0')-->
+            <!--        thead-->
+            <!--            th-->
+            <!--            th-->
+            <!--            th-->
+            <!--        tfoot-->
+            <!--            th-->
+            <!--            th-->
+            <!--            th-->
+          </div>
+          <div class="modal-footer bg-light">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal-slider fade" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Modal Slider</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="text-white">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-slider__content owl-carousel">
+              <div class="col">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium atque, autem ducimus esse in ipsum, laborum maxime mollitia nostrum omnis optio porro praesentium quae quasi quod reprehenderit ut, veniam veritatis.</p>
+              </div>
+              <div>
+                <div class="col">
+                  <table class="table">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>#</th>
+                        <th>First</th>
+                        <th>Last</th>
+                        <th>Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th>2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th>3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div>
+                <form class="form">
+                  <div class="col-4">
+                    <div class="form-fieldset"><span class="form-legend">Col 4</span>
+                      <div class="form-group">
+                        <label>First name</label>
+                        <input class="form-control" type="text" name="firstname" placeholder="First name">
+                      </div>
+                      <div class="form-group">
+                        <label>Date</label>
+                        <input class="form-control" type="date" name="date">
+                      </div>
+                      <div class="form-group">
+                        <label>Select</label>
+                        <select class="custom-select">
+                          <option value="#">Option 1</option>
+                          <option value="#">Option 2</option>
+                          <option value="#">Option 3</option>
+                          <option value="#">Option 4</option>
+                          <option value="#">Option 5</option>
+                        </select>
+                      </div><span class="form-hr-text">Backup Required With Every Invoice</span>
+                      <div class="form-group">
+                        <label class="col-form-label">Textarea</label>
+                        <textarea class="form-control"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <div class="form-fieldset"><span class="form-legend">Col 8 with two inner cols</span>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group">
+                            <label>First name</label>
+                            <input class="form-control" type="text" name="firstname" placeholder="First name">
+                          </div>
+                          <div class="form-group">
+                            <label>Date</label>
+                            <input class="form-control" type="date" name="date">
+                          </div>
+                          <div class="form-group">
+                            <label>Select</label>
+                            <select class="custom-select">
+                              <option value="#">Option 1</option>
+                              <option value="#">Option 2</option>
+                              <option value="#">Option 3</option>
+                              <option value="#">Option 4</option>
+                              <option value="#">Option 5</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-form-label">Textarea</label>
+                            <textarea class="form-control"></textarea>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group">
+                            <label>Last name</label>
+                            <input class="form-control" type="text" name="lastname" placeholder="Last name">
+                          </div>
+                          <div class="form-group">
+                            <label>End date</label>
+                            <input class="form-control" type="date" name="enddate">
+                          </div>
+                          <div class="form-group">
+                            <label>Select</label>
+                            <select class="custom-select">
+                              <option value="#">Option 1</option>
+                              <option value="#">Option 2</option>
+                              <option value="#">Option 3</option>
+                              <option value="#">Option 4</option>
+                              <option value="#">Option 5</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-form-label">Textarea</label>
+                            <textarea class="form-control"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="form-fieldset"><span class="form-legend">Col 4</span>
+                      <div class="form-group">
+                        <label>First name</label>
+                        <input class="form-control" type="text" name="firstname" placeholder="First name">
+                      </div>
+                      <div class="form-group">
+                        <label>Date</label>
+                        <input class="form-control" type="date" name="date">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="form-fieldset"><span class="form-legend">Col 5</span>
+                      <div class="form-group">
+                        <label>First name</label>
+                        <input class="form-control" type="text" name="firstname" placeholder="First name">
+                      </div>
+                      <div class="form-group">
+                        <label>City, State, Zip</label>
+                        <div class="form-row">
+                          <div class="col-6">
+                            <input class="form-control" type="text" name="city" placeholder="City">
+                          </div>
+                          <div class="col">
+                            <input class="form-control" type="text" name="state" placeholder="State">
+                          </div>
+                          <div class="col">
+                            <input class="form-control" type="text" name="zip" placeholder="Zip">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="form-fieldset"><span class="form-legend">Col 3</span>
+                      <div class="form-group">
+                        <label>First name</label>
+                        <input class="form-control" type="text" name="firstname" placeholder="First name">
+                      </div>
+                      <div class="form-group">
+                        <label>Select</label>
+                        <select class="custom-select">
+                          <option value="#">Option 1</option>
+                          <option value="#">Option 2</option>
+                          <option value="#">Option 3</option>
+                          <option value="#">Option 4</option>
+                          <option value="#">Option 5</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div>
+                <form class="modal-form">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label>Date/Time</label>
+                      <div class="input-group">
+                        <input class="form-control" type="date">
+                        <input class="form-control" type="text" data-mask="00:00" placeholder="00:00">
+                      </div>
+                    </div><span>or</span>
+                    <div class="form-group">
+                      <label>Date/Time</label>
+                      <div class="input-group">
+                        <input class="form-control" type="text" data-mask="00/00/0000" placeholder="00/00/0000">
+                        <input class="form-control" type="text" data-mask="00:00" placeholder="00:00">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Last Action</label>
+                      <select class="form-control">
+                        <option value="#">Assigned</option>
+                        <option value="#">Confirmed</option>
+                        <option value="#">At Origin</option>
+                        <option value="#">Loading</option>
+                        <option value="#">Moving</option>
+                        <option value="#">At Destination</option>
+                        <option value="#">Unloading</option>
+                        <option value="#">Dropped</option>
+                        <option value="#">Hold</option>
+                        <option value="#">Rejected</option>
+                        <option value="#">Custom Hold</option>
+                        <option value="#">Custom Released</option>
+                        <option value="#">Out For Delivery</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <div class="label">Notes</div>
+                      <textarea class="form-control" rows="5"></textarea>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-light">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal--no-padding modal--no-scroll fade" id="random-id-for-launch-by-button-1" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Print Settlements</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="text-white">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-3 p-4 border-right">
+                <form>
+                  <div class="custom-control custom-radio">
+                    <input class="form-check-input" type="radio" value="#" id="custom-radio" name="print-settlements-radio-buttons" checked>
+                    <label class="form-check-label" for="custom-radio">Batch No</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input class="form-check-input" type="radio" value="#" id="custom-radio-1" name="print-settlements-radio-buttons">
+                    <label class="form-check-label" for="custom-radio-1">Date Range</label>
+                  </div>
+                </form>
+              </div>
+              <div class="col-9 p-4">
+                <div class="dt-toolbar">
+                  <div class="form-group">
+                    <label>Batch No</label>
+                    <select class="custom-select">
+                      <option value="#" selected>Choose...</option>
+                      <option value="#">54</option>
+                      <option value="#">01</option>
+                      <option value="#">02</option>
+                      <option value="#">03</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="table table-responsive">
+                  <table class="table table-bordered compact js-datatable" id="payrollDT" cellspacing="0" data-var="payrollDT">
+                    <thead>
+                      <th></th>
+                      <th></th>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-light">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="random-id-for-launch-by-button-2" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Rate By</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="text-white">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form class="js-fp" id="rateLoadForm" action="/load/rate?id=11" method="post">
+              <input type="hidden" name="_csrf-frontend" value="lL78KxzOj-VrtUqS38XZ8CRyfmFB-i5A4OiFObD9HTDH881lfavV3Qb5HfG-97SnRSgbVCuweAaov9xwyrpUQQ==">
+              <div class="row">
+                <div class="col-6">
+                  <div class="row field-rate-source required align-items-center">
+                    <label class="col-sm-2" for="rate-source">Source</label>
+                    <div class="col-sm-6">
+                      <select class="form-control" id="rate-source" name="Rate[source]" aria-required="true">
+                        <option value="Manual" selected="">Manual</option>
+                        <option value="Load Matrix">Load Matrix</option>
+                        <option value="Commodity Matrix">Commodity Matrix</option>
+                      </select>
+                      <div class="invalid-feedback"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="row field-rate-matrixnumber align-items-center">
+                    <label class="col-sm-3" for="rate-matrixnumber">Matrix No</label>
+                    <div class="col-sm-6">
+                      <input class="form-control dropdown-toggle" id="auto_6181001394673" type="text" name="" value="" readonly="true" data-toggle="dropdown">
+                      <input class="form-control js-tdd-hidden" id="rate-matrixnumber" type="hidden" name="Rate[matrixNumber]">
+                      <div class="dropdown-menu dropdown-menu--table">
+                        <div class="table table-responsive">
+                          <script>
+                            var tConf_6181001394720 = {
+                                data: [
+                                    ['1', 'A', 'Z', 'ZipZip', '123'],
+                                    ['1 C', 'A C', 'Z C', 'ZipZip', '123'],
+                                    ['2', 'B', 'Y', 'ZoneZone', '123'],
+                                    ['2 C', 'B C', 'Y C', 'ZoneZone', '123'],
+                                    ['3', 'C', 'X', 'Geograph', '123'],
+                                    ['3 C', 'C C', 'X C', 'Geograph', '123'],
+                                ],
+                                columns: [{title: "Matrix No"}, {title: "Matrix Name"}, {title: "Type"}, {title: "Method"}, {
+                                    title: "Number",
+                                    orderable: true,
+                                    searchable: true,
+                                    visible: false
+                                }],
+                                autoWidth: false,
+                                ordering: false,
+                                orderCellsTop: true,
+                                initComplete: function (settings) {
+                                    let inputId = $(this).data("input");
+                                    let initRow = function (row) {
+                                        return row[0] == "";
+                                    };
+                                    $(this)
+                                        .DataTable()
+                                        .rows()
+                                        .every(function (rowIdx, tableLoop, rowLoop) {
+                                            let row = this.data();
+                                            if (initRow(row)) {
+                                                $("#" + inputId).val(row[0]);
+                                            }
+                                        });
+                                },
+                                dom: "tp",
+                                buttons: [],
+                                stateSave: false,
+                                conditionalPaging: true,
+                            };
+                          </script>
+                          <div class="dataTables_wrapper dt-bootstrap4 no-footer" id="dt-6181001396162_wrapper">
+                            <table class="table table-bordered compact js-datatable js-dd dataTable no-footer" id="dt-6181001396162" data-form-name="Rate" data-dest="rate-matrixnumber" data-callback="rateloadmxnuch" data-lookup="0" data-display="0" data-input="auto_6181001394673" data-var="tConf_6181001394720" role="grid">
+                              <thead>
+                                <tr role="row">
+                                  <th class="sorting_disabled" rowspan="1" colspan="1">Matrix No</th>
+                                  <th class="sorting_disabled" rowspan="1" colspan="1">Matrix Name</th>
+                                  <th class="sorting_disabled" rowspan="1" colspan="1">Type</th>
+                                  <th class="sorting_disabled" rowspan="1" colspan="1">Method</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="odd">
+                                  <td class="dataTables_empty" valign="top" colspan="4">No data available in table</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div class="dataTables_paginate paging_simple_numbers" id="dt-6181001396162_paginate" style="visibility: hidden;">
+                              <ul class="pagination">
+                                <li class="paginate_button page-item previous disabled" id="dt-6181001396162_previous"><a class="page-link" href="#" aria-controls="dt-6181001396162" data-dt-idx="0" tabindex="0">Previous</a></li>
+                                <li class="paginate_button page-item next disabled" id="dt-6181001396162_next"><a class="page-link" href="#" aria-controls="dt-6181001396162" data-dt-idx="1" tabindex="0">Next</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="invalid-feedback"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-5">
+                  <div class="border rounded p-4">
+                    <div class="form-group row field-rateLoadRateBy">
+                      <label class="col-sm-4" for="rateLoadRateBy">Rate By</label>
+                      <div class="col-sm-6">
+                        <select class="form-control" id="rateLoadRateBy" name="Rate[rateBy]">
+                          <option value="">Select</option>
+                          <option class="null ZipZip Geograph ZoneZone Distance Manual LoadMatrix" value="Flat" selected="">Flat</option>
+                          <option class="null ZipZip Geograph ZoneZone Distance Manual LoadMatrix" value="Miles">Miles</option>
+                          <option class="ZipZip Geograph ZoneZone LoadMatrix" value="Piece">Piece</option>
+                          <option class="ZipZip Geograph ZoneZone LoadMatrix" value="Space">Space</option>
+                          <option class="ZipZip Geograph ZoneZone LoadMatrix" value="Pound">Pound</option>
+                          <option class="ZipZip Geograph ZoneZone LoadMatrix" value="Cwt">Cwt</option>
+                          <option class="ZipZip Geograph ZoneZone Distance LoadMatrix" value="Ton">Ton</option>
+                          <option class="ZipZip Geograph ZoneZone LoadMatrix" value="Lot">Lot</option>
+                          <option class="ZipZip Geograph LoadMatrix" value="Multi">Multi</option>
+                          <option class="ZoneZone LoadMatrix" value="Step">Step</option>
+                          <option class="ZoneZone CommodityMatrix" value="Step">1</option>
+                          <option class="ZoneZone CommodityMatrix" value="Step">2</option>
+                          <option class="ZoneZone CommodityMatrix" value="Step">3</option>
+                          <option class="ZoneZone CommodityMatrix" value="Step">4</option>
+                          <option class="ZoneZone CommodityMatrix" value="Step">5</option>
+                          <option class="ZoneZone CommodityMatrix LoadMatrix" value="Step">Mix</option>
+                          <option class="ZoneZone CommodityMatrix LoadMatrix" value="Step">Mix 1</option>
+                        </select>
+                        <div class="invalid-feedback"></div>
+                      </div>
+                    </div>
+                    <div class="form-group row field-rateLoadRate">
+                      <label class="col-sm-4" for="rateLoadRate">Rate</label>
+                      <div class="col-sm-6">
+                        <input class="form-control" id="rateLoadRate" type="number" name="Rate[rate]" value="7500.00" min="0" step="0.01">
+                        <div class="invalid-feedback"></div>
+                      </div>
+                    </div>
+                    <div class="form-group row field-rate-units">
+                      <label class="col-sm-4" for="rate-units">Units</label>
+                      <div class="col-sm-6">
+                        <input class="form-control" id="rate-units" type="number" name="Rate[units]" readonly="readonly" min="0" step="0.01">
+                        <div class="invalid-feedback"></div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-4">Gross</label>
+                      <p class="col-sm-6">7500.00</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-5">
+                  <div class="border rounded p-4">
+                    <div class="form-group row field-rate-discountpct">
+                      <label class="col-sm-4" for="rate-discountpct">Discount Pct</label>
+                      <div class="col-sm-6">
+                        <input class="form-control" id="rate-discountpct" type="number" name="Rate[discountPct]" value="0.10" min="0" step="0.01">
+                        <div class="invalid-feedback"></div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-4">Discount Amt</label>
+                      <p class="col-sm-6">750</p>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-4">Freight Rev</label>
+                      <p class="col-sm-6">6750</p>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-4">Accessorials</label>
+                      <p class="col-sm-6">200</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2">Total Revenue
+                  <p class="col-sm-6">6950</p>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer bg-light">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="random-id-for-launch-by-button-3" tabindex="-1">
+      <div class="modal-dialog modal-xs">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Adjust Balance</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="row field">
+              <div class="col-3">
+                <label>Data</label>
+              </div>
+              <div class="col-5">
+                <input class="form-control" type="date">
+              </div>
+            </div>
+            <div class="row field">
+              <div class="col-3">
+                <label>GL Acct</label>
+              </div>
+              <div class="col-5">
+                <select class="form-control">
+                  <option value="#">9999</option>
+                  <option value="#">9999</option>
+                  <option value="#">9999</option>
+                </select>
+              </div>
+            </div>
+            <div class="row field">
+              <div class="col-3">
+                <label>Data</label>
+              </div>
+              <div class="col-5">
+                <select class="form-control">
+                  <option value="#">1</option>
+                  <option value="#">1</option>
+                  <option value="#">1</option>
+                </select>
+              </div>
+            </div>
+            <div class="row field">
+              <div class="col-3">
+                <label>Amount</label>
+              </div>
+              <div class="col-5">
+                <input class="form-control" type="text" value="-0.04">
+              </div>
+            </div>
+            <div class="row field">
+              <div class="col-3">
+                <label>Out Ref</label>
+              </div>
+              <div class="col-5">
+                <input class="form-control" type="text">
+              </div>
+            </div>
+            <div class="row field">
+              <div class="col-3">
+                <label>UDF</label>
+              </div>
+              <div class="col-5">
+                <input class="form-control" type="text">
+              </div>
+            </div>
+            <div class="row field">
+              <div class="col-3">
+                <label>Memo</label>
+              </div>
+              <div class="col-9">
+                <textarea class="form-control" name="memo" rows="5"></textarea>
+              </div>
+            </div>
+            <div class="row field mt-4">
+              <div class="col-6 text-center">
+                <p>Amounk Owed BEFORE Adjustment</p>
+                <p class="form-readonly-text">0.03</p>
+              </div>
+              <div class="col-6 text-center">
+                <p>Amounk Owed AFTER Adjustment</p>
+                <p class="form-readonly-text">0.07</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="work-order-error" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Express</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="error-block"><i class="fas fa-exclamation-circle"></i>
+              <p>Entry Required</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" type="button" data-dismiss="modal">Okay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/jquery-3.5.1.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.bundle.js" type="text/javascript"></script>
+    <script src="/js/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="/js/dataTables.bootstrap4.js" type="text/javascript"></script>
+    <script src="/js/vendor.js" type="text/javascript"></script>
+    <script src="/js/scripts.js" type="text/javascript"></script>
+    <script>
+      var dataTableDropdown = {
+          data: [
+              ['Mikron', '1034 6th Ave N', 'KENT', 'WA', '98032', '', false, false],
+              ['MIL-SPEC ENTERPRISE', '88 33RD ST', 'BROOKLYN', 'NY', '11232-192', '', false, false],
+              ['MILAN', '700 MILAN DRIVE', 'SPARKS', 'NV', '89431', '', false, false],
+              ['MILAN EXPRESS DISTRIBUTION SERVICE 5', '700 MILAN DRIVE', 'Sparks', 'NV', '89431', '', false, false],
+              ['MILAN OH', '49 LOCKWOOD RD', 'MILAN', 'OH', '44846', '', false, false],
+          ],
+          paging: false,
+          orderCellsTop: true,
+          initComplete: function () {
+          },
+          columns: [
+              {
+                  title: 'Name',
+              },{
+                  title:  'Address',
+              },{
+                  title: 'City',
+              },{
+                  title: 'St',
+              },{
+                  title: 'Zip',
+              },{
+                  title: 'Zone',
+              },{
+                  title: 'RRP',
+                  searchable: false,
+                  bSortable: false,
+                  render: function (data, type, row) {
+                      if (data) {
+                          return '<input type="checkbox" class="editor-active" onclick="return false;" checked>';
+                      } else {
+                          return '<input type="checkbox" class="editor-active" onclick="return false;">';
+                      }
+                  },
+                  className: "dt-body-center text-center"
+              },{
+                  title: 'Inactive',
+                  searchable: false,
+                  bSortable: false,
+                  render: function (data, type, row) {
+                      if (data) {
+                          return '<input type="checkbox" class="editor-active" onclick="return false;" checked>';
+                      } else {
+                          return '<input type="checkbox" class="editor-active" onclick="return false;">';
+                      }
+                  },
+                  className: "dt-body-center text-center"
+              }
+          ],
+      };
+      var clearData = {
+          data: [
+              [false, '', 'DM WORLD TRANSPORT', 'Load'],
+              [true, '', 'DM WORLD', 'Load'],
+          ],
+          searching: false,
+          paging: true,
+          info: false,
+          lengthChange: false,
+          dom: 't',
+          ordering: false,
+          initComplete: function () {
+          },
+          columns: [
+              {
+                  title: 'Clr',
+                  render: function (data, type, row) {
+                      if (data) {
+                          return '<input type="checkbox" class="editor-active" onclick="return false;" checked>';
+                      } else {
+                          return '<input type="checkbox" class="editor-active" onclick="return false;">';
+                      }
+                  },
+                  className: "dt-body-center text-center"
+              },{
+                  title:  'Date',
+              },{
+                  title: 'Name',
+              },{
+                  title: 'Pay Code',
+              }
+          ],
+          autoWidth: false,
+      };
+      var scansData = {
+          data: [
+              ['BL', 'Bill of Lading'],
+              ['BL', 'Bill of Lading'],
+              ['BL', 'Bill of Lading'],
+              ['TA', 'Transport Agreement'],
+          ],
+          searching: false,
+          paging: true,
+          info: false,
+          lengthChange: false,
+          dom: 't',
+          ordering: false,
+          initComplete: function () {
+          },
+          columns: [
+              {
+                  title: 'Type',
+              },{
+                  title: 'Description',
+              }
+          ],
+          autoWidth: false,
+      };
+      
+      /***** DT ****/
+      var firstTable = {
+          data: [
+              ["Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800"],
+              ["Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750"],
+              ["Ashton Cox", "Junior Technical Author", "San Francisco", "1562", "2009/01/12", "$86,000"],
+              ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh", "6224", "2012/03/29", "$433,060"],
+              ["Airi Satou", "Accountant", "Tokyo", "5407", "2008/11/28", "$162,700"],
+              ["Brielle Williamson", "Integration Specialist", "New York", "4804", "2012/12/02", "$372,000"],
+              ["Herrod Chandler", "Sales Assistant", "San Francisco", "9608", "2012/08/06", "$137,500"],
+              ["Rhona Davidson", "Integration Specialist", "Tokyo", "6200", "2010/10/14", "$327,900"],
+              ["Colleen Hurst", "Javascript Developer", "San Francisco", "2360", "2009/09/15", "$205,500"],
+              ["Sonya Frost", "Software Engineer", "Edinburgh", "1667", "2008/12/13", "$103,600"],
+              ["Jena Gaines", "Office Manager", "London", "3814", "2008/12/19", "$90,560"],
+              ["Quinn Flynn", "Support Lead", "Edinburgh", "9497", "2013/03/03", "$342,000"],
+              ["Charde Marshall", "Regional Director", "San Francisco", "6741", "2008/10/16", "$470,600"],
+              ["Haley Kennedy", "Senior Marketing Designer", "London", "3597", "2012/12/18", "$313,500"],
+              ["Tatyana Fitzpatrick", "Regional Director", "London", "1965", "2010/03/17", "$385,750"],
+              ["Michael Silva", "Marketing Designer", "London", "1581", "2012/11/27", "$198,500"],
+              ["Paul Byrd", "Chief Financial Officer (CFO)", "New York", "3059", "2010/06/09", "$725,000"],
+              ["Gloria Little", "Systems Administrator", "New York", "1721", "2009/04/10", "$237,500"],
+              ["Bradley Greer", "Software Engineer", "London", "2558", "2012/10/13", "$132,000"],
+              ["Dai Rios", "Personnel Lead", "Edinburgh", "2290", "2012/09/26", "$217,500"],
+              ["Jenette Caldwell", "Development Lead", "New York", "1937", "2011/09/03", "$345,000"],
+              ["Yuri Berry", "Chief Marketing Officer (CMO)", "New York", "6154", "2009/06/25", "$675,000"],
+              ["Caesar Vance", "Pre-Sales Support", "New York", "8330", "2011/12/12", "$106,450"],
+              ["Doris Wilder", "Sales Assistant", "Sydney", "3023", "2010/09/20", "$85,600"],
+              ["Angelica Ramos", "Chief Executive Officer (CEO)", "London", "5797", "2009/10/09", "$1,200,000"],
+              ["Gavin Joyce", "Developer", "Edinburgh", "8822", "2010/12/22", "$92,575"],
+              ["Jennifer Chang", "Regional Director", "Singapore", "9239", "2010/11/14", "$357,650"],
+              ["Brenden Wagner", "Software Engineer", "San Francisco", "1314", "2011/06/07", "$206,850"],
+              ["Fiona Green", "Chief Operating Officer (COO)", "San Francisco", "2947", "2010/03/11", "$850,000"],
+              ["Shou Itou", "Regional Marketing", "Tokyo", "8899", "2011/08/14", "$163,000"],
+              ["Michelle House", "Integration Specialist", "Sydney", "2769", "2011/06/02", "$95,400"],
+              ["Suki Burks", "Developer", "London", "6832", "2009/10/22", "$114,500"],
+              ["Prescott Bartlett", "Technical Author", "London", "3606", "2011/05/07", "$145,000"],
+              ["Gavin Cortez", "Team Leader", "San Francisco", "2860", "2008/10/26", "$235,500"],
+              ["Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050"],
+              ["Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009/12/09", "$85,675"]
+          ],
+          orderCellsTop: true,
+          colReorder: {
+              realtime: false
+          },
+          select: {
+              style: 'multi',
+              items: 'row'
+          },
+          stateSave: true,
+          initComplete: function () {
+              $('.table tbody tr:nth-child(3)').addClass('load-light-gray');
+              $('.table tbody tr:nth-child(6)').addClass('load-blue');
+              $('.table tbody tr:nth-child(9)').addClass('load-red');
+              $('.table tbody tr:nth-child(12)').addClass('load-light-orange');
+              $('.table tbody tr:nth-child(15)').addClass('load-medium-orange');
+              $('.table tbody tr:nth-child(18)').addClass('load-dark-orange');
+              $('.table tbody tr:nth-child(21)').addClass('load-gray');
+              $('.table tbody tr:nth-child(24)').addClass('load-yellow');
+          },
+          columns: [
+              {
+                  title: "Name",
+                  orderable: false,
+              }, {
+                  title: "Position",
+              }, {
+                  title: "Office",
+              }, {
+                  title: "Extn.",
+                  orderable: false,
+                  searchable: false,
+              }, {
+                  title: "Start Date",
+              }, {
+                  title: "Salary",
+                  orderable: false,
+                  searchable: false,
+              }
+          ],
+          autoWidth: false,
+          conditionalPaging: true,
+          order: [[3, 'asc']],
+          dom: 'Bfrtip',
+          buttons: [
+              {
+                  text: '<i class="fas fa-star"></i>',
+                  action: function () {
+                      this.rows().select();
+                  }
+              },
+              {
+                  text: '<i class="far fa-star"></i>',
+                  action: function () {
+                      this.rows().deselect();
+                  }
+              },
+              {
+                  extend: 'copy',
+              },
+              {
+                  extend: 'colvis',
+                  className: 'btn-primary',
+                  attr: {
+                      'title': 'Columns visibility',
+                      'data-colvis-limit': '3', // default/undefined == 1
+                  },
+                  text: 'Hide/Show Columns',
+                  init: function (api, node, config) {
+                      $(node).removeClass('btn-secondary')
+                  }
+              }
+          ]
+      };
+      
+      var zeroTable = {
+          data: [
+              ["Tiger Nixon", "System Architect", "Edinburgh"],
+              ["Garrett Winters", "Accountant", "Tokyo"],
+              ["Ashton Cox", "Junior Technical Author", "San Francisco"],
+              ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh"],
+              ["Airi Satou", "Accountant", "Tokyo"],
+          ],
+          orderCellsTop: true,
+          colReorder: {
+              realtime: false,
+          },
+          stateSave: true,
+          initComplete: function () {
+          },
+          columns: [
+              {
+                  title: "Name",
+                  orderable: false,
+                  searchable: false,
+              }, {
+                  title: "Position",
+                  orderable: false,
+                  searchable: false,
+              }, {
+                  title: "Office",
+                  orderable: false,
+                  searchable: false,
+              },
+          ],
+          buttons: [
+              {
+                  text: 'Select all',
+                  action: function () {
+                      this.rows().select();
+                  }
+              },
+              {
+                  text: 'Select none',
+                  action: function () {
+                      this.rows().deselect();
+                  }
+              },
+              {
+                  extend: 'colvis',
+                  columns: ':gt(0)'
+              }
+          ],
+          dom: 'B',
+          order: [[1, 'asc']],
+          autoWidth: false,
+          conditionalPaging: true,
+      };
+      
+      var secondTable = {
+          data: [
+              ["Tiger Nixon", "System Architect", "Edinburgh"],
+              ["Garrett Winters", "Accountant", "Tokyo"],
+              ["Ashton Cox", "Junior Technical Author", "San Francisco"],
+              ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh"],
+              ["Airi Satou", "Accountant", "Tokyo"],
+          ],
+          orderCellsTop: true,
+          colReorder: {
+              realtime: false,
+          },
+          stateSave: true,
+          initComplete: function () {
+          },
+          columns: [
+              {
+                  title: "Name",
+                  orderable: false,
+              }, {
+                  title: "Position",
+              }, {
+                  title: "Office",
+              },
+          ],
+          buttons: [
+              {
+                  text: 'Select all',
+                  action: function () {
+                      this.rows().select();
+                  }
+              },
+              {
+                  text: 'Select none',
+                  action: function () {
+                      this.rows().deselect();
+                  }
+              },
+              {
+                  extend: 'colvis',
+                  columns: ':gt(0)'
+              }
+          ],
+          dom: 'Bfrtip',
+          order: [[1, 'asc']],
+          autoWidth: false,
+          conditionalPaging: true,
+      };
+      var thirdTable = {
+          data: [
+              ["Tiger Nixon", "System Architect", "Edinburgh"],
+              ["Garrett Winters", "Accountant", "Tokyo"],
+              ["Ashton Cox", "Junior Technical Author", "San Francisco"],
+              ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh"],
+              ["Airi Satou", "Accountant", "Tokyo"],
+          ],
+          orderCellsTop: true,
+          colReorder: true,
+          stateSave: true,
+          initComplete: function () {
+          },
+          columns: [
+              {
+                  title: "Name",
+                  searchable: false,
+              }, {
+                  title: "Position",
+              }, {
+                  title: "Office",
+              },
+          ],
+          buttons: [
+              {
+                  extend: 'colvis',
+                  columns: ':gt(0)'
+              }
+          ],
+          dom: 'Bfrtip',
+          autoWidth: false,
+          conditionalPaging: true,
+      };
+      
+      var payrollDT = {
+          data: [
+              ["ABDI, MOHOYADIN", '1'],
+              ["ABDI, MUSTAFA", '1'],
+              ["ABDULLAHI NOOR, MOHAMED", '1'],
+              ["AGUIRRE, JONATHAN", '1'],
+              ["AHMED, SHUAYB", '1'],
+              ["ALI, YASIN", '1'],
+              ["ALVAREZ, ARIEL", '1'],
+              ["BERMEO, DANIEL", '1'],
+              ["BISHAR, ALI", '1'],
+              ["BROWN, SANTIGO", '1'],
+              ["CHAPPELLE, TRAVE", '1'],
+              ["DARBI, HASSAN", '1'],
+              ["DAUD, MUKTAR", '1'],
+              ["DAYI, MECIT", '1'],
+              ["EGAL, HASSAN", '1'],
+              ["HAKIMI, HAFIZULLAH", '1'],
+              ["HASSAN, ABDIKARIN", '1'],
+              ["HASSAN, ABDIWELI", '1'],
+              ["HERRERA GONZALES, JHONN", '1'],
+              ["HERSI, WALI", '1'],
+          ],
+          orderCellsTop: true,
+          stateSave: true,
+          initComplete: function () {
+          },
+          columns: [
+              {
+                  title: "Payroll For",
+                  // searchable: false,
+              }, {
+                  title: "Settlement",
+                  // searchable: false,
+              }
+          ],
+          buttons: [
+              {
+                  extend: 'print',
+                  text: '<i class="fas fa-print"></i>',
+                  message: 'Test Message',
+                  messageTop: 'Test Top Message',
+                  messageBottom: 'Test Bottom Message',
+              },
+              {
+                  text: '<i class="fas fa-star"></i>',
+                  action: function () {
+                      this.rows().select();
+                  }
+              },
+              {
+                  text: '<i class="far fa-star"></i>',
+                  action: function () {
+                      this.rows().deselect();
+                  }
+              },
+          ],
+          select: true,
+          searching: false,
+          paging: false,
+          dom: 'B',
+          autoWidth: false,
+          conditionalPaging: true,
+      };
+    </script>
+  </body>
+</html>

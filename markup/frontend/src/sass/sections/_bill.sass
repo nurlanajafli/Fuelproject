@@ -1,0 +1,57 @@
+.bill-window
+	label
+		display: block
+		background-color: $clr-blue
+		color: $clr-white
+		width: 100%
+		padding: 4px 8px
+		text-align: center
+
+.bill-grid
+	overflow-x: hidden
+
+	h4
+		display: block
+		background-color: lighten($clr-blue, 5)
+		color: $clr-white
+		width: 100%
+		padding: 8px
+		font-size: 18px
+		margin: 0
+
+	.dt-control
+		cursor: pointer
+
+	table
+		tr
+			.fa-plus
+				color: $clr-blue
+				text-align: center
+				display: block
+				padding-top: 4px
+			.fa-minus
+				color: $clr-blue
+				text-align: center
+				display: none
+				padding-top: 4px
+
+		tr.shown
+			.fa-plus
+				display: none
+			.fa-minus
+				display: block
+
+		tr.shown + tr
+			> td
+				padding: 20px 10px
+				margin: 0
+				background-color: lighten($clr-blue, 25)
+
+				table,
+				.table
+					margin: 0 !important
+					background-color: $clr-white
+
+				thead th
+					background-color: $clr-gray-dark
+					border-color: $clr-gray-dark

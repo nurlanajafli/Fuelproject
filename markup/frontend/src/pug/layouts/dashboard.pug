@@ -1,0 +1,14 @@
+extends base
+
+block title
+    title Dashboard
+
+block header
+    include ../blocks/header
+
+block content
+    #wrapper
+        include ../components/sidebar
+        include ../components/content
+        a(href='#').scroll-to-top
+            i.fas.fa-arrow-up

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/css/fontawesome-all.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <title>Truck information</title>
+  </head>
+  <body>
+    <script>
+      var svgArray = [
+          '/svgmin/sprite_icons.svg'
+      ];
+    </script>
+    <div class="svgSprite"></div>
+    <div class="wrapper">
+      <div class="wrapper__inner">
+        <div class="wrapper__content">
+          <div id="wrapper">
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+              <!-- Sidebar - Brand--><a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-truck"></i></div>
+                <div class="sidebar-brand-text mx-3">TMS Markup</div></a>
+              <!-- Divider-->
+              <hr class="sidebar-divider my-0">
+              <!-- Nav Item - Tables-->
+              <li class="nav-item active"><a class="nav-link" href="tables.html"><i class="fas fa-fw fa-table"></i><span>Tables</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="edit.html"><i class="fas fa-fw fa-pen"></i><span>Edit</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="forms.html"><i class="fas fa-fw fa-list"></i><span>Forms</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="notes.html"><i class="fas fa-fw fa-sticky-note"></i><span>Notes</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="compliance.html"><i class="fas fa-fw fa-car"></i><span>Compliance</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="load.html"><i class="fas fa-fw fa-truck-loading"></i><span>Load</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="truck-information.html"><i class="fas fa-fw fa-info"></i><span>Truck information</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="table-dropdown.html"><i class="fas fa-fw fa-table"></i><span>Table dropdown</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="modals.html"><i class="far fa-fw fa-window-maximize"></i><span>Modals</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="location.html"><i class="fas fa-fw fa-search-location"></i><span>Location</span></a></li>
+              <!-- Divider-->
+              <hr class="sidebar-divider d-none d-md-block">
+              <!-- Sidebar Toggler (Sidebar)-->
+              <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+              </div>
+            </ul>
+            <div class="d-flex flex-column" id="content-wrapper">
+              <div id="content">
+                <!-- Topbar-->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                  <!-- Sidebar Toggle (Topbar)-->
+                  <form class="form-inline">
+                    <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop"><i class="fa fa-bars"></i></button>
+                  </form>
+                  <!-- Topbar Search-->
+                  <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div class="input-group">
+                      <input class="form-control bg-light border-0 small" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button"><i class="fas fa-search fa-sm"></i></button>
+                      </div>
+                    </div>
+                  </form>
+                  <!-- Topbar Navbar-->
+                  <ul class="navbar-nav ml-auto">
+                    <!-- Nav Item - Search Dropdown (Visible Only XS)-->
+                    <li class="nav-item dropdown no-arrow d-sm-none"><a class="nav-link dropdown-toggle" id="searchDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-search fa-fw"></i></a>
+                      <!-- Dropdown - Messages-->
+                      <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                        <form class="form-inline mr-auto w-100 navbar-search">
+                          <div class="input-group">
+                            <input class="form-control bg-light border-0 small" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                              <button class="btn btn-primary" type="button"><i class="fas fa-search fa-sm"></i></button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </li>
+                    <!-- Nav Item - Alerts-->
+                    <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" id="alertsDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell fa-fw"></i>
+                        <!-- Counter - Alerts--><span class="badge badge-danger badge-counter">3+</span></a>
+                      <!-- Dropdown - Alerts-->
+                      <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in ntf-list" aria-labelledby="alertsDropdown">
+                        <div class="dropdown-header">
+                          <h6>Notifications</h6>
+                          <button class="ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                        </div><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a>
+                      </div>
+                    </li>
+                    <!-- Nav Item - Messages-->
+                    <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" id="messagesDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-envelope fa-fw"></i>
+                        <!-- Counter - Messages--><span class="badge badge-danger badge-counter">7</span></a>
+                      <!-- Dropdown - Messages-->
+                      <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                        <h6 class="dropdown-header">Message Center</h6><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="images/svg/undraw_profile_1.svg" alt="">
+                            <div class="status-indicator bg-success"></div>
+                          </div>
+                          <div class="font-weight-bold">
+                            <div class="text-truncate">
+                              Hi there! I am wondering if you can help me with a
+                              problem I&apos;ve been having.
+                            </div>
+                            <div class="small text-gray-500">Emily Fowler &middot; 58m</div>
+                          </div></a><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="images/svg/undraw_profile_2.svg" alt="">
+                            <div class="status-indicator"></div>
+                          </div>
+                          <div>
+                            <div class="text-truncate">
+                              I have the photos that you ordered last month, how
+                              would you like them sent to you?
+                            </div>
+                            <div class="small text-gray-500">Jae Chun &middot; 1d</div>
+                          </div></a><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="images/svg/undraw_profile_3.svg" alt="">
+                            <div class="status-indicator bg-warning"></div>
+                          </div>
+                          <div>
+                            <div class="text-truncate">
+                              Last month&apos;s report looks great, I am very happy with
+                              the progress so far, keep up the good work!
+                            </div>
+                            <div class="small text-gray-500">Morgan Alvarez &middot; 2d</div>
+                          </div></a><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                            <div class="status-indicator bg-success"></div>
+                          </div>
+                          <div>
+                            <div class="text-truncate">
+                              Am I a good boy? The reason I ask is because someone
+                              told me that people say this to all dogs, even if they aren&apos;t good...
+                            </div>
+                            <div class="small text-gray-500">Chicken the Dog &middot; 2w</div>
+                          </div></a><a class="dropdown-item text-center small text-gray-500" href="/chat.html">Read More Messages</a>
+                      </div>
+                    </li>
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <!-- Nav Item - User Information-->
+                    <li class="nav-item dropdown no-arrow"><a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span><img class="img-profile rounded-circle" src="images/svg/undraw_profile.svg"></a>
+                      <!-- Dropdown - User Information-->
+                      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>                                    Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>                                    Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>                                    Activity Log</a>
+                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>                                    Logout</a>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- End of Topbar-->
+                <!-- Begin Page Content-->
+                <div class="container-fluid">
+                  <h1 class="h3 mb-4 text-gray-800">Truck information</h1>
+                  <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                      <div class="edit-form-toolbar">
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target="#truck-set-date" data-placement="top" title="Set Date"><i class="fas fa-redo"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target="#truck-out-of-service" data-placement="top" title="Out of Service"><i class="fas fa-sign-out-alt"></i></button>
+                        <button class="btn btn-link" data-tooltip="tooltip" data-toggle="modal" data-target="#truck-down" data-placement="top" title="Truck Down"><i class="fas fa-arrow-down"></i></button>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <section class="edit-form">
+                        <nav class="nav nav-tabs" id="nav-tab"><a class="nav-link active" id="nav-info-tab" data-toggle="tab" href="#nav-info">Info</a><a class="nav-link" id="nav-financial-tab" data-toggle="tab" href="#nav-financial">Financial</a></nav>
+                        <div class="tab-content" id="nav-tabContent">
+                          <div class="tab-pane fade show active" id="nav-info">
+                            <div class="form-fieldset">
+                              <div class="row">
+                                <div class="col-5">
+                                  <div class="field row">
+                                    <div class="col-3">
+                                      <label>Truck No</label>
+                                    </div>
+                                    <div class="col-6">
+                                      <input class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="field row">
+                                    <div class="col-3">
+                                      <label>Type</label>
+                                    </div>
+                                    <div class="col-6">
+                                      <select class="form-control">
+                                        <option selected>B1</option>
+                                        <option value="#">B2</option>
+                                        <option value="#">A1</option>
+                                        <option value="#">A2</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="field row">
+                                    <div class="col-3">
+                                      <label>Year</label>
+                                    </div>
+                                    <div class="col-6">
+                                      <input class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="field row">
+                                    <div class="col-3">
+                                      <label>Make</label>
+                                    </div>
+                                    <div class="col-6">
+                                      <input class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="field row">
+                                    <div class="col-3">
+                                      <label>Model</label>
+                                    </div>
+                                    <div class="col-6">
+                                      <input class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="field row">
+                                    <div class="col-3">
+                                      <label>Tare</label>
+                                    </div>
+                                    <div class="col-6">
+                                      <input class="form-control" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="field row">
+                                    <div class="col-3">
+                                      <label>In Svc</label>
+                                    </div>
+                                    <div class="col-9">
+                                      <input class="form-control" type="text" data-mask="00/00/000" placeholder="__/__/____">
+                                    </div>
+                                  </div>
+                                  <div class="field row">
+                                    <div class="col-3">
+                                      <label>License</label>
+                                    </div>
+                                    <div class="col-6">
+                                      <input class="form-control" type="text">
+                                    </div>
+                                    <div class="col-1">
+                                      <label>St</label>
+                                    </div>
+                                    <div class="col-2">
+                                      <select class="form-control">
+                                        <option selected>NY</option>
+                                        <option value="#">TX</option>
+                                        <option value="#">LA</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="field row">
+                                    <div class="col-3">
+                                      <label>Dispatcher</label>
+                                    </div>
+                                    <div class="col-6">
+                                      <select class="form-control">
+                                        <option selected>Dispatcher option</option>
+                                        <option value="#">Dispatcher option</option>
+                                        <option value="#">Dispatcher option</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="field row">
+                                    <div class="col-3">
+                                      <label>Office</label>
+                                    </div>
+                                    <div class="col-6">
+                                      <select class="form-control">
+                                        <option selected>Choose ...</option>
+                                        <option value="#">New York</option>
+                                        <option value="#">Texas</option>
+                                        <option value="#">Chicago</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="nav-financial"></div>
+                        </div>
+                        <div class="form-fieldset"><span class="form-legend">Status</span></div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                  <div class="copyright text-center my-auto"><span>Copyright &copy; Your Website 2020</span></div>
+                </div>
+              </footer>
+            </div><a class="scroll-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Set Date-->
+    <div class="modal fade" id="truck-set-date" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Set Date</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="text-white">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form class="form">
+              <div class="row align-items-center">
+                <div class="col-7">
+                  <div class="field custom-control custom-radio">
+                    <input class="custom-control-input" id="edit-truck-date" type="radio" name="edit-or-remove-date">
+                    <label class="custom-control-label" for="edit-truck-date">Edit Out of Service Date</label>
+                  </div>
+                </div>
+                <div class="col-5">
+                  <div class="field">
+                    <input class="form-control" type="date">
+                  </div>
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-7">
+                  <div class="field custom-control custom-radio">
+                    <input class="custom-control-input" id="remove-truck-date" type="radio" name="edit-or-remove-date">
+                    <label class="custom-control-label" for="remove-truck-date">Remove Out of Service Date</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer bg-light">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary" type="button">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Truck out of service-->
+    <div class="modal fade" id="truck-out-of-service" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Truck Out of Service</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="text-white">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form class="form">
+              <div class="form-fieldset">
+                <p class="text-secondary mb-5">No Unit Assigned</p>
+                <div class="field custom-control custom-radio">
+                  <input class="custom-control-input" id="remove-truck-from-assigned" type="radio" name="truck-assigned-unit">
+                  <label class="custom-control-label" for="remove-truck-from-assigned">Remove Out of Service Date</label>
+                </div>
+                <div class="field custom-control custom-radio">
+                  <input class="custom-control-input" id="make-assigned-unit-inactive" type="radio" name="truck-assigned-unit">
+                  <label class="custom-control-label" for="make-assigned-unit-inactive">Make Assigned Unit Inactive</label>
+                </div>
+                <div class="form-fieldset mt-5"><span class="form-legend">Drivers</span>
+                  <div class="field row">
+                    <div class="col">
+                      <div class="custom-control custom-radio">
+                        <input class="custom-control-input" id="drivers-remove-unit" type="radio" name="truck-assigned-unit">
+                        <label class="custom-control-label" for="drivers-remove-unit">Remove From Unit</label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="custom-control custom-radio">
+                        <input class="custom-control-input" id="drivers-keep-unit" type="radio" name="truck-assigned-unit">
+                        <label class="custom-control-label" for="drivers-keep-unit">Keep With Unit</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-fieldset"><span class="form-legend">Trailer</span>
+                  <div class="field row">
+                    <div class="col">
+                      <div class="custom-control custom-control-inline custom-radio">
+                        <input class="custom-control-input" id="trailers-remove-unit" type="radio" name="truck-assigned-unit">
+                        <label class="custom-control-label" for="trailers-remove-unit">Remove From Unit</label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="custom-control custom-control-inline custom-radio">
+                        <input class="custom-control-input" id="trailers-keep-unit" type="radio" name="truck-assigned-unit">
+                        <label class="custom-control-label" for="trailers-keep-unit">Keep With Unit</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6 m-auto">
+                    <div class="field row">
+                      <div class="col">
+                        <label>Out of Service</label>
+                      </div>
+                      <div class="col">
+                        <input class="form-control" type="date">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer bg-light">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary" type="button">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Truck down-->
+    <div class="modal fade" id="truck-down" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Take Truck Down - 333666</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="text-white">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form class="form row">
+              <div class="col-5">
+                <div class="form-fieldset">
+                  <div class="field row">
+                    <div class="col">
+                      <p>Truck</p>
+                    </div>
+                    <div class="col">
+                      <p class="form-readonly-text">333666</p>
+                    </div>
+                  </div>
+                  <div class="field row">
+                    <div class="col">
+                      <p>Unit</p>
+                    </div>
+                    <div class="col">
+                      <p class="form-readonly-text">None</p>
+                    </div>
+                  </div>
+                  <div class="field row">
+                    <div class="col">
+                      <p>Office</p>
+                    </div>
+                    <div class="col">
+                      <p class="form-readonly-text"></p>
+                    </div>
+                  </div>
+                  <div class="field row mb-4">
+                    <div class="col">
+                      <p>Status</p>
+                    </div>
+                    <div class="col">
+                      <p class="form-readonly-text">Available</p>
+                    </div>
+                  </div>
+                  <div class="field row">
+                    <div class="col">
+                      <p>Last Trip</p>
+                    </div>
+                    <div class="col">
+                      <p class="form-readonly-text"></p>
+                    </div>
+                  </div>
+                  <div class="field row">
+                    <div class="col">
+                      <p>Load No</p>
+                    </div>
+                    <div class="col">
+                      <p class="form-readonly-text"></p>
+                    </div>
+                  </div>
+                  <div class="field row">
+                    <div class="col">
+                      <p>Date</p>
+                    </div>
+                    <div class="col">
+                      <p class="form-readonly-text"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-7">
+                <div class="form-fieldset">
+                  <div class="field row">
+                    <div class="col">
+                      <label>Returns To Service</label>
+                    </div>
+                    <div class="col">
+                      <input class="form-control" type="date">
+                    </div>
+                  </div>
+                  <label>Returns Location</label>
+                  <select class="form-control">
+                    <option selected>Location option</option>
+                    <option value="#">Location option</option>
+                    <option value="#">Location option</option>
+                    <option value="#">Location option</option>
+                  </select>
+                </div>
+                <div class="form-fieldset">
+                  <div class="mb-3"></div>
+                </div>
+                <div class="form-fieldset"><span class="form-legend">Send Notifications</span>
+                  <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" id="notify-all-dispatch">
+                    <label class="custom-control-label" for="notify-all-dispatch">Notify All Dispatch Personnel</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer bg-light">
+            <button class="btn btn-primary" type="button">Mark As Down<i class="fas fa-arrow-down pl-2"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/jquery-3.5.1.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.bundle.js" type="text/javascript"></script>
+    <script src="/js/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="/js/dataTables.bootstrap4.js" type="text/javascript"></script>
+    <script src="/js/vendor.js" type="text/javascript"></script>
+    <script src="/js/scripts.js" type="text/javascript"></script>
+  </body>
+</html>

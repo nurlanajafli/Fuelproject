@@ -1,0 +1,13 @@
+extends pug/layouts/dashboard
+
+block title
+    title Forms
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 Forms
+        .card.shadow.mb-4
+            .card-header.py-3
+                h6.m-0.font-weight-bold.text-primary All forms
+            .card-body
+                include pug/sections/forms/all

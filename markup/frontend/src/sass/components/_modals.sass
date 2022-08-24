@@ -1,0 +1,259 @@
+.modal
+
+	.close
+		&:focus,
+		&:active
+			outline: none
+
+
+
+	&-dialog
+
+		&.modal-xl,
+		&.modal-lg
+			.modal-body
+				padding: 30px 15px 15px
+			.modal-header,
+			.modal-footer
+				padding: 15px 30px
+
+		&.modal-map
+			max-width: 800px
+			.modal-body
+				padding: 0
+		&.modal-full
+			//height: 100vh
+			//max-height: 100vh
+			width: 100%
+			max-width: 1440px
+
+	&--no-padding
+		.modal-body
+			padding: 0 !important
+
+
+	&-dialog-centered
+		height: calc(100% - (.5rem * 2))
+
+	&-toolbar
+		padding: 5px 30px
+		border-bottom: 1px solid #e3e6f0
+
+// location confirm
+.location-confirm
+	&-inner
+		display: flex
+		align-items: center
+
+	&-left
+		margin-right: 30px
+		.fa
+			color: $clr-blue
+
+	&-right
+		p
+			margin-bottom: 8px
+
+	&-old,
+	&-new
+		color: $clr-gray-dark
+
+// mobile express registration
+.mer-modal
+	ul
+		list-style: none
+		//padding-left: 20px
+		margin: 15px 0 5px
+
+		li
+			margin: 0
+			padding: 0
+			&:not(:last-child)
+				margin-bottom: 5px
+
+	&-hr
+		border-color: $clr-primary
+
+.modal-full
+	img
+		height: auto
+		max-height: 61vh
+		cursor: zoom-in
+	img.modal-full__image
+		max-height: 100%
+		cursor: zoom-out
+
+.clear-load-modal
+	.float-right
+		font-size: 0
+		.btn
+			font-size: 1rem
+		.btn:not(:last-child)
+			margin-right: 5px
+
+// remove overall scroll and set modal-body scroll
+.modal-open
+	.modal.modal--no-scroll
+		overflow-y: hidden
+
+		.modal-body
+			max-height: 80vh
+			overflow-y: auto
+			overflow-x: hidden
+
+// modal slider
+.modal-slider
+	&__content
+		padding-top: 40px
+		position: relative
+
+	.owl-nav
+		position: absolute
+		top: 0
+		display: flex
+		justify-content: space-between
+		align-items: center
+		width: 100%
+
+		button
+			width: 100px
+			height: 30px
+			padding: 0 5px
+			line-height: 30px
+			&:active,
+			&:focus
+				outline: none
+
+			&:hover
+				color: $clr-blue
+
+			&.disabled
+				cursor: not-allowed
+				opacity: 0.5
+
+	.owl-prev
+		i
+			margin-right: 10px
+	.owl-next
+		i
+			margin-left: 10px
+
+	.owl-stage-outer
+		padding-top: 10px
+
+
+
+
+
+
+
+// modal compact view
+.modal
+
+	.modal-dialog
+		letter-spacing: 0.02em
+
+		.modal-header
+			padding: 10px 20px
+			position: relative
+
+			.close
+				font-size: 20px
+				padding: 0
+				margin: 0
+				width: 40px
+				height: 40px
+				line-height: 0
+				float: none
+				position: absolute
+				top: 0
+				right: 0
+
+				span
+					display: block
+
+		.modal-toolbar
+			padding: 5px 20px
+
+		.modal-title
+			font-size: 16px
+
+		.modal-body
+			padding: 10px 20px
+
+		&.modal-map
+			.modal-body
+				padding: 0
+
+		.form-group,
+		.table,
+		.field,
+		p
+			margin-bottom: 10px
+			//&:last-child
+				margin-bottom: 0
+
+		.modal-border
+			margin-bottom: 20px
+			&:last-child
+				margin-bottom: 0
+
+		.form-fieldset
+			margin-bottom: 20px
+			margin-top: 20px
+
+		label:not([class="custom-control-label"]),
+		label:not([class=".form-check-label"])
+			margin-bottom: 0
+			font-size: 0.95rem
+
+		.form-control
+			letter-spacing: 0.05em
+			@include placeholder
+				letter-spacing: 0.05em
+
+		.form-hr-text
+			font-size: 0.95rem
+
+		.form-legend
+			font-size: 15px
+
+		.modal-footer
+			padding: 5px 20px
+
+		.modal-border
+			border: 1px solid #e3e6f0
+			border-radius: 4px
+			padding: 15px
+
+		.table.compact
+			font-size: 15px
+			thead th
+				padding: 8px 10px
+				&.sorting,
+				&.sorting_desc,
+				&.sorting_asc
+					&:before,
+					&:after
+						bottom: 8px
+			tbody td
+				padding: 4px 10px
+
+		// sm
+		.btn
+			padding: 0.25rem 0.5rem
+			font-size: 14px
+
+		div:not([class='input-group'])
+			.form-control,
+			.custom-select
+				height: calc(1.5em + 0.5rem + 2px)
+				padding: 0.25rem 0.5rem
+				font-size: 15px
+				border-radius: 4px
+				letter-spacing: 0.02em
+				@include placeholder
+					letter-spacing: 0.02em
+
+			textarea.form-control
+				height: auto

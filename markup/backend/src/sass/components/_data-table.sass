@@ -1,0 +1,236 @@
+.dt-actions
+	display: flex
+	.btn
+		&:not(:last-child)
+			margin-right: 5px
+.actions
+	width: 200px !important
+	min-width: 0
+	max-width: none
+	input
+		display: none
+
+.dataTable
+	tbody
+		tr:not([class*="load"])
+			&:hover
+				background-color: rgba($clr-black, 0.05)
+
+.dataTable
+	.load
+		&-light-gray
+			background-color: $load-light-gray
+			color: #B32A23
+			a
+				color: #B32A23
+
+		&-gray
+			background-color: $load-gray
+			color: lighten($clr-black, 10)
+			a
+				color: lighten($clr-black, 10)
+
+		&-blue
+			background-color: $load-blue
+			color: lighten($clr-black, 10)
+			a
+				color: lighten($clr-black, 10)
+
+		&-red
+			background-color: $load-red
+			color: lighten($clr-white, 10)
+			a
+				color: lighten($clr-white, 10)
+		&-light-orange
+			background-color: $load-light-orange
+			color: lighten($clr-black, 10)
+			a
+				color: lighten($clr-black, 10)
+		&-medium-orange
+			background-color: $load-medium-orange
+			color: lighten($clr-black, 10)
+			a
+				color: lighten($clr-black, 10)
+		&-dark-orange
+			background-color: $load-dark-orange
+			color: lighten($clr-black, 10)
+			a
+				color: lighten($clr-black, 10)
+		&-yellow
+			background-color: $load-yellow
+			color: lighten($clr-black, 10)
+			a
+				color: lighten($clr-black, 10)
+
+// custom styles
+table.dataTable thead td
+	padding: 4px 20px
+	white-space: nowrap
+	cursor: pointer
+
+table.dataTable tfoot th
+	padding: 0
+	white-space: nowrap
+
+table.dataTable.compact thead th, table.dataTable.compact thead td
+	padding: 12px
+
+table.dataTable.compact tbody td
+	padding: 6px 12px
+
+tfoot
+	display: table-header-group
+
+.dataTables_filter .form-control:focus
+	box-shadow: 0 0 0 1px rgba($brand-primary, 0.25)
+
+.dataTable.compact .form-control
+	border-radius: 0
+	border: 0
+	padding: 4px 12px
+	height: auto
+	width: 100%
+	min-height: 33px
+	&:focus
+		box-shadow: none
+
+table.dataTable.compact tfoot th,
+table.dataTable.compact tfoot td
+	padding: 0
+
+table.dataTable thead
+	th[data-orderable]
+		//cursor: default
+		&:before,
+		&:after
+			display: none
+
+table.dataTable tfoot
+	th[data-searchable]
+		cursor: not-allowed
+		background: rgba($brand-primary, 0.2)
+		color: rgba($clr-black, 0.7)
+	.js-column-search
+		background: rgba($brand-primary, 0.2)
+		color: rgba($clr-black, 0.7)
+
+// dataTable temp styling
+table.table-bordered.dataTable
+	border: 0
+
+	thead th
+		border: 1px solid $brand-primary
+		background-color: $brand-primary
+		color: $clr-white
+		font-weight: 500
+		cursor: pointer
+		letter-spacing: 0.04em
+
+		&:not(:last-child)
+			border-right: 0
+
+	tbody
+		td
+			border: 1px solid rgba($brand-primary, 0.3)
+			border-bottom-width: 0
+			letter-spacing: 0.04em
+			&:not(:last-child)
+				border-right: 0
+
+		tr:last-child
+			td
+				border-bottom-width: 1px
+
+	tfoot th
+		font-weight: 500
+		border: 1px solid rgba($brand-primary, 0.3)
+		border-bottom: 0
+		border-top: 0
+		letter-spacing: 0.04em
+
+		&:not(:last-child)
+			border-right: 0
+
+// colvis style
+div.dt-button-collection
+	> &:last-child
+		display: table !important
+
+.buttons-columnVisibility
+	font-size: 15px
+	min-width: 100%
+	position: relative
+	padding-left: 34px
+	padding-right: 10px
+	white-space: break-spaces
+	color: rgba($clr-gray, 0.5)
+	user-select: none
+	&:before
+		content: "\f070"
+		font-family: 'Font Awesome 5 Free'
+		font-size: 13px
+		position: absolute
+		left: 10px
+		top: 6px
+		color: rgba($clr-gray, 0.5)
+	&.active
+		background: transparent
+		color: $clr-gray-dark
+		&:before
+			content: "\f06e"
+			font-family: 'Font Awesome 5 Free'
+			color: $brand-primary
+
+	&:focus,
+	&:hover
+		background: transparent
+		color: $clr-gray
+		&:before
+			color: $clr-gray
+
+.dataTables_wrapper
+	position: relative
+
+	.dataTables_filter
+		margin-bottom: 5px
+
+	.dt-buttons
+		position: absolute
+		right: 275px
+		float: none
+		.btn
+			padding: 5px 10px
+			font-size: 12px
+			line-height: 1.5
+			-webkit-border-radius: 4px
+			border-radius: 4px
+			&:focus,
+			&:active
+				outline: none
+
+	div.dt-button-collection
+		padding: 0
+
+		.dropdown-menu
+			padding: 0
+			margin: 0
+			a
+				color: $clr-secondary
+				background: transparent
+			.active
+				&:before
+					color: $brand-primary
+				a
+					background: transparent
+					color: $brand-primary
+
+// dt select
+table.dataTable tbody tr.selected,
+table.dataTable tbody tr td.selected
+	background-color: #1e5571
+	color: #ffffff
+
+table.dataTable tbody tr.selected:hover,
+table.dataTable tbody tr td.selected:hover
+	background-color: #1e5571
+	color: #ffffff

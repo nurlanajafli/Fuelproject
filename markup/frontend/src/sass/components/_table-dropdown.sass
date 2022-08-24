@@ -1,0 +1,92 @@
+.dropdown-menu.dropdown-menu--table
+	font-size: 16px
+	padding: 0
+	margin: 0
+	border: 0
+	border-radius: 0
+
+	.table
+		margin: 0 !important
+		color: $clr-dark
+		border-top: 0
+
+	thead
+		background-color: $clr-dark
+		color: $clr-white
+
+		th
+			white-space: nowrap
+			letter-spacing: 0.04em
+
+	tbody
+		td
+			border: 1px solid rgba($clr-blue, 0.5)
+			white-space: nowrap
+			letter-spacing: 0.04em
+		tr
+			cursor: pointer
+			&:hover
+				background-color: rgba($clr-blue, 0.2)
+
+	.dataTables_wrapper
+		.row
+			&:first-child,
+			&:last-child
+				display: none
+
+// table dropdown
+div.dataTables_wrapper.no-footer div.dataTables_paginate
+	text-align: center
+
+div.dataTables_wrapper.no-footer div.dataTables_paginate ul.pagination
+	margin: 0
+	flex-wrap: wrap
+
+.dataTables_wrapper.no-footer .page-link
+	border-top: 0
+	border-radius: 0
+
+.dataTables_wrapper.no-footer .page-item.previous,
+.dataTables_wrapper.no-footer .page-item.next
+	flex: 1 1 50%
+
+.dataTables_wrapper.no-footer .page-link:focus,
+.dataTables_wrapper.no-footer .page-link:active
+	outline: none
+	box-shadow: none
+
+.dataTables_wrapper.no-footer .page-item:nth-child(2)
+	border-left: 1px solid $clr-gray
+
+.dropdown-menu--table
+
+	.pagination
+		flex-wrap: wrap
+		justify-content: space-between
+		width: 100%
+
+	.page-item
+		order: 1
+		min-width: 14.28%
+		flex: 1 1 auto
+
+		&.previous
+			order: 2
+			max-width: 50%
+			flex: 0 0 50%
+
+		&.next
+			order: 3
+			max-width: 50%
+			flex: 0 0 50%
+
+
+	.dataTables_scrollHeadInner,
+	.dataTables_scrollFootInner
+		width: 100% !important
+		table
+			width: 100% !important
+
+	.dataTables_scrollBody
+		border-bottom: 1px solid rgba(78, 115, 223, 0.3)
+		overflow-x: hidden !important

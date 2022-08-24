@@ -1,0 +1,185 @@
+extends pug/layouts/base
+
+block title
+    title Company Info Markup
+
+block content
+    .page-header
+        h1 Company Info Markup
+    ol.breadcrumb
+        li
+            a(href='./') Home
+        li.active Company Info Markup
+    .row
+        .col-lg-12
+            .panel.panel-default
+                .panel-body
+                    form
+                        .row.clearfix
+                            .col-lg-7
+                                .panel.panel-default
+                                    .panel-heading.text-center
+                                        | Address, Contact and Business
+                                        | Information
+                                    .panel-body
+                                        .form-horizontal(action="#")
+                                            .form-group
+                                                label.col-sm-3.control-label Company Name
+                                                .col-sm-9
+                                                    input.form-control(type="text" value="Gurman Trucking Inc")
+                                            .form-group
+                                                label.col-sm-3.control-label Address 1
+                                                .col-sm-9
+                                                    input.form-control(type="text" value="201 E Veterans Parkway")
+                                            .form-group
+                                                label.col-sm-3.control-label Address 2
+                                                .col-sm-9
+                                                    input.form-control(type="text" value="Suite 8")
+                                            .form-group
+                                                label.col-sm-3.control-label City, St, Zip
+                                                .col-sm-4
+                                                    input.form-control(type="text" value="USA")
+                                                .col-sm-2(style="padding: 0")
+                                                    select.form-control
+                                                        option IL
+                                                        option TX
+                                                        option NY
+                                                        option CH
+                                                        option LA
+                                                .col-sm-3
+                                                    input.form-control(type="text" value="60560")
+                                            .form-group
+                                                label.col-sm-3.control-label County
+                                                .col-sm-4
+                                                    input.form-control(type="text" value="USA")
+                                            .form-group
+                                                label.col-sm-3.control-label Main Phone
+                                                .col-sm-4
+                                                    input.form-control(type="text" value="630-381-0064")
+                                            .form-group
+                                                label.col-sm-3.control-label Main 800
+                                                .col-sm-4
+                                                    input.form-control(type="text")
+                                            .form-group
+                                                label.col-sm-3.control-label Main Fax
+                                                .col-sm-4
+                                                    input.form-control(type="text")
+                                            .form-group
+                                                label.col-sm-3.control-label Acconting Ph
+                                                .col-sm-4
+                                                    input.form-control(type="text")
+                                            .form-group
+                                                label.col-sm-3.control-label A/R Contact
+                                                .col-sm-4
+                                                    input.form-control(type="text" value="Erkin Khasanov")
+                                            .form-group.lg-mb-10
+                                                label.col-sm-3.control-label A/P Contact
+                                                .col-sm-4
+                                                    input.form-control(type="text" value="Erkin K")
+                                            br
+                                            .form-group
+                                                label.col-sm-3.control-label Business Type
+                                                .col-sm-4
+                                                    select.form-control
+                                                        option Corporation
+                                                        option Startup
+                                                        option Government
+                                            .form-group
+                                                label.col-sm-3.control-label Federal ID
+                                                .col-sm-4
+                                                    input.form-control(type="text" value="37-1915699")
+                                            .form-group
+                                                label.col-sm-3.control-label DOT ID
+                                                .col-sm-4
+                                                    input.form-control(type="text" value="1244207")
+                                            .form-group
+                                                label.col-sm-3.control-label MC ID
+                                                .col-sm-4
+                                                    input.form-control(type="text" value="489245")
+                                            .form-group
+                                                label.col-sm-3.control-label SCAC
+                                                .col-sm-4
+                                                    input.form-control(type="text" value="GRMV")
+                            .col-lg-5
+                                .panel.panel-default
+                                    .panel-heading.text-center Your Lines Of Business
+                                    .panel-body
+                                        .form-horizontal
+                                            .form-group
+                                                .col-sm-6
+                                                .col-sm-3.text-primary.text-center Allowed
+                                                .col-sm-3.text-primary.text-center Primary
+                                            .form-group
+                                                label.col-sm-6.text-right Truckload Dispatch
+                                                .col-sm-3.text-center
+                                                    input(type="checkbox")
+                                                .col-sm-3.text-center
+                                                    input(type="radio")
+                                            .form-group
+                                                label.col-sm-6.text-right Truckload Brokerage
+                                                .col-sm-3.text-center
+                                                    input(type="checkbox")
+                                                .col-sm-3.text-center
+                                                    input(type="radio")
+                                            .form-group
+                                                label.col-sm-6.text-right LTL Dispatch
+                                                .col-sm-3.text-center
+                                                    input(type="checkbox")
+                                                .col-sm-3.text-center
+                                                    input(type="radio")
+                                            .form-group
+                                                label.col-sm-6.text-right LTL Brokerage
+                                                .col-sm-3.text-center
+                                                    input(type="checkbox")
+                                                .col-sm-3.text-center
+                                                    input(type="radio")
+                                            .form-group
+                                                label.col-sm-6.text-right Intermodal Dispatch
+                                                .col-sm-3.text-center
+                                                    input(type="checkbox")
+                                                .col-sm-3.text-center
+                                                    input(type="radio")
+                                            .form-group
+                                                label.col-sm-6.text-right Intermodal Brokerage
+                                                .col-sm-3.text-center
+                                                    input(type="checkbox")
+                                                .col-sm-3.text-center
+                                                    input(type="radio")
+                                .panel.panel-default
+                                    .panel-heading.text-center Company Logo File
+                                    .panel-body
+                                        .form-group.col-sm-10.form-inline
+                                            input.logo-upload(type='file' accept='image/*')
+                                            button.btn.btn-block.btn-primary.js-logo-upload(type='button') Upload logo
+                                        .form-group.col-sm-10
+                                            button.btn.btn-block.btn-danger.js-preview-remove(data-url='https://google.com') Remove
+                                        .form-group
+                                            .col-sm-10
+                                                img.logo-preview(src="https://via.placeholder.com/150x75/FFFFFF/FFFFFF" width="100%" height="auto" id="logo-preview")
+                                            .col-sm-2
+                                                button.btn.btn-default(type="button" data-toggle="modal" data-target=".modal-upload-info") ?
+                            .col-lg-12
+                                .form-actions.pull-right
+                                    button.btn.btn-primary(type='submit') Save
+
+block modals
+    .modal.modal-upload-info.fade(tabindex='-1' role='dialog')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    // <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    h4.modal-title Express
+                .modal-body
+                    .row
+                        .col-sm-2
+                            span.glyphicon.glyphicon-info-sign.text-info
+                        .col-sm-10
+                            p The company logo image prints on invoices and other documents
+                            p The image file must meet the following requirements:
+                            ul
+                                li - 150 pixels wide
+                                li - 75 pixels tall
+                                li - 100 Kb or less
+                                li - .jpg, .jpeg or .png format
+                .modal-footer
+                    button.btn.btn-default(type='button' data-dismiss='modal') OK

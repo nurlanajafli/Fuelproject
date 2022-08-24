@@ -1,0 +1,133 @@
+doctype html
+head
+    meta(charset='utf-8')
+    title Invoice
+    link(rel='stylesheet' href='css/print.css')
+body
+    .container
+        .invoice
+            .invoice__header
+                table
+                    tbody
+                        tr
+                            td.w-82.border-0
+                                .invoice__company.clearfix
+                                    .invoice__company-logo.pull-left
+                                        img(src='https://via.placeholder.com/175x125')
+                                    .invoice__company-info.pull-left
+                                        p Gurman Trucking Inc
+                                        p 201 E Veterans Parkway
+                                        p Yorkville, IL 60560
+                                        p P: 630-381-0064 F:
+                            td.w-18.border-0
+                                .invoice__number
+                                    h4.clr-light-blue INVOICE
+                                    p 130335
+                                    p 5/11/2021
+                table.invoice__header-info
+                    tr
+                        td.border-0
+                            p.clr-light-blue Bill To
+                    tr
+                        td.w-75.border-0
+                            p SDM TRANSPORT LLC
+                            p 220 W LANDSTREET ROAD Suite A
+                            p ORLANDO, FL 32824
+                        td.w-25.border-0
+                            p Terms:  Net 30
+                            p Reference: TEST2
+                            p Office: 1
+            .invoice__info
+                .doc__table
+                    table
+                        tbody
+                            tr
+                                td
+                                td
+                                td
+                                td
+                                td Reference
+                            tr
+                                td PU
+                                td S P RICHARDS CO
+                                td 24 WES WARREN DR
+                                td MIDDLETOWN, NY 10941
+                                td
+                            tr
+                                td DEL
+                                td VELOCITY CENTER
+                                td 4540 FISHER ROAD
+                                td COLUMBUS, OH 43228
+                                td
+            .invoice__inputs
+                table.invoice__inputs-first.w-100
+                    tbody
+                        tr
+                            td Commodity
+                            td Description
+                            td Reference
+                            td Pcs
+                            td Bill Wgt
+                        tr
+                            td.border-0 Steel Pipe
+                            td.border-0
+                            td.border-0 456564
+                            td.border-0 10
+                            td.border-0 500
+                table.invoice__inputs-second.w-100
+                    tbody
+                        tr
+                            td Accessorial
+                            td Reference
+                            td Rate Ea
+                            td Units
+                            td Amount
+                        tr
+                            td.border-0 0
+                            td.border-0 0
+                            td.border-0 0
+                            td.border-0 0
+                            td.border-0 0
+            .invoice__summary.clearfix.border-y
+                div.invoice__summary-item
+                    p Pickup Date: <span>3/23/21</span>
+                    p Delivery Date: <span>3/23/21</span>
+                div.invoice__summary-item
+                    p Total Pieces: <span>0</span>
+                    p Total Space: <span>0</span>
+                div.invoice__summary-item
+                    p Actual Wgt: <span>0</span>
+                    p Tariff Wgt: <span>0</span>
+                div.invoice__summary-item
+                    p As Wgt: <span>0</span>
+                    p Miles: <span>558</span>
+                div.invoice__summary-item
+            .invoice__total.clearfix
+                div.pull-left.w-50
+                    p Remit Payment To:
+                    p RTS Financial Service, Inc.
+                    p PO Box 840267
+                    p Dallas, TX 75284-0267
+                div.pull-left.w-25
+                    p Rate By: <span>Flat</span>
+                    p Rate: <span>1.00</span>
+                    p &nbsp;
+                    p Discount: <span>0.90</span>
+                div.pull-left.w-25
+                    table
+                        tbody
+                            tr
+                                td
+                                    p Freight:
+                                td
+                                    p 0.10
+                            tr
+                                td
+                                    p + Accessorials:
+                                td
+                                    p 0.00
+                            tr
+                                td
+                                    p Invoice Total:
+                                td
+                                    p.border-b.text-right 0.10

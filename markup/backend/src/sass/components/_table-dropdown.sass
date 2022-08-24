@@ -1,0 +1,99 @@
+.dropdown-menu.dropdown-menu--table
+	font-size: 16px
+	padding: 0
+	margin: 0
+	border: 0
+	border-radius: 0
+
+	.table
+		margin: 0 !important
+		color: $clr-dark
+		border-top: 0
+
+	thead
+		background-color: $clr-dark
+		color: $clr-white
+
+		th
+			white-space: nowrap
+			letter-spacing: 0.04em
+
+	tbody
+		td
+			border: 1px solid rgba($clr-blue, 0.5)
+			white-space: nowrap
+			letter-spacing: 0.04em
+		tr
+			cursor: pointer
+			&:hover
+				background-color: rgba($clr-blue, 0.2)
+
+	.dataTables_wrapper
+		.row
+			&:first-child,
+			&:last-child
+				display: none
+
+div.dataTables_wrapper.no-footer div.dataTables_paginate
+	text-align: center
+	padding-top: 0
+	width: 100%
+
+div.dataTables_wrapper.no-footer div.dataTables_paginate ul.pagination
+	margin: 0
+	padding: 0
+
+.dataTables_wrapper.no-footer .page-item.previous,
+.dataTables_wrapper.no-footer .page-item.next
+	flex: 1 1 50%
+
+.dataTables_wrapper.no-footer .page-item a:focus,
+.dataTables_wrapper.no-footer .page-item a:active
+	outline: none
+	box-shadow: none
+
+.dropdown-menu--table
+
+	.pagination
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		width: 100%
+
+		> .page-item:first-child a
+			border-radius: 0
+
+		> .page-item:last-child a
+			border-radius: 0
+
+	.page-item
+		order: 1
+		min-width: 14.28%
+		flex: 1 1 auto
+
+		&.active
+			a:hover,
+			a:focus
+				background-color: #337ab7
+
+		a
+			border-radius: 0
+			margin-left: 0
+			width: 100%
+			border: 1px solid rgba($clr-blue, 0.3)
+			border-top: 0
+			border-right: 0
+			&:focus
+				background-color: transparent
+			&:hover
+				background-color: rgba($clr-blue, 0.1)
+
+		&.previous
+			order: 2
+			max-width: 50%
+			flex: 0 0 50%
+
+		&.next
+			order: 3
+			max-width: 50%
+			flex: 0 0 50%

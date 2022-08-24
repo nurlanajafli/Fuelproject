@@ -1,0 +1,73 @@
+{
+    "name": "yiisoft/yii2-app-advanced",
+    "description": "Yii 2 Advanced Project Template",
+    "keywords": ["yii2", "framework", "advanced", "project template"],
+    "homepage": "http://www.yiiframework.com/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.0",
+        "yiisoft/yii2": "~2.0.14",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
+        "yiisoft/yii2-redis": "^2.0",
+        "schmunk42/yii2-giiant": "@stable",
+        "the-real-start/enums": "^1.0",
+        "2amigos/yii2-translateable-behavior": "*",
+        "dmstr/yii2-adminlte-asset": "^2.1",
+        "yiisoft/yii2-bootstrap4": "^2.0",
+        "yiisoft/yii2-authclient": "^2.2",
+        "yiisoft/yii2-imagine": "^2.3",
+        "mohorev/yii2-upload-behavior": "*",
+        "kreait/firebase-php": "^5.17",
+        "zircote/swagger-php": "^3.1",
+        "kartik-v/yii2-mpdf": "dev-master",
+        "yiisoft/yii2-httpclient": "^2.0",
+        "filsh/yii2-oauth2-server": "*",
+        "the-real-start/yii2-rest-response": "*",
+        "cboden/ratchet": "^0.4.3",
+        "2amigos/yii2-chartjs-widget": "^3.0",
+        "yii2tech/spreadsheet": "^1.0",
+        "hguenot/yii2-gsftp": "*"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.1.0",
+        "yiisoft/yii2-gii": "~2.1.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+        "codeception/codeception": "^4.1",
+        "codeception/module-asserts": "^1.0",
+        "codeception/module-yii2": "^1.1",
+        "codeception/module-filesystem": "^1.0",
+        "codeception/verify": "~0.5.0 || ~1.1.0",
+        "symfony/browser-kit": ">=2.7 <=4.2.4",
+        "codeception/module-rest": "^2.0",
+        "codeception/module-datafactory": "^2.0"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        },
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "git",
+            "url": "ssh://git@git.therealstart.com:50210/sandbox/yii2-rest-response.git"
+        }
+    ]
+}

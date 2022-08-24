@@ -1,0 +1,13 @@
+extends pug/layouts/dashboard
+
+block title
+    title Edit
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 Edit Form
+        .card.shadow.mb-4
+            .card-header.py-3
+                include pug/sections/form-toolbar.pug
+            .card-body
+                include pug/sections/edit-form.pug

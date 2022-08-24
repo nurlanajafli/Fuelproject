@@ -1,0 +1,118 @@
+extends pug/layouts/base
+
+block title
+    title Permissions
+
+block content
+    .page-header
+        h1 Permissions
+    ol.breadcrumb
+        li
+            a(href='./') Home
+        li.active Permissions
+    .panel.panel-default
+        .panel-body
+            .clearfix
+                .pull-left
+                    h4 Permissions
+                .pull-right
+                    button(type='button').btn.btn-success Save
+            .border.row
+                .col-sm-4
+                    table.table
+                        thead
+                            tr
+                                th User
+                                th Office
+                                th Dept
+                        tbody
+                            tr
+                                td HURI
+                                td 1
+                                td AC
+                            tr
+                                td IGOR
+                                td 1
+                                td MA
+                            tr
+                                td SDM
+                                td 1
+                                td MA
+                .col-sm-8
+                    .permissions-table
+                        table.table.table-bordered.compact.js-datatable#userPermissions(data-var="userPermissions")
+                            thead
+                                tr
+                                    th
+                                    th
+                            tfoot
+                                tr
+                                    th
+                                    th
+                            tbody
+                    .clearfix
+                        .pull-right
+                            button(type='button').btn.btn-success Save
+
+block scripts
+    script.
+        var userPermissions = {
+            data : [
+                ['System Adminstrator', 'System Adminstrator'],
+                ['System Setup', 'Dispatch Setup'],
+                ['System Setup', 'Accounting Setup'],
+                ['System Setup', 'Management Setup'],
+                ['System Setup', 'Rate Metrices Setup'],
+                ['System Setup', 'International Setup'],
+                ['Lists Setup', 'List Manager'],
+                ['Lists Setup', 'Truck Listing'],
+                ['Lists Setup', 'Add/Edit Trucks'],
+                ['Lists Setup', 'Trailer Listing'],
+                ['Lists Setup', 'Add/Edit Trailer'],
+            ],
+            columns: [
+                {
+                    name: 'category',
+                    title: 'Category',
+                },
+                {
+                    title: 'Description',
+                },
+            ],
+            autoWidth: false,
+            paging: false,
+            order: [[0, 'asc']],
+            dom: 'Bfrtip',
+            conditionalPaging: true,
+            buttons: [
+                {
+                    text: 'Save',
+                    action: function (e, dt, node, config) {
+                        // some function
+                    },
+                    className: 'btn btn-success'
+                },
+                {
+                    text: 'Select All',
+                    action: function () {
+                        this.rows().select();
+                    }
+                },
+                {
+                    text: 'Deselect All',
+                    action: function () {
+                        this.rows().deselect();
+                    }
+                },
+            ],
+            scrollY: '500px',
+            scrollCollapse: true,
+            stateSave: true,
+            select: {
+                style: 'multi',
+            },
+            rowsGroup: [
+                'category:name',
+                0
+            ],
+        }

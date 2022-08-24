@@ -1,0 +1,99 @@
+extends pug/layouts/dashboard
+
+block title
+    title Tables
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 Table
+        .card.shadow.mb-4
+            .card-header.py-3
+                h6.m-0.font-weight-bold.text-primary DataTables Example
+            .card-body
+                h2 rowGroup
+                .table.table-responsive
+                    table.table.table-bordered.compact.js-datatable#fourth(cellspacing='0')
+                        thead
+                            th
+                            th
+                            th
+                        tfoot
+                            th
+                            th
+                            th
+
+block modals
+    .modal#js-row-remove.fade(tabindex='-1')
+        .modal-dialog.modal-dialog-centered
+            .modal-content
+                .modal-header
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span &times;
+                .modal-body.my-4
+                    p.text-lg.text-center Are you sure to delete this item?
+                .modal-footer
+                    button.btn.btn-secondary(type='button' data-dismiss='modal') Cancel
+                    button.btn.btn-primary(type='submit') Confirm
+block scripts
+    script.
+        var collapsedGroups = {};
+        var sixTable = $('#fourth').DataTable({
+            data: [
+                ["Ashton Cox", "Junior Technical Author", "San Francisco"],
+                ["Tiger Nixon", "System Architect", "Edinburgh"],
+                ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh"],
+                ["Garrett Winters", "Accountant", "Tokyo"],
+                ["Charde Marshall", "Regional Director", "San Francisco"],
+                ["Airi Satou", "Accountant", "Tokyo"],
+                ["Airi Satou", "Accountant", "Tokyo"],
+                ["Airi Satou", "Accountant", "Tokyo"],
+                ["Airi Satou", "Accountant", "Tokyo"],
+                ],
+                orderCellsTop: true,
+                colReorder: true,
+                stateSave: true,
+                initComplete: function () {
+                },
+                columns: [
+                  {
+                    title: "Name",
+                    searchable: false,
+                  }, {
+                    title: "Position",
+                  }, {
+                    title: "Office",
+                  },
+                ],
+                buttons: [
+                  {
+                    extend: 'colvis',
+                    columns: ':gt(0)'
+                  }
+                ],
+                dom: 'Bfrtip',
+                autoWidth: false,
+                conditionalPaging: true,
+                draw: false,
+                order: [[2, 'asc']],
+                rowGroup: {
+                dataSrc: 2,
+                startRender: function (rows, group) {
+                    var collapsed = !!collapsedGroups[group];
+
+                    rows.nodes().each(function (r) {
+                    r.style.display = collapsed ? 'none' : '';
+                    });
+
+                    // Add category name to the <tr>. NOTE: Hardcoded colspan
+                    return $('<tr/>')
+                        .append('<td colspan="8">' + group + ' (' + rows.count() + ')</td>')
+                        .attr('data-name', group)
+                        .toggleClass('collapsed', collapsed);
+                }
+                }
+                })
+                $('#fourth tbody').on('click', 'tr.dtrg-start', function () {
+                    var name = $(this).data('name');
+                    collapsedGroups[name] = !collapsedGroups[name];
+                    sixTable.draw(false);
+                });

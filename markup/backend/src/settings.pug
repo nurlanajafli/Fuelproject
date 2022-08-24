@@ -1,0 +1,57 @@
+extends pug/layouts/base
+
+block title
+    title Settings
+
+block content
+    .page-header
+        h1 Settings
+    ol.breadcrumb
+        li
+            a(href='./') Home
+        li.active Settings
+    .row
+        .col-lg-12
+            .panel.panel-default
+                .panel-body
+                    form
+                        .row.clearfix
+                            .col-sm-12
+                                .form-horizontal(action="#")
+                                    .form-group
+                                        label.col-sm-2.control-label #1 Label 1
+                                        .col-sm-8
+                                            input.form-control(type="text" placeholder="Some #1 settings")
+                                    .form-group
+                                        label.col-sm-2.control-label #1 Label 2
+                                        .col-sm-8
+                                            input.form-control(type="text" placeholder="Some #1 settings")
+                                    .form-group
+                                        label.col-sm-2.control-label #1 Label 3
+                                        .col-sm-4
+                                            input.form-control(type="text" placeholder="1")
+                                        .col-sm-2(style="padding: 0")
+                                            select.form-control
+                                                option 01
+                                                option 02
+                                                option 03
+                                                option 04
+                                                option 05
+                                        .col-sm-2
+                                            input.form-control(type="text" placeholder="123456")
+                                    .form-group
+                                        label.col-sm-2.control-label #1 Label 4
+                                        .col-sm-4
+                                            input.form-control(type="text" placeholder="Some #1 settings")
+                                    .form-group
+                                        label.col-sm-2.control-label #1 Label 5
+                                        .col-sm-4
+                                            select.form-control
+                                                option 01
+                                                option 02
+                                                option 03
+                                                option 04
+                                                option 05
+                            .col-lg-12
+                                .form-actions.pull-right
+                                    button.btn.btn-primary(type='submit') Save

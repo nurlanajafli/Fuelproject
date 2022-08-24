@@ -1,0 +1,5 @@
+FROM node:8.11.1
+RUN node --version
+RUN npm --version
+RUN npx --version
+RUN npm install --global gulp-cli

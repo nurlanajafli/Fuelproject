@@ -1,0 +1,43 @@
+.modal.modify-location-modal.fade(tabindex='-1')
+    .modal-dialog.modal-lg
+        .modal-content
+            .modal-header
+                h5.modal-title Modify Location
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span &times;
+            .modal-body
+                form
+                    .row.field
+                        .col-2
+                            label Date
+                        .col-3
+                            input.form-control(type='text' placeholder='__/__/____' data-mask="00/00/0000")
+                    .row.field
+                        .col-2
+                            label Location
+                        .col-7
+                            input.form-control.dropdown-toggle(type='text' data-toggle='dropdown')
+                            .dropdown-menu.dropdown-menu--table
+                                .table.table-responsive
+                                    table.table.table-bordered.compact.js-datatable(width='100%' cellspacing='0' data-var='dataTableDropdown')
+                    .row.field
+                        .col-2
+                            label City St Zip
+                        .col-7.row
+                            .col
+                                span.form-readonly-text BROOKLYN
+                            .col
+                                span.form-readonly-text NY
+                            .col
+                                span.form-readonly-text 11232-1925
+                    .row.field
+                        .col-2
+                            label Zone
+                        .col-3
+                            select.form-control
+                                option(value='') Select
+                                option(value='IS') IS
+                                option(value='MW') MW
+            .modal-footer
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Cancel
+                button.btn.btn-primary(type='button' data-target='.location-confirm-modal' data-toggle='modal') Save

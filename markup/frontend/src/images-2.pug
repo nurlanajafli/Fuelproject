@@ -1,0 +1,200 @@
+extends pug/layouts/dashboard
+
+block title
+    title Image view 2
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 Images 2
+        .card.shadow.mb-4
+            .card-header.py-3
+                .file-view-toolbar
+                    button(type='button' data-toggle='modal' data-target='#js-file-upload').btn.btn-link
+                        i.fas.fa.fa-upload
+                    button(type='button' data-toggle='modal' data-target='#js-image-import' data-tooltip='Import image').btn.btn-link
+                        i.fas.fa.fa-download
+            .card-body
+                .file-view
+                    .row
+                        .col-3
+                            .file-view-sidebar
+                                .file-view-modes
+                                    button(type='button').btn.btn-link.js-file-view-table
+                                        i.fas.fa.fa-th-list
+                                    button(type='button').btn.btn-link.js-file-view-thumb
+                                        i.fas.fa.fa-th-large
+                                .file-view-list.file-view-list--table
+                                    table.table.table-bordered.table-sm
+                                        thead
+                                            tr
+                                                td Description
+                                                td Pgs
+                                                td Date
+                                        tbody
+                                            tr(data-img-src='https://via.placeholder.com/768x992').js-img-view
+                                                td Delivery Receipt
+                                                td 1
+                                                td 03/30/21
+                                            tr(data-img-src='https://via.placeholder.com/960x1100').js-img-view
+                                                td Delivery Receipt
+                                                td 1
+                                                td 03/30/21
+                                            tr(data-img-src='https://via.placeholder.com/640x840').js-img-view
+                                                td Delivery Receipt
+                                                td 1
+                                                td 03/30/21
+                                            tr(data-img-src='https://via.placeholder.com/576x768').js-img-view
+                                                td Delivery Receipt
+                                                td 1
+                                                td 03/30/21
+                                    ul
+                                        li
+                                            a(href='https://via.placeholder.com/768x992' class='js-img-view')
+                                                span fake-image-name-2020-01-02
+                                                img(src='https://via.placeholder.com/280x200?text=thumbnail' alt='Picture')
+                                        li
+                                            a(href='https://via.placeholder.com/960x1100' class='js-img-view')
+                                                span random-image-name
+                                                img(src='https://via.placeholder.com/280x200?text=thumbnail' alt='Picture')
+                                        li
+                                            a(href='https://via.placeholder.com/640x840' class='js-img-view')
+                                                span IMG_VIA_PLACEHOLDER
+                                                img(src='https://via.placeholder.com/280x200?text=thumbnail' alt='Picture')
+                                        li
+                                            a(href='https://via.placeholder.com/576x768' class='js-img-view')
+                                                span IMG22021345
+                                                img(src='https://via.placeholder.com/280x200?text=thumbnail' alt='Picture')
+                        .col-9
+                            .file-view-area
+                                .file-view-options
+                                    button(type='button' disabled).btn.btn-link
+                                        i.fas.fa.fa-print
+                                    button(type='button' disabled).btn.btn-link
+                                        i.fas.fa.fa-fax
+                                    button(type='button' disabled).btn.btn-link
+                                        i.fas.fa.fa-envelope
+                                    button(type='button' disabled).btn.btn-link
+                                        i.fas.fa.fa-upload
+                                    button(type='button' disabled).btn.btn-link
+                                        i.fas.fa.fa-trash-alt
+                                    span.file-view-area-separator
+                                    button(type='button' disabled).btn.btn-link
+                                        i.fas.fa.fa-step-backward
+                                    button(type='button' disabled).btn.btn-link
+                                        i.fas.fa.fa-play.fa-rotate-180
+                                    button(type='button' disabled).btn.btn-link
+                                        i.fas.fa.fa-play
+                                    button(type='button' disabled).btn.btn-link
+                                        i.fas.fa.fa-step-forward
+                                    // 1/5
+                                    span.file-view-area-separator
+                                    button(type='button' disabled).btn.btn-link
+                                        i.fas.fa.fa-search-minus
+                                    button(type='button' disabled).btn.btn-link
+                                        i.fas.fa.fa-search-plus
+                                    select(disabled).form-control
+                                        option(value='#') 200%
+                                        option(value='#') 150%
+                                        option(value='#' selected) 100%
+                                        option(value='#') 75%
+                                        option(value='#') 50%
+                                    span.file-view-area-separator
+                                    button(type='button' disabled).btn.btn-link
+                                        i.fas.fa.fa-undo-alt
+                                    button(type='button' disabled).btn.btn-link
+                                        i.fas.fa.fa-redo-alt
+                                    span.file-view-area-separator
+                                    button(type='button' disabled).btn.btn-link
+                                        i.fas.fa.fa-arrows-alt
+                                    button(type='button' disabled).btn.btn-link
+                                        i.fas.fa.fa-font
+                                    span.file-view-area-separator
+                                .file-view-content
+
+block modals
+    .modal#js-image-import.fade(tabindex='-1')
+        .modal-dialog.modal-lg
+            .modal-content
+                .modal-header
+                    h5.modal-title Import image
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span &times;
+                .modal-body
+                    .form-fieldset.mb-3
+                        .form-group.row.field
+                            .col-2
+                                label Source
+                            .col-4
+                                span.form-readonly-text Loads
+                        .form-group.row.field
+                            .col-2
+                                label Load No
+                            .col-4
+                                span.form-readonly-text 130308
+                        .form-group.row
+                            .col-2
+                                label Image
+                            .col-4
+                                input.form-control.dropdown-toggle(type='text' data-toggle='dropdown')
+                                .dropdown-menu.dropdown-menu-right.dropdown-menu--table
+                                    .table.table-responsive
+                                        table.table.table-bordered.compact.js-datatable(width='100%' cellspacing='0' data-var='dataTableDropdown')
+                .modal-footer
+                    button.btn.btn-secondary(type='button' data-dismiss='modal') Cancel
+                    button.btn.btn-primary(type='button') Import
+
+    .modal#js-file-upload.fade(tabindex='-1')
+        .modal-dialog.modal-lg
+            .modal-content
+                .modal-header
+                    h5.modal-title Image upload
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span &times;
+                .modal-body
+                    .col
+                        form.custom-file-container(data-upload-id='fileUploadWithPreview')
+                            label Upload File
+                            .field.justify-content-between
+                                label.custom-file-container__custom-file
+                                    input.custom-file-container__custom-file__custom-file-input(type='file' accept='*' aria-label='Choose File')
+                                    input(type='hidden' name='MAX_FILE_SIZE' value='10485760')
+                                    span.custom-file-container__custom-file__custom-file-control(data-file-choose='Choose image...' data-file-browse='Select' data-file-selected=' files selected')
+                                label
+                                    a.custom-file-container__image-clear.btn.btn-outline-danger(href='javascript:void(0)' title='Clear Image') Clear
+                            a.custom-file-container__image-preview.js-lg-single
+                            hr
+                            .form-group
+                                label.col-form-label Description
+                                textarea.form-control(rows='4')
+                .modal-footer
+                    button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                    button.btn.btn-primary(type='button') Save changes
+
+block scripts
+    script.
+        var dataTableDropdown = {
+            data: [
+                ['BL', 'Bill of Lading'],
+                ['DR', 'Delivery Receipt'],
+                ['IC', 'Interchange'],
+                ['LR', 'Load Receipt'],
+                ['PO', 'Purchase Order'],
+                ['PS', 'Packing Slip'],
+                ['ST', 'Scale Ticket'],
+                ['TA', 'Transport Agreement'],
+                ['WO', 'Work Order'],
+                ['OR', 'Other Receipt'],
+                ['OB', 'Other Backup'],
+            ],
+            paging: false,
+            orderCellsTop: true,
+            initComplete: function () {
+            },
+            columns: [
+                {
+                    title: 'Code',
+                },{
+                    title:  'Description',
+                },
+            ],
+        };

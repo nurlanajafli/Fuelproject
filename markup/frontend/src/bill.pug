@@ -1,0 +1,332 @@
+extends pug/layouts/dashboard
+
+block title
+    title Bill
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 Bill
+        .card.shadow.mb-4
+            .card-header.py-3
+                h6.m-0.font-weight-bold.text-primary Bill Window
+            .card-body
+                button.btn.btn-primary(data-tooltip='tooltip' data-placement='top' title='Bill' data-toggle='modal' data-target='#random-id') Bill Window
+
+        h3.h3.mb-4.text-gray-800 Bill Listing
+        .card.shadow.mb-4
+            .card-header.py-3
+                .edit-form-toolbar
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Upload')
+                        i.fas.fa-upload
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Add')
+                        i.fas.fa-plus-square
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Search')
+                        i.fas.fa-search
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Light')
+                        i.far.fa-lightbulb
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Down')
+                        i.fas.fa-arrow-down
+            .card-body
+                //- button.btn.btn-primary(data-tooltip='tooltip' data-placement='top' title='Bill' data-toggle='modal' data-target='#random-id') Bill Window
+                .table.table-responsive.bill-grid
+                    table.table.table-bordered.compact.js-datatable.w-100#bill-listing(cellspacing='0' data-var='billListing')
+                        thead
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                        tfoot.d-none
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+
+block modals
+    .modal.modal--no-scroll#random-id.fade(tabindex='-1' )
+        .modal-dialog.modal-full
+            .modal-content
+                .modal-header.bg-primary.text-white
+                    h5.modal-title Bill Window
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span.text-white &times;
+                .modal-toolbar.bg-light
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Plus')
+                        i.fas.fa-plus
+                    button.btn.btn-link.js-show-load-cleaning(data-tooltip='tooltip' data-placement='top' title='Left')
+                        i.fas.fa-caret-left
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Right')
+                        i.fas.fa-caret-right
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Edit')
+                        i.fas.fa-pen
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Microscope')
+                        i.fas.fa-microscope
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Download')
+                        i.fas.fa-download
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Print')
+                        i.fas.fa-print
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Lamp')
+                        i.fas.fa-lightbulb
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Image')
+                        i.fas.fa-image
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Clipboard')
+                        i.fas.fa-clipboard
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Close')
+                        i.fas.fa-times
+                .modal-body
+                    .form-fieldset.bill-window
+                        .form-row.justify-content-between.mb-5
+                            .col-3
+                                label From
+                                select.form-control.rounded-0
+                                    option(value='#') COMDATA
+                                    option(value='#') COMDATA 2
+                            .col-5
+                                .form-row
+                                    .col-4
+                                        label Bill No
+                                        input.form-control.rounded-0(value='Comdata Inv')
+                                    .col-4
+                                        label Posting Date
+                                        input.form-control.rounded-0(value='07/03/2019')
+                                    .col-4
+                                        label Posting Date
+                                        input.form-control.rounded-0(value='07/03/2019')
+                            .col-12.p-2
+                                p.form-readonly-text.mb-0 451 MONUMENT RD APT 116
+                                p.form-readonly-text.mb-0 JACKSONVILLE, FL
+                        .form-row.justify-content-between
+                            .col-1
+                                label A/P Acct
+                                select.form-control.rounded-0
+                                    option(value='#') 2010
+                                    option(value='#') 2015
+                            .col-2
+                                label Terms
+                                select.form-control.rounded-0
+                                    option(value='#') Net 30
+                                    option(value='#') Net 20
+                            .col-2
+                                label Due Date
+                                input.form-control.rounded-0(value='08/02/2019')
+                            .col-1
+                                label Office
+                                select.form-control.rounded-0
+                                    option(value='#') first
+                                    option(value='#') second
+                            .col-6
+                                label Memo
+                                input.form-control.rounded-0(value='Comdata 7/3/2019')
+                    .table.table-responsive
+                        table.table.table-bordered.compact.js-datatable.w-100#first(cellspacing='0' data-var='billTable')
+                            thead
+                                th
+                                th
+                                th
+                                th
+                                th
+                                th
+                                th
+                                th
+                    .row.justify-content-between
+                        .col-2
+                            .row
+                                .col-5 Trans ID:
+                                .col-7
+                                    span.form-readonly-text 33119
+                        .col-2
+                            .row
+                                .col-3 Input:
+                                .col-9
+                                    span.form-readonly-text 7/3/2019
+                        .col-2
+                            .row
+                                .col-2 By:
+                                .col-10
+                                    span.form-readonly-text YULDUZ
+                        .col-3
+                            .row
+                                .col-4 Disc Date:
+                                .col-8
+                                    span.form-readonly-text 7/3/19
+                            .row
+                                .col-4 Disc Amt:
+                                .col-8
+                                    span.form-readonly-text 0.00
+                        .col-3
+                            .row
+                                .col-5 Bill Total:
+                                .col-7
+                                    span.form-readonly-text 188,600.2
+                            .row
+                                .col-5 Balance:
+                                .col-7
+                                    span.form-readonly-text 188,600.2
+                .modal-footer.bg-light
+                    button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                    button.btn.btn-primary(type='button') Save changes
+
+block scripts
+    script.
+        // Bill Windows
+        var billTable = {
+            data: [
+                ["1050", "KHOMITSY, RUSLAN", "436.68", "1", " ", "3 RUS KHA", "Repaid-Batch #27", "06/24 TrkFul - Load No: 120427 - EVERGREEN"],
+                ["1050", "KHOMITSY, RUSLAN", "29.33", "1", " ", "3 RUS KHA", "Repaid-Batch #27", "06/24 TrkFul - Load No: 120427 - EVERGREEN"],
+                ["1050", "KHOMITSY, RUSLAN", "1.25", "1", " ", "3 RUS KHA", "Repaid-Batch #27", "06/24 TrkFul - Load No: 120427 - EVERGREEN"],
+                ["4020", "KHOMITSY, RUSLAN", "-50.93", "1", " ", "3 RUS KHA", "Repaid-Batch #27", "06/24 TrkFul - Load No: 120427 - EVERGREEN"],
+                ["1050", "KHOMITSY, RUSLAN", "371.16", "1", " ", "3 RUS KHA", "Repaid-Batch #27", "06/24 TrkFul - Load No: 120427 - EVERGREEN"],
+                ["1050", "KHOMITSY, RUSLAN", "22.06", "1", " ", "3 RUS KHA", "Repaid-Batch #27", "06/24 TrkFul - Load No: 120427 - EVERGREEN"],
+                ["1050", "KHOMITSY, RUSLAN", "22.06", "1", " ", "3 RUS KHA", "Repaid-Batch #27", "06/24 TrkFul - Load No: 120427 - EVERGREEN"],
+                ["1050", "KHOMITSY, RUSLAN", "22.06", "1", " ", "3 RUS KHA", "Repaid-Batch #27", "06/24 TrkFul - Load No: 120427 - EVERGREEN"],
+                ["1050", "KHOMITSY, RUSLAN", "22.06", "1", " ", "3 RUS KHA", "Repaid-Batch #27", "06/24 TrkFul - Load No: 120427 - EVERGREEN"],
+            ],
+            orderCellsTop: true,
+            colReorder: {
+                realtime: false
+            },
+            stateSave: true,
+            columns: [
+                {
+                    title: "Account",
+                }, {
+                    title: "Charge To",
+                }, {
+                    title: "Amount",
+                }, {
+                    title: "Office",
+                }, {
+                    title: "Our Ref",
+                }, {
+                    title: "UD",
+                }, {
+                    title: "Special",
+                }, {
+                    title: "Memo",
+                }
+            ],
+            autoWidth: true,
+            conditionalPaging: true,
+            dom: 'tp'
+        };
+
+        // Bill Listing
+        var billListing = {
+            data: [
+                ["+", "TOLLS2 Inv", "06/28/19", "08/02/19", "BESTPASS IMPORT", " ", "2010", "5,891.24", "5,891.24", "TOLLS2 6/28/2019"],
+                ["+", "Comdata Inv", "07/03/19", "08/02/19", "COMDATA", " ", "2010", "188,600.92", "188,600.92", "Comdata 7/3/2019"],
+                ["+", "Comdata Inv", "07/11/19", "08/10/19", "COMDATA", " ", "2010", "156,127.26", "156,127.26", "Comdata 7/11/2019"],
+                ["+", "Comdata Inv", "07/17/19", "08/16/19", "COMDATA", " ", "2010", "164,673.07", "164,673.07", "Comdata 7/17/2019"],
+            ],
+            orderCellsTop: true,
+            colReorder: {
+                realtime: false
+            },
+            stateSave: true,
+            columns: [
+                {
+                    title: "/",
+                    orderable: false,
+                    sortable: false,
+                    className: "dt-control",
+                    data: null,
+                    defaultContent: "<i class='fas fa-plus'></i><i class='fas fa-minus'></i>"
+                }, {
+                    title: "Bill No",
+                }, {
+                    title: "Billed",
+                }, {
+                    title: "Due",
+                }, {
+                    title: "Company Name",
+                }, {
+                    title: "Off",
+                }, {
+                    title: "Account",
+                }, {
+                    title: "Amount",
+                }, {
+                    title: "Balance",
+                }, {
+                    title: "Memo",
+                }
+            ],
+            autoWidth: true,
+            conditionalPaging: true,
+            dom: 'tp'
+        };
+
+        // Bill Listing Sub Details
+        var billListingDetails = {
+            data: [
+                ["1050", "KHOMITSKIY, RUSLAN", "436.68", "1", " ", "0", "3 RUS KHA", "06/24 TrkFul - Load No:"],
+                ["1050", "KHOMITSKIY, RUSLAN", "29.33", "1", " ", "0", "3 RUS KHA", "06/24 DiesEx - Load No:"],
+                ["1050", "KHOMITSKIY, RUSLAN", "1.25", "1", " ", "0", "3 RUS KHA", "06/24 TranFee - Load No:"],
+                ["4020", "KHOMITSKIY, RUSLAN", "-50.93", "1", " ", "0", "3 RUS KHA", "06/24 Reb - Load No:"],
+            ],
+            orderCellsTop: true,
+            colReorder: {
+                realtime: false
+            },
+            stateSave: true,
+            columns: [
+                {
+                    title: "Account",
+                }, {
+                    title: "Charge To",
+                }, {
+                    title: "Amount",
+                }, {
+                    title: "Off",
+                }, {
+                    title: "Our Reff",
+                }, {
+                    title: "PO",
+                }, {
+                    title: "UD",
+                }, {
+                    title: "Memo",
+                }
+            ],
+            autoWidth: true,
+            pageLength: 7,
+            conditionalPaging: true,
+            destroy: true,
+            dom: 'tp'
+        };
+
+        // Bill Listing Sub History
+        var billListingHistory = {
+            data: [
+            ],
+            orderCellsTop: true,
+            colReorder: {
+                realtime: false
+            },
+            stateSave: true,
+            columns: [
+                {
+                    title: "Date",
+                }, {
+                    title: "Type",
+                }, {
+                    title: "Account",
+                }, {
+                    title: "Amount",
+                }
+            ],
+            autoWidth: true,
+            conditionalPaging: true,
+            dom: 'tp'
+        };

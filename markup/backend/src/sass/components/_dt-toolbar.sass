@@ -1,0 +1,74 @@
+.dt-toolbar
+	display: flex
+	//align-items: center
+	flex-wrap: nowrap
+	margin-bottom: 10px
+
+	.btn-link
+		&:hover,
+		&:focus,
+		&:active
+			text-decoration: none
+
+	&-actions
+		margin-right: 15px
+		margin-bottom: 10px
+		flex: 0 0 auto
+		.btn,
+		input
+			&:not(:last-child)
+				margin-right: 5px
+
+	&-filter
+		flex: 1 1 100%
+		display: flex
+		flex-wrap: wrap
+		select
+			&:not(:last-child)
+				margin-right: 5px
+
+		&-item
+			display: flex
+			margin-right: 10px
+			align-items: center
+			margin-bottom: 10px
+
+			label
+				margin-right: 10px
+				margin-bottom: 0
+
+	&-legend
+		display: flex
+		flex: 0 0 auto
+		list-style: none
+		padding: 0
+		margin: 0 0 10px auto
+
+		li
+			width: 20px
+			height: 20px
+			border: 1px solid $clr-blue
+			margin-left: 10px
+			&:first-child
+				margin-left: 0
+
+.dt-legend
+	&-load
+		&--light-gray
+			background: $load-light-gray
+		&--gray
+			background: $load-gray
+		&--blue
+			background: $load-blue
+		&--red
+			background: $load-red
+		&--light-orange
+			background: $load-light-orange
+		&--medium-orange
+			background: $load-medium-orange
+		&--dark-orange
+			background: $load-dark-orange
+		&--yellow
+			background: $load-yellow
+		&--white
+			background: $clr-white

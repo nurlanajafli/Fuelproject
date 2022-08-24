@@ -1,0 +1,36 @@
+.modal.mer-modal.fade(tabindex='-1')
+    .modal-dialog.modal-lg
+        .modal-content
+            .modal-header
+                h5.modal-title Mobile Express Registration
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span &times;
+            .modal-body
+                form.form-fieldset.mb-0
+                    span.form-legend Mobile Express
+                    .mer-modal-content
+                        .row
+                            .col.ml-4
+                                p.form-readonly-text Mobile Express is an advanced system that enables full two-way communication between dispatch
+                                    | personnel and drivers. Mobile Express is a fee based service, contact PCS Software directly for current pricing.
+                                ul
+                                    li Works with any smart phone
+                                    li 2-Way Dispatch Messaging
+                                    li 2-Way Document Transfers
+                                    li Driver Submitted Check Calls
+                                    li Driver Submitted Load Status Updates
+                                    li GPS Verified Driver Location Tracking
+                                    li Document Image Capture and Transfer
+                                    li Delivery Signature Capture and Transfer
+                        hr.mer-modal-hr
+                        .row.align-items-center
+                            .col-9.ml-4
+                                .custom-control.custom-checkbox.mb-1
+                                    input(type="checkbox" class="custom-control-input" id="some-id")
+                                    label(class="custom-control-label" for="some-id") I Understand These Services as Described
+                                p.form-readonly-text Driver Is Not Registered For Mobile Express
+                            .col.text-right
+                                button.btn.btn-primary(type='button') Register
+            //- .modal-footer
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary(type='button') Save changes

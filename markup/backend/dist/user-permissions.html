@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/fontawesome-all.css">
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Optional theme-->
+    <!--link(rel="stylesheet" href="css/bootstrap-theme.css")-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
+    <!--
+    [if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]
+    -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Permissions</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <section class="content">
+          <div class="page-header">
+            <h1>Permissions</h1>
+          </div>
+          <ol class="breadcrumb">
+            <li><a href="./">Home</a></li>
+            <li class="active">Permissions</li>
+          </ol>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="clearfix">
+                <div class="pull-left">
+                  <h4>Permissions</h4>
+                </div>
+                <div class="pull-right">
+                  <button class="btn btn-success" type="button">Save</button>
+                </div>
+              </div>
+              <div class="border row">
+                <div class="col-sm-4">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>User</th>
+                        <th>Office</th>
+                        <th>Dept</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>HURI</td>
+                        <td>1</td>
+                        <td>AC</td>
+                      </tr>
+                      <tr>
+                        <td>IGOR</td>
+                        <td>1</td>
+                        <td>MA</td>
+                      </tr>
+                      <tr>
+                        <td>SDM</td>
+                        <td>1</td>
+                        <td>MA</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-sm-8">
+                  <div class="permissions-table">
+                    <table class="table table-bordered compact js-datatable" id="userPermissions" data-var="userPermissions">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tfoot>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </tfoot>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                  <div class="clearfix">
+                    <div class="pull-right">
+                      <button class="btn btn-success" type="button">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="js/dataTables.bootstrap.js" type="text/javascript"></script>
+    <script src="js/vendor.js" type="text/javascript"></script>
+    <script src="js/scripts.js" type="text/javascript"></script>
+    <script>
+      var userPermissions = {
+          data : [
+              ['System Adminstrator', 'System Adminstrator'],
+              ['System Setup', 'Dispatch Setup'],
+              ['System Setup', 'Accounting Setup'],
+              ['System Setup', 'Management Setup'],
+              ['System Setup', 'Rate Metrices Setup'],
+              ['System Setup', 'International Setup'],
+              ['Lists Setup', 'List Manager'],
+              ['Lists Setup', 'Truck Listing'],
+              ['Lists Setup', 'Add/Edit Trucks'],
+              ['Lists Setup', 'Trailer Listing'],
+              ['Lists Setup', 'Add/Edit Trailer'],
+          ],
+          columns: [
+              {
+                  name: 'category',
+                  title: 'Category',
+              },
+              {
+                  title: 'Description',
+              },
+          ],
+          autoWidth: false,
+          paging: false,
+          order: [[0, 'asc']],
+          dom: 'Bfrtip',
+          conditionalPaging: true,
+          buttons: [
+              {
+                  text: 'Save',
+                  action: function (e, dt, node, config) {
+                      // some function
+                  },
+                  className: 'btn btn-success'
+              },
+              {
+                  text: 'Select All',
+                  action: function () {
+                      this.rows().select();
+                  }
+              },
+              {
+                  text: 'Deselect All',
+                  action: function () {
+                      this.rows().deselect();
+                  }
+              },
+          ],
+          scrollY: '500px',
+          scrollCollapse: true,
+          stateSave: true,
+          select: {
+              style: 'multi',
+          },
+          rowsGroup: [
+              'category:name',
+              0
+          ],
+      }
+    </script>
+  </body>
+</html>

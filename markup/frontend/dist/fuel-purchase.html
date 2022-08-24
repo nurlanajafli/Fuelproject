@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/css/fontawesome-all.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <title>Fuel Purchase</title>
+  </head>
+  <body>
+    <script>
+      var svgArray = [
+          '/svgmin/sprite_icons.svg'
+      ];
+    </script>
+    <div class="svgSprite"></div>
+    <div class="wrapper">
+      <div class="wrapper__inner">
+        <div class="wrapper__content">
+          <div id="wrapper">
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+              <!-- Sidebar - Brand--><a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-truck"></i></div>
+                <div class="sidebar-brand-text mx-3">TMS Markup</div></a>
+              <!-- Divider-->
+              <hr class="sidebar-divider my-0">
+              <!-- Nav Item - Tables-->
+              <li class="nav-item active"><a class="nav-link" href="tables.html"><i class="fas fa-fw fa-table"></i><span>Tables</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="edit.html"><i class="fas fa-fw fa-pen"></i><span>Edit</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="forms.html"><i class="fas fa-fw fa-list"></i><span>Forms</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="notes.html"><i class="fas fa-fw fa-sticky-note"></i><span>Notes</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="compliance.html"><i class="fas fa-fw fa-car"></i><span>Compliance</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="load.html"><i class="fas fa-fw fa-truck-loading"></i><span>Load</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="truck-information.html"><i class="fas fa-fw fa-info"></i><span>Truck information</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="table-dropdown.html"><i class="fas fa-fw fa-table"></i><span>Table dropdown</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="modals.html"><i class="far fa-fw fa-window-maximize"></i><span>Modals</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="location.html"><i class="fas fa-fw fa-search-location"></i><span>Location</span></a></li>
+              <!-- Divider-->
+              <hr class="sidebar-divider d-none d-md-block">
+              <!-- Sidebar Toggler (Sidebar)-->
+              <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+              </div>
+            </ul>
+            <div class="d-flex flex-column" id="content-wrapper">
+              <div id="content">
+                <!-- Topbar-->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                  <!-- Sidebar Toggle (Topbar)-->
+                  <form class="form-inline">
+                    <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop"><i class="fa fa-bars"></i></button>
+                  </form>
+                  <!-- Topbar Search-->
+                  <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div class="input-group">
+                      <input class="form-control bg-light border-0 small" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button"><i class="fas fa-search fa-sm"></i></button>
+                      </div>
+                    </div>
+                  </form>
+                  <!-- Topbar Navbar-->
+                  <ul class="navbar-nav ml-auto">
+                    <!-- Nav Item - Search Dropdown (Visible Only XS)-->
+                    <li class="nav-item dropdown no-arrow d-sm-none"><a class="nav-link dropdown-toggle" id="searchDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-search fa-fw"></i></a>
+                      <!-- Dropdown - Messages-->
+                      <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                        <form class="form-inline mr-auto w-100 navbar-search">
+                          <div class="input-group">
+                            <input class="form-control bg-light border-0 small" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                              <button class="btn btn-primary" type="button"><i class="fas fa-search fa-sm"></i></button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </li>
+                    <!-- Nav Item - Alerts-->
+                    <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" id="alertsDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell fa-fw"></i>
+                        <!-- Counter - Alerts--><span class="badge badge-danger badge-counter">3+</span></a>
+                      <!-- Dropdown - Alerts-->
+                      <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in ntf-list" aria-labelledby="alertsDropdown">
+                        <div class="dropdown-header">
+                          <h6>Notifications</h6>
+                          <button class="ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                        </div><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a>
+                      </div>
+                    </li>
+                    <!-- Nav Item - Messages-->
+                    <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" id="messagesDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-envelope fa-fw"></i>
+                        <!-- Counter - Messages--><span class="badge badge-danger badge-counter">7</span></a>
+                      <!-- Dropdown - Messages-->
+                      <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                        <h6 class="dropdown-header">Message Center</h6><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="images/svg/undraw_profile_1.svg" alt="">
+                            <div class="status-indicator bg-success"></div>
+                          </div>
+                          <div class="font-weight-bold">
+                            <div class="text-truncate">
+                              Hi there! I am wondering if you can help me with a
+                              problem I&apos;ve been having.
+                            </div>
+                            <div class="small text-gray-500">Emily Fowler &middot; 58m</div>
+                          </div></a><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="images/svg/undraw_profile_2.svg" alt="">
+                            <div class="status-indicator"></div>
+                          </div>
+                          <div>
+                            <div class="text-truncate">
+                              I have the photos that you ordered last month, how
+                              would you like them sent to you?
+                            </div>
+                            <div class="small text-gray-500">Jae Chun &middot; 1d</div>
+                          </div></a><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="images/svg/undraw_profile_3.svg" alt="">
+                            <div class="status-indicator bg-warning"></div>
+                          </div>
+                          <div>
+                            <div class="text-truncate">
+                              Last month&apos;s report looks great, I am very happy with
+                              the progress so far, keep up the good work!
+                            </div>
+                            <div class="small text-gray-500">Morgan Alvarez &middot; 2d</div>
+                          </div></a><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                            <div class="status-indicator bg-success"></div>
+                          </div>
+                          <div>
+                            <div class="text-truncate">
+                              Am I a good boy? The reason I ask is because someone
+                              told me that people say this to all dogs, even if they aren&apos;t good...
+                            </div>
+                            <div class="small text-gray-500">Chicken the Dog &middot; 2w</div>
+                          </div></a><a class="dropdown-item text-center small text-gray-500" href="/chat.html">Read More Messages</a>
+                      </div>
+                    </li>
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <!-- Nav Item - User Information-->
+                    <li class="nav-item dropdown no-arrow"><a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span><img class="img-profile rounded-circle" src="images/svg/undraw_profile.svg"></a>
+                      <!-- Dropdown - User Information-->
+                      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>                                    Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>                                    Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>                                    Activity Log</a>
+                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>                                    Logout</a>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- End of Topbar-->
+                <!-- Begin Page Content-->
+                <div class="container-fluid">
+                  <h1 class="h3 mb-4 text-gray-800">Fuel Purchase</h1>
+                  <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                      <div class="dt-toolbar justify-content-between">
+                        <div class="dt-toolbar__left">
+                          <div class="dt-toolbar-actions">
+                            <button class="btn btn-primary" data-tooltip="tooltip" data-placement="top" title="Reload"><i class="fas fa-sync"></i></button>
+                            <button class="btn btn-primary" data-tooltip="tooltip" data-placement="top" title="Plus" data-toggle="modal" data-target="#some-random-id"><i class="fas fa-plus"></i></button><a class="btn btn-primary" href="/fuel-settings.html"><i class="fas fa-cog"></i></a>
+                          </div>
+                          <div class="dt-toolbar-filter js-table-filter">
+                            <div class="dt-toolbar-filter-item">
+                              <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown" placeholder="Offices">
+                              <div class="dropdown-menu dropdown-menu--table">
+                                <div class="table table-responsive">
+                                  <table class="table table-bordered compact js-datatable" width="100%" cellspacing="0" data-var="tbOffices">
+                                    <thead>
+                                      <th></th>
+                                      <th></th>
+                                    </thead>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="dt-toolbar-filter-item">
+                              <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown" placeholder="Drivers">
+                              <div class="dropdown-menu dropdown-menu--table">
+                                <div class="table table-responsive">
+                                  <table class="table table-bordered compact js-datatable" width="100%" cellspacing="0" data-var="tbNames">
+                                    <thead>
+                                      <th></th>
+                                    </thead>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="dt-toolbar-filter-item">
+                              <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown" placeholder="Trucks">
+                              <div class="dropdown-menu dropdown-menu--table">
+                                <div class="table table-responsive">
+                                  <table class="table table-bordered compact js-datatable" width="100%" cellspacing="0" data-var="tbTrucks">
+                                    <thead>
+                                      <th></th>
+                                      <th></th>
+                                    </thead>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="dt-toolbar__right">
+                          <div class="dt-toolbar-actions js-daterange d-flex" data-column-index="4" data-date-format="DD/MM/YYYY">
+                            <div class="dropdown">
+                              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><i class="fas fa-filter"></i></button>
+                              <div class="dropdown-menu"><a class="dropdown-item js-daterange-this-month" href="#">This Month</a><a class="dropdown-item js-daterange-last-month" href="#">Last Month</a><a class="dropdown-item js-daterange-this-quarter" href="#">This Quarter</a><a class="dropdown-item js-daterange-last-quarter" href="#">Last Quarter</a><a class="dropdown-item js-daterange-this-year" href="#">This Year</a><a class="dropdown-item js-daterange-last-year" href="#">Last Year</a><a class="dropdown-item js-daterange-today" href="#">Today</a></div>
+                            </div>
+                            <input class="form-control js-daterange-min" type="text" name="min" placeholder="from date">
+                            <input class="form-control js-daterange-max" type="text" name="max" placeholder="to date">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="table table-responsive">
+                        <table class="table table-bordered compact js-datatable" id="first" cellspacing="0" data-var="richTable">
+                          <thead>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                          </thead>
+                          <tfoot>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                          </tfoot>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                  <div class="copyright text-center my-auto"><span>Copyright &copy; Your Website 2020</span></div>
+                </div>
+              </footer>
+            </div><a class="scroll-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="some-random-id" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Input Fuel Purchase</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="row mt-2">
+              <div class="col">
+                <div class="form-group row">
+                  <div class="col-3">
+                    <label>Trip No</label>
+                  </div>
+                  <div class="col-6">
+                    <input class="form-control">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-3">
+                    <label>Unit</label>
+                  </div>
+                  <div class="col-6">
+                    <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown">
+                    <div class="dropdown-menu dropdown-menu--table">
+                      <div class="table table-responsive">
+                        <table class="table table-bordered compact js-datatable" width="100%" cellspacing="0" data-var="tbOffices">
+                          <thead>
+                            <th></th>
+                            <th></th>
+                          </thead>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-3">
+                    <label>Driver</label>
+                  </div>
+                  <div class="col-8">
+                    <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown">
+                    <div class="dropdown-menu dropdown-menu--table">
+                      <div class="table table-responsive">
+                        <table class="table table-bordered compact js-datatable" width="100%" cellspacing="0" data-var="tbOffices">
+                          <thead>
+                            <th></th>
+                            <th></th>
+                          </thead>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-3">
+                    <label>Co Driver</label>
+                  </div>
+                  <div class="col-8">
+                    <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown">
+                    <div class="dropdown-menu dropdown-menu--table">
+                      <div class="table table-responsive">
+                        <table class="table table-bordered compact js-datatable" width="100%" cellspacing="0" data-var="tbOffices">
+                          <thead>
+                            <th></th>
+                            <th></th>
+                          </thead>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-3">
+                    <label>Truck</label>
+                  </div>
+                  <div class="col-6">
+                    <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown">
+                    <div class="dropdown-menu dropdown-menu--table">
+                      <div class="table table-responsive">
+                        <table class="table table-bordered compact js-datatable" width="100%" cellspacing="0" data-var="tbOffices">
+                          <thead>
+                            <th></th>
+                            <th></th>
+                          </thead>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-3">
+                    <label>Trailer</label>
+                  </div>
+                  <div class="col-6">
+                    <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown">
+                    <div class="dropdown-menu dropdown-menu--table">
+                      <div class="table table-responsive">
+                        <table class="table table-bordered compact js-datatable" width="100%" cellspacing="0" data-var="tbOffices">
+                          <thead>
+                            <th></th>
+                            <th></th>
+                          </thead>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-3">
+                    <label>Trailer 2</label>
+                  </div>
+                  <div class="col-6">
+                    <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown">
+                    <div class="dropdown-menu dropdown-menu--table">
+                      <div class="table table-responsive">
+                        <table class="table table-bordered compact js-datatable" width="100%" cellspacing="0" data-var="tbOffices">
+                          <thead>
+                            <th></th>
+                            <th></th>
+                          </thead>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group row">
+                  <div class="col-3">
+                    <label>Date</label>
+                  </div>
+                  <div class="col-8">
+                    <div class="row">
+                      <div class="col-8">
+                        <input class="form-control" type="date">
+                      </div>
+                      <div class="col-4">
+                        <input class="form-control" type="time">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-3">
+                    <label>Vendor</label>
+                  </div>
+                  <div class="col-8">
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-3">
+                    <label>City, State</label>
+                  </div>
+                  <div class="col-8">
+                    <div class="row">
+                      <div class="col-8">
+                        <input class="form-control" type="text">
+                      </div>
+                      <div class="col-4">
+                        <input class="form-control dropdown-toggle" type="text" data-toggle="dropdown">
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu--table">
+                          <div class="table table-responsive">
+                            <table class="table table-bordered compact js-datatable" cellspacing="0" data-var="tbOffices">
+                              <thead>
+                                <th></th>
+                                <th></th>
+                              </thead>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-3">
+                    <label>Quantity</label>
+                  </div>
+                  <div class="col-3">
+                    <input class="form-control" type="text" placeholder="0.00">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-3">
+                    <label>Cost</label>
+                  </div>
+                  <div class="col-3">
+                    <input class="form-control" type="text" placeholder="0.00">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-3">
+                    <label>PPG</label>
+                  </div>
+                  <div class="col-3">
+                    <input class="form-control" type="text" placeholder="0.00">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <div class="modal-footer-left">
+              <button class="btn btn-danger" type="button">Delete</button>
+            </div>
+            <div class="modal-footer-right">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+              <button class="btn btn-primary" type="button">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal--no-scroll fade" id="random-id-for-launch-by-button-1" tabindex="-1">
+      <div class="modal-dialog modal-full">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">DataTD</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="text-white">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="inline-dt-wrap">
+              <div class="table table-responsive">
+                <table class="table table-bordered compact js-datatable w-100" id="payrollDT" cellspacing="0" data-var="DTVar">
+                  <thead>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </thead>
+                  <tfoot class="d-none">
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tfoot>
+                </table>
+              </div>
+              <div class="table table-responsive inline-dt dropdown-menu--table">
+                <table class="table compact js-datatable table-bordered" id="inlineDT1" data-var="inlineDT" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-light">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/jquery-3.5.1.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.bundle.js" type="text/javascript"></script>
+    <script src="/js/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="/js/dataTables.bootstrap4.js" type="text/javascript"></script>
+    <script src="/js/vendor.js" type="text/javascript"></script>
+    <script src="/js/scripts.js" type="text/javascript"></script>
+    <script>
+      var DTVar = {
+          data: [
+              ['GOOD #1', '', '', '0.00', ''],
+              ['GOOD #2', ' ', ' ' , '0.00', ''],
+              ['GOOD #3', ' ', ' ' , '0.00', ''],
+              ['GOOD #4', ' ', ' ' , '0.00', ''],
+              ['GOOD #5', ' ', ' ' , '0.00', ''],
+              ['GOOD #6', ' ', ' ' , '0.00', ''],
+              ['GOOD #7', ' ', ' ' , '0.00', ''],
+              ['GOOD #8', ' ', ' ' , '0.00', ''],
+              ['GOOD #9', ' ', ' ' , '0.00', ''],
+              ['GOOD #10', ' ', ' ' , '0.00', ''],
+              ['GOOD #11', ' ', ' ' , '0.00', ''],
+              ['GOOD #12', ' ', ' ' , '0.00', ''],
+              ['GOOD #13', ' ', ' ' , '0.00', ''],
+              ['GOOD #14', ' ', ' ' , '0.00', ''],
+              ['GOOD #15', ' ', ' ' , '0.00', ''],
+              ['GOOD #16', ' ', ' ' , '0.00', ''],
+              ['GOOD #17', ' ', ' ' , '0.00', ''],
+              ['GOOD #18', ' ', ' ' , '0.00', ''],
+              ['GOOD #19', ' ', ' ' , '0.00', ''],
+              ['GOOD #20', ' ', ' ' , '0.00', ''],
+              ['GOOD #2', ' ', ' ' , '0.00', ''],
+              ['GOOD #3', ' ', ' ' , '0.00', ''],
+              ['GOOD #4', ' ', ' ' , '0.00', ''],
+              ['GOOD #5', ' ', ' ' , '0.00', ''],
+              ['GOOD #6', ' ', ' ' , '0.00', ''],
+              ['GOOD #7', ' ', ' ' , '0.00', ''],
+              ['GOOD #8', ' ', ' ' , '0.00', ''],
+              ['GOOD #9', ' ', ' ' , '0.00', ''],
+              ['GOOD #10', ' ', ' ' , '0.00', ''],
+              ['GOOD #11', ' ', ' ' , '0.00', ''],
+              ['GOOD #12', ' ', ' ' , '0.00', ''],
+              ['GOOD #13', ' ', ' ' , '0.00', ''],
+              ['GOOD #14', ' ', ' ' , '0.00', ''],
+              ['GOOD #15', ' ', ' ' , '0.00', ''],
+              ['GOOD #16', ' ', ' ' , '0.00', ''],
+              ['GOOD #17', ' ', ' ' , '0.00', ''],
+              ['GOOD #18', ' ', ' ' , '0.00', ''],
+              ['GOOD #19', ' ', ' ' , '0.00', ''],
+              ['GOOD #20', ' ', ' ' , '0.00', ''],
+          ],
+          dom: 't',
+          orderCellsTop: true,
+          initComplete: function () {
+          },
+          paging: false,
+          columns: [
+              {title: 'Description',},
+              {title: 'O/O Acct', className: 'inline-dt-trigger'},
+              {title: 'C/D Acct', className: 'inline-dt-trigger'},
+              {title: 'Fee Amt',},
+              {title: 'Fee Acct', className: 'inline-dt-trigger'},
+          ],
+      };
+      
+      var richTable = {
+          data: [],
+          dom: 'tp',
+          orderCellsTop: true,
+          autoWidth: false,
+          initComplete: function () {
+          },
+          conditionalPaging: true,
+          columns: [
+              { title: 'Trip', },
+              { title: 'Date', },
+              { title: 'Time', },
+              { title: 'Off', },
+              { title: 'Driver', },
+              { title: 'Truck', },
+              { title: 'Vendor', },
+              { title: 'City', },
+              { title: 'St', },
+              { title: 'Qty', },
+              { title: 'Cost', },
+              { title: 'PPG', },
+          ],
+      };
+      
+      var tbOffices = {
+          data: [
+              ['All', 'All Offices'],
+              ['1', 'Main Office'],
+              ['2', 'test'],
+          ],
+          dom: 'tp',
+          orderCellsTop: true,
+          initComplete: function () {
+          },
+          conditionalPaging: true,
+          columns: [
+              { title: 'No', },
+              { title: 'Office', },
+          ],
+      };
+      
+      var inlineDT = {
+          data: [
+              ['1000', 'Bank of America Account', 'Bank'],
+              ['1030', 'Receviables', 'Accounts Receviable'],
+              ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+              ['1033', 'TAFS - Reserve', 'Current Asset'],
+              ['1050', 'Advances Given', 'Current Asset'],
+              ['1055', 'Loans Given', 'Current Asset'],
+              ['1056', 'Deductible', 'Current Asset'],
+              ['1100', 'Undeposited Funds', 'Current Asset'],
+              ['1500', 'Parts Inventory', 'Current Asset'],
+              ['1800', 'Land', 'Fixed Asset'],
+              ['1000', 'Bank of America Account', 'Bank'],
+              ['1030', 'Receviables', 'Accounts Receviable'],
+              ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+              ['1033', 'TAFS - Reserve', 'Current Asset'],
+              ['1050', 'Advances Given', 'Current Asset'],
+              ['1055', 'Loans Given', 'Current Asset'],
+              ['1056', 'Deductible', 'Current Asset'],
+              ['1100', 'Undeposited Funds', 'Current Asset'],
+              ['1500', 'Parts Inventory', 'Current Asset'],
+              ['1800', 'Land', 'Fixed Asset'],
+              ['1000', 'Bank of America Account', 'Bank'],
+              ['1030', 'Receviables', 'Accounts Receviable'],
+              ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+              ['1033', 'TAFS - Reserve', 'Current Asset'],
+              ['1050', 'Advances Given', 'Current Asset'],
+              ['1055', 'Loans Given', 'Current Asset'],
+              ['1056', 'Deductible', 'Current Asset'],
+              ['1100', 'Undeposited Funds', 'Current Asset'],
+              ['1500', 'Parts Inventory', 'Current Asset'],
+              ['1800', 'Land', 'Fixed Asset'],
+              ['1000', 'Bank of America Account', 'Bank'],
+              ['1030', 'Receviables', 'Accounts Receviable'],
+              ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+              ['1033', 'TAFS - Reserve', 'Current Asset'],
+              ['1050', 'Advances Given', 'Current Asset'],
+              ['1055', 'Loans Given', 'Current Asset'],
+              ['1056', 'Deductible', 'Current Asset'],
+              ['1100', 'Undeposited Funds', 'Current Asset'],
+              ['1500', 'Parts Inventory', 'Current Asset'],
+              ['1800', 'Land', 'Fixed Asset'],
+              ['1000', 'Bank of America Account', 'Bank'],
+              ['1030', 'Receviables', 'Accounts Receviable'],
+              ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+              ['1033', 'TAFS - Reserve', 'Current Asset'],
+              ['1050', 'Advances Given', 'Current Asset'],
+              ['1055', 'Loans Given', 'Current Asset'],
+              ['1056', 'Deductible', 'Current Asset'],
+              ['1100', 'Undeposited Funds', 'Current Asset'],
+              ['1500', 'Parts Inventory', 'Current Asset'],
+              ['1800', 'Land', 'Fixed Asset'],
+              ['1000', 'Bank of America Account', 'Bank'],
+              ['1030', 'Receviables', 'Accounts Receviable'],
+              ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+              ['1033', 'TAFS - Reserve', 'Current Asset'],
+              ['1050', 'Advances Given', 'Current Asset'],
+              ['1055', 'Loans Given', 'Current Asset'],
+              ['1056', 'Deductible', 'Current Asset'],
+              ['1100', 'Undeposited Funds', 'Current Asset'],
+              ['1500', 'Parts Inventory', 'Current Asset'],
+              ['1800', 'Land', 'Fixed Asset'],
+              ['1000', 'Bank of America Account', 'Bank'],
+              ['1030', 'Receviables', 'Accounts Receviable'],
+              ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+              ['1033', 'TAFS - Reserve', 'Current Asset'],
+              ['1050', 'Advances Given', 'Current Asset'],
+              ['1055', 'Loans Given', 'Current Asset'],
+              ['1056', 'Deductible', 'Current Asset'],
+              ['1100', 'Undeposited Funds', 'Current Asset'],
+              ['1500', 'Parts Inventory', 'Current Asset'],
+              ['1800', 'Land', 'Fixed Asset'],
+          ],
+          dom: 'rtp',
+          orderCellsTop: true,
+          // scrollY: '500px',
+          // scrollCollapse: true,
+          // paging: false,
+          autoWidth: false,
+          order: [[0, 'asc']],
+          initComplete: function () {
+          },
+          conditionalPaging: true,
+          columns: [
+              { title: 'Account No', },
+              { title: 'Desc', },
+              { title: 'Type', },
+          ],
+      };
+      
+      var tbNames = {
+          data: [
+              ['ALI, MOHAMED MIRE'],
+              ['BELEDI, ABDULAHI'],
+              ['BELLEVUE, NEWTON'],
+              ['DANIEL, JOHN EDOUARD'],
+              ['DERNE, HENOCK'],
+              ['DOE, JOHN'],
+          ],
+          dom: 'tp',
+          orderCellsTop: true,
+          initComplete: function () {
+          },
+          conditionalPaging: true,
+          columns: [
+              { title: 'Names', },
+          ],
+      };
+      
+      var tbTrucks = {
+          data: [
+              ['222947', 'CS'],
+              ['222961', 'CS'],
+              ['222969', 'CS'],
+              ['252401', 'CS'],
+              ['333666', 'B1'],
+              ['809846', 'CS'],
+              ['834600', 'CS'],
+          ],
+          dom: 'tp',
+          orderCellsTop: true,
+          initComplete: function () {
+          },
+          conditionalPaging: true,
+          columns: [
+              { title: 'Truck No',},
+              { title: 'Type',},
+          ],
+      };
+    </script>
+  </body>
+</html>

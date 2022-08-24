@@ -1,0 +1,17 @@
+.modal#no-paddings-modal.fade(tabindex='-1')
+    .modal-dialog.modal-xl.modal--no-padding
+        .modal-content
+            .modal-header
+                h5.modal-title Default modal
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span &times;
+            .modal-body
+                .table.table-responsive.m-0
+                    table.table.table-bordered.compact.js-datatable#zero(cellspacing='0' data-var='zeroTable' style='margin: 0 !important;')
+                        thead
+                            th
+                            th
+                            th
+            .modal-footer
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary(type='button') Save changes

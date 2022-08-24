@@ -1,0 +1,20 @@
+.modal#parts-used-modal.fade(tabindex='-1')
+    .modal-dialog
+        .modal-content
+            .modal-header
+                h5.modal-title Parts Used
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span &times;
+            .modal-body
+                label.setting__fields--label
+                    p Qly used
+                    input.form-control(type='number' value="0")
+                label.setting__fields--label
+                    p Cost Each
+                    input.form-control(type='number' value="0")
+                label.setting__fields--label
+                    p Line Total
+                    div 200.00
+            .modal-footer
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary(type='button') Save changes

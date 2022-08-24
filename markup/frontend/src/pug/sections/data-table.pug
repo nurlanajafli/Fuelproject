@@ -1,0 +1,65 @@
+include dt-toolbar
+.d-flex.justify-content-between
+    h6 from left
+    h6 and right
++DTToolbar('justify')
+.table.table-responsive
+    table.table.table-bordered.compact.js-datatable#first(cellspacing='0' data-var='firstTable')
+        thead
+            th
+            th
+            th
+            th
+            th
+            th
+        tfoot
+            th
+            th
+            th
+            th
+            th
+            th
+
+hr.m-5
+
+h6 only left
++DTToolbar('left')
+.table.table-responsive
+    table.table.table-bordered.compact.js-datatable#second(cellspacing='0' data-var='secondTable')
+        thead
+            th
+            th
+            th
+        tfoot
+            th
+            th
+            th
+
+hr.m-5
+
+h6.text-right only right
++DTToolbar('right')
+.table.table-responsive
+    table.table.table-bordered.compact.js-datatable#third(cellspacing='0' data-var='thirdTable')
+        thead
+            th
+            th
+            th
+        tfoot
+            th
+            th
+            th
+
+hr.m-5
+
+//h2 rowGroup
+//.table.table-responsive
+//    table.table.table-bordered.compact.js-datatable#fourth(cellspacing='0')
+//        thead
+//            th
+//            th
+//            th
+//        tfoot
+//            th
+//            th
+//            th

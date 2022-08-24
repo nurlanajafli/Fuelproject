@@ -1,0 +1,52 @@
+.modal.modal-slider.fade(tabindex='-1')
+    .modal-dialog.modal-xl
+        .modal-content
+            .modal-header.bg-primary.text-white
+                h5.modal-title Modal Slider
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span.text-white &times;
+            .modal-body
+                .modal-slider__content.owl-carousel
+                    div.col
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium atque, autem ducimus esse in ipsum, laborum maxime mollitia nostrum omnis optio porro praesentium quae quasi quod reprehenderit ut, veniam veritatis.
+                    div
+                        include ../../sections/bootstrap-table
+                    div
+                        include ../../sections/forms/layouts
+                    div
+                        form.modal-form
+                            .col-6
+                                .form-group
+                                    label Date/Time
+                                    .input-group
+                                        input.form-control(type='date')
+                                        input.form-control(type='text' data-mask='00:00' placeholder='00:00')
+                                span or
+                                .form-group
+                                    label Date/Time
+                                    .input-group
+                                        input.form-control(type='text' data-mask='00/00/0000' placeholder='00/00/0000')
+                                        input.form-control(type='text' data-mask='00:00' placeholder='00:00')
+                                .form-group
+                                    label Last Action
+                                    select.form-control
+                                        option(value='#') Assigned
+                                        option(value='#') Confirmed
+                                        option(value='#') At Origin
+                                        option(value='#') Loading
+                                        option(value='#') Moving
+                                        option(value='#') At Destination
+                                        option(value='#') Unloading
+                                        option(value='#') Dropped
+                                        option(value='#') Hold
+                                        option(value='#') Rejected
+                                        option(value='#') Custom Hold
+                                        option(value='#') Custom Released
+                                        option(value='#') Out For Delivery
+                            .col
+                                .form-group
+                                    .label Notes
+                                    textarea.form-control(rows='5')
+            .modal-footer.bg-light
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary(type='button') Save changes

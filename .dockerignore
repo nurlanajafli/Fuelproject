@@ -1,0 +1,9 @@
+.git
+/.idea
+/vendor
+node_modules
+runtime
+web
+gii
+/.docker/database
+/.docker/redis

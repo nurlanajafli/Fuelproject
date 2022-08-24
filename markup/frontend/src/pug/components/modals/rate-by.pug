@@ -1,0 +1,147 @@
+.modal#random-id-for-launch-by-button-2.fade(tabindex='-1')
+    .modal-dialog.modal-xl
+        .modal-content
+            .modal-header.bg-primary.text-white
+                h5.modal-title Rate By
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span.text-white &times;
+            .modal-body
+                form#rateLoadForm.js-fp(action='/load/rate?id=11' method='post')
+                    input(type='hidden' name='_csrf-frontend' value='lL78KxzOj-VrtUqS38XZ8CRyfmFB-i5A4OiFObD9HTDH881lfavV3Qb5HfG-97SnRSgbVCuweAaov9xwyrpUQQ==')
+                    .row
+                        .col-6
+                            .row.field-rate-source.required.align-items-center
+                                label.col-sm-2(for='rate-source') Source
+                                .col-sm-6
+                                    select#rate-source.form-control(name='Rate[source]' aria-required='true')
+                                        option(value='Manual' selected='') Manual
+                                        option(value='Load Matrix') Load Matrix
+                                        option(value='Commodity Matrix') Commodity Matrix
+                                    .invalid-feedback
+                        .col-6
+                            .row.field-rate-matrixnumber.align-items-center
+                                label.col-sm-3(for='rate-matrixnumber') Matrix No
+                                .col-sm-6
+                                    input#auto_6181001394673.form-control.dropdown-toggle(type='text' name='' value='' readonly='true' data-toggle='dropdown')
+                                    input#rate-matrixnumber.form-control.js-tdd-hidden(type='hidden' name='Rate[matrixNumber]')
+                                    .dropdown-menu.dropdown-menu--table
+                                        .table.table-responsive
+                                            script.
+                                                var tConf_6181001394720 = {
+                                                    data: [
+                                                        ['1', 'A', 'Z', 'ZipZip', '123'],
+                                                        ['1 C', 'A C', 'Z C', 'ZipZip', '123'],
+                                                        ['2', 'B', 'Y', 'ZoneZone', '123'],
+                                                        ['2 C', 'B C', 'Y C', 'ZoneZone', '123'],
+                                                        ['3', 'C', 'X', 'Geograph', '123'],
+                                                        ['3 C', 'C C', 'X C', 'Geograph', '123'],
+                                                    ],
+                                                    columns: [{title: "Matrix No"}, {title: "Matrix Name"}, {title: "Type"}, {title: "Method"}, {
+                                                        title: "Number",
+                                                        orderable: true,
+                                                        searchable: true,
+                                                        visible: false
+                                                    }],
+                                                    autoWidth: false,
+                                                    ordering: false,
+                                                    orderCellsTop: true,
+                                                    initComplete: function (settings) {
+                                                        let inputId = $(this).data("input");
+                                                        let initRow = function (row) {
+                                                            return row[0] == "";
+                                                        };
+                                                        $(this)
+                                                            .DataTable()
+                                                            .rows()
+                                                            .every(function (rowIdx, tableLoop, rowLoop) {
+                                                                let row = this.data();
+                                                                if (initRow(row)) {
+                                                                    $("#" + inputId).val(row[0]);
+                                                                }
+                                                            });
+                                                    },
+                                                    dom: "tp",
+                                                    buttons: [],
+                                                    stateSave: false,
+                                                    conditionalPaging: true,
+                                                };
+                                            #dt-6181001396162_wrapper.dataTables_wrapper.dt-bootstrap4.no-footer
+                                                table#dt-6181001396162.table.table-bordered.compact.js-datatable.js-dd.dataTable.no-footer(data-form-name='Rate' data-dest='rate-matrixnumber' data-callback='rateloadmxnuch' data-lookup='0' data-display='0' data-input='auto_6181001394673' data-var='tConf_6181001394720' role='grid')
+                                                    thead
+                                                        tr(role='row')
+                                                            th.sorting_disabled(rowspan='1' colspan='1') Matrix No
+                                                            th.sorting_disabled(rowspan='1' colspan='1') Matrix Name
+                                                            th.sorting_disabled(rowspan='1' colspan='1') Type
+                                                            th.sorting_disabled(rowspan='1' colspan='1') Method
+                                                    tbody
+                                                        tr.odd
+                                                            td.dataTables_empty(valign='top' colspan='4') No data available in table
+                                                #dt-6181001396162_paginate.dataTables_paginate.paging_simple_numbers(style='visibility: hidden;')
+                                                    ul.pagination
+                                                        li#dt-6181001396162_previous.paginate_button.page-item.previous.disabled
+                                                            a.page-link(href='#' aria-controls='dt-6181001396162' data-dt-idx='0' tabindex='0') Previous
+                                                        li#dt-6181001396162_next.paginate_button.page-item.next.disabled
+                                                            a.page-link(href='#' aria-controls='dt-6181001396162' data-dt-idx='1' tabindex='0') Next
+                                    .invalid-feedback
+                    hr
+                    .row
+                        .col-5
+                            .border.rounded.p-4
+                                .form-group.row.field-rateLoadRateBy
+                                    label.col-sm-4(for='rateLoadRateBy') Rate By
+                                    .col-sm-6
+                                        select#rateLoadRateBy.form-control(name='Rate[rateBy]')
+                                            option(value='') Select
+                                            option.null.ZipZip.Geograph.ZoneZone.Distance.Manual.LoadMatrix(value='Flat' selected='') Flat
+                                            option.null.ZipZip.Geograph.ZoneZone.Distance.Manual.LoadMatrix(value='Miles') Miles
+                                            option.ZipZip.Geograph.ZoneZone.LoadMatrix(value='Piece') Piece
+                                            option.ZipZip.Geograph.ZoneZone.LoadMatrix(value='Space') Space
+                                            option.ZipZip.Geograph.ZoneZone.LoadMatrix(value='Pound') Pound
+                                            option.ZipZip.Geograph.ZoneZone.LoadMatrix(value='Cwt') Cwt
+                                            option.ZipZip.Geograph.ZoneZone.Distance.LoadMatrix(value='Ton') Ton
+                                            option.ZipZip.Geograph.ZoneZone.LoadMatrix(value='Lot') Lot
+                                            option.ZipZip.Geograph.LoadMatrix(value='Multi') Multi
+                                            option.ZoneZone.LoadMatrix(value='Step') Step
+                                            option.ZoneZone.CommodityMatrix(value='Step') 1
+                                            option.ZoneZone.CommodityMatrix(value='Step') 2
+                                            option.ZoneZone.CommodityMatrix(value='Step') 3
+                                            option.ZoneZone.CommodityMatrix(value='Step') 4
+                                            option.ZoneZone.CommodityMatrix(value='Step') 5
+                                            option.ZoneZone.CommodityMatrix.LoadMatrix(value='Step') Mix
+                                            option.ZoneZone.CommodityMatrix.LoadMatrix(value='Step') Mix 1
+                                        .invalid-feedback
+                                .form-group.row.field-rateLoadRate
+                                    label.col-sm-4(for='rateLoadRate') Rate
+                                    .col-sm-6
+                                        input#rateLoadRate.form-control(type='number' name='Rate[rate]' value='7500.00' min='0' step='0.01')
+                                        .invalid-feedback
+                                .form-group.row.field-rate-units
+                                    label.col-sm-4(for='rate-units') Units
+                                    .col-sm-6
+                                        input#rate-units.form-control(type='number' name='Rate[units]' readonly='readonly' min='0' step='0.01')
+                                        .invalid-feedback
+                                .form-group.row
+                                    label.col-sm-4 Gross
+                                    p.col-sm-6 7500.00
+                        .col-5
+                            .border.rounded.p-4
+                                .form-group.row.field-rate-discountpct
+                                    label.col-sm-4(for='rate-discountpct') Discount Pct
+                                    .col-sm-6
+                                        input#rate-discountpct.form-control(type='number' name='Rate[discountPct]' value='0.10' min='0' step='0.01')
+                                        .invalid-feedback
+                                .form-group.row
+                                    label.col-sm-4 Discount Amt
+                                    p.col-sm-6 750
+                                .form-group.row
+                                    label.col-sm-4 Freight Rev
+                                    p.col-sm-6 6750
+                                .form-group.row
+                                    label.col-sm-4 Accessorials
+                                    p.col-sm-6 200
+                        .col-2
+                            | Total Revenue
+                            p.col-sm-6 6950
+            .modal-footer.bg-light
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary(type='button') Save changes

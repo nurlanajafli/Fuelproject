@@ -1,0 +1,13 @@
+.modal#large-modal.fade(tabindex='-1')
+    .modal-dialog.modal-xl
+        .modal-content
+            .modal-header
+                h5.modal-title Big modal
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span &times;
+            .modal-body
+                .row
+                    include ../../sections/forms/layouts
+            .modal-footer
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary(type='button') Save changes

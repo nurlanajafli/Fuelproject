@@ -1,0 +1,16 @@
+.modal.location-confirm-modal.fade(tabindex='-1')
+    .modal-dialog.modal-dialog-centered
+        .modal-content
+            .modal-header
+                h5.modal-title Express
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span &times;
+            .modal-body
+                .location-confirm-inner.py-4
+                    .location-confirm-left
+                        i.fas.fa.fa-question-circle.fa-3x
+                    .location-confirm-right
+                        p Location required for trailer tracking, update now?
+            .modal-footer
+                button.btn.btn-primary(type='button') Yes
+                button.btn.btn-secondary(type='button' data-dismiss='modal') No

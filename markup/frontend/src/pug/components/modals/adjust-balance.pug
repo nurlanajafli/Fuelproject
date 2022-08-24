@@ -1,0 +1,59 @@
+.modal#random-id-for-launch-by-button-3.fade(tabindex='-1')
+    .modal-dialog.modal-xs
+        .modal-content
+            .modal-header
+                h5.modal-title Adjust Balance
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span &times;
+            .modal-body
+                .row.field
+                    .col-3
+                        label Data
+                    .col-5
+                        input.form-control(type='date')
+                .row.field
+                    .col-3
+                        label GL Acct
+                    .col-5
+                        select.form-control
+                            option(value='#') 9999
+                            option(value='#') 9999
+                            option(value='#') 9999
+                .row.field
+                    .col-3
+                        label Data
+                    .col-5
+                        select.form-control
+                            option(value='#') 1
+                            option(value='#') 1
+                            option(value='#') 1
+                .row.field
+                    .col-3
+                        label Amount
+                    .col-5
+                        input.form-control(type='text' value='-0.04')
+                .row.field
+                    .col-3
+                        label Out Ref
+                    .col-5
+                        input.form-control(type='text')
+                .row.field
+                    .col-3
+                        label UDF
+                    .col-5
+                        input.form-control(type='text')
+                .row.field
+                    .col-3
+                        label Memo
+                    .col-9
+                        textarea.form-control(name='memo' rows='5')
+                .row.field.mt-4
+                    .col-6.text-center
+                        p Amounk Owed BEFORE Adjustment
+                        p.form-readonly-text 0.03
+                    .col-6.text-center
+                        p Amounk Owed AFTER Adjustment
+                        p.form-readonly-text 0.07
+            .modal-footer
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary(type='button') Save changes

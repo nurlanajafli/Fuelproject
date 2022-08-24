@@ -1,0 +1,140 @@
+extends pug/layouts/dashboard
+
+block title
+    title Driver Compliance
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 Driver Compliance Info
+        .card.shadow.mb-4
+            .card-header.py-3
+                .edit-form-toolbar
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='New')
+                        i.fas.fa-plus
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Image')
+                        i.fas.fa-image
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Eraser')
+                        i.fas.fa-eraser
+            .card-body
+                section.edit-form
+                    nav#nav-tab.nav.nav-tabs
+                        a#nav-summary-tab.nav-link.active(data-toggle='tab' href='#nav-summary') Summary
+                        a#nav-claims-tab.nav-link(data-toggle='tab' href='#nav-claims') Claims & Accidents
+                        a#nav-violations-tab.nav-link(data-toggle='tab' href='#nav-violations') Log Violations
+                    #nav-tabContent.tab-content
+                        #nav-summary.tab-pane.fade.show.active
+                            .col-6
+                                .form-fieldset
+                                    .col-10.pl-3
+                                        p.form-readonly-text FARAH, ABBAS
+                                        p.form-readonly-text 4598 SLATER RD #207
+                                        p.form-readonly-text EAGAN, MN 55122
+                                        p.form-readonly-text Owner Operator
+                                        .row
+                                            .col-4
+                                                p Phone
+                                        .row
+                                            .col-4
+                                                p Cell
+                                            .col-8
+                                                p.form-readonly-text 952-200-1451
+                                        .row
+                                            .col-4
+                                                p Other
+                                        .row
+                                            .col-4
+                                                p Email
+                                            .col-8
+                                                p.form-readonly-text mailexample@gmail.com
+                                        .row
+                                            .col-4
+                                                p Hired
+                                            .col-8
+                                                p.form-readonly-text 12/15/2020
+                                .form-fieldset
+                                    span.form-legend CDL
+                                    .col.pl-4
+                                        .form-row.text-center
+                                            .col-5
+                                                label(for='#cdl-number') CDL Number
+                                                input.form-control(type='text' id='#cdl-number' placeholder='CDL Number')
+                                            .col-3
+                                                label St
+                                                select.form-control
+                                                    option(value='#') MN
+                                                    option(value='#') NY
+                                                    option(value='#') LA
+                                                    option(value='#') TX
+                                                    option(value='#') MX
+                                            .col-4
+                                                label Expires
+                                                input.form-control(type='date')
+                                        hr
+                                        .form-row.align-items-center
+                                            .col-3.offset-2
+                                                .custom-control.custom-checkbox
+                                                    input(type="checkbox" class="custom-control-input" id="hazmat")
+                                                    label(class="custom-control-label" for="hazmat") HazMat
+                                            .col-5
+                                                .d-flex.align-items-center
+                                                    label.mb-0 Expires
+                                                    input.form-control.ml-3(type='date')
+                                .form-fieldset
+                                    span.form-legend Access
+                                    .form-row.text-center
+                                        .col-4
+                                            label ACE ID
+                                            input.form-control(type='text')
+                                        .col-4
+                                            label FAST ID
+                                            input.form-control(type='text')
+                                        .col-4
+                                            label Expires
+                                            input.form-control(type='date')
+                                .form-fieldset
+                                    span.form-legend Activity Tracking
+                                    .form-row.text-center.mb-3
+                                        .col-3
+                                            label Last Drug <br> Test
+                                            input.form-control.text-center(type='date')
+                                        .col-3
+                                            label Last Alcohol <br> Test
+                                            input.form-control.text-center(type='date')
+                                        .col-3
+                                            label Next DOT <br> Physical
+                                            input.form-control.text-center(type='date')
+                                        .col-3
+                                            label Work Auth <br> Expires
+                                            input.form-control.text-center(type='date')
+                                    .form-row.text-center
+                                        .col-3
+                                            label Next FFD <br> Evaluation
+                                            input.form-control.text-center(type='date')
+                                        .col-3
+                                            label Next H2S <br> Certification
+                                            input.form-control.text-center(type='date')
+                                        .col-3
+                                            label Next Vio <br> Review
+                                            input.form-control.text-center(type='date')
+                                        .col-3
+                                            label Next MVR <br> Review
+                                            input.form-control.text-center(type='date')
+                            .col-6
+                        #nav-claims.tab-pane.fade
+                            .col-12
+                        #nav-violations.tab-pane.fade
+                            .col-12
+
+block modals
+    .modal#js-row-remove.fade(tabindex='-1')
+        .modal-dialog.modal-dialog-centered
+            .modal-content
+                .modal-header
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span &times;
+                .modal-body.my-4
+                    p.text-lg.text-center Are you sure to delete this item?
+                .modal-footer
+                    button.btn.btn-secondary(type='button' data-dismiss='modal') Cancel
+                    button.btn.btn-primary(type='submit') Confirm
+block scripts

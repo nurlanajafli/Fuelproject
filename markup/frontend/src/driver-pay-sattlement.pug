@@ -1,0 +1,179 @@
+doctype html
+head
+    meta(charset='utf-8')
+    title Driver Pay Sattlement
+    link(rel='stylesheet' href='css/print.css')
+body
+    .container
+        .doc
+            table.w-100
+                tbody
+                    tr.clearfix
+                        td.w-82.border-0
+                            p Gurman Trucking Inc
+                            p 6900 S Orange Blossom Tr st# 400
+                            p.text-uppercase ORLANDO, FL 32809
+                            p P: 4075744443  F: 4075744443
+                        td.w-18.border-0.va-bottom.text-right
+                            p.text-right Main Office
+            .doc__table.mb-10
+                .doc__table-header.border.clearfix
+                    p.text-uppercase.text-right.pull-left.w-60 DRIVER PAY SETTLEMENT
+                    p.text-right.pull-left.w-40 Page 1 of 1
+                table
+                    tbody
+                        tr
+                            td.border-0.w-50
+                                p Name: <span>ALI, MOHAMED MIRE</span>
+                                p Pay To: <span>ALI, MOHAMED MIRE</span>
+                            td.border-0.w-25
+                                p Period Start: <span>12/21/20</span>
+                                p Period End: <span>12/27/20</span>
+                            td.border-0.w-25
+                                p Check Date: <span>12/30/20</span>
+                                p Batch: <span>60</span>
+            .doc__table.mb-50
+                .doc__table-header.border
+                    p.text-uppercase.text-center SUMMARY
+                table
+                    tbody
+                        tr
+                            td.border-0.w-50
+                                p Dispatch Pay: <span>16,500.00</span>
+                                p Total Pay: <span>16,500.00</span>
+                            td.border-0.w-50
+                                p Gross: <span>16,500.00</span>
+                                p Adjustments: <span>10,973.73</span>
+                                p Net Amount: <span>5,526.27</span>
+            .doc__table.mb-10
+                .doc__table-header.border
+                    p.text-uppercase.text-center DISPATCH PAY
+                table
+                    thead.doc__table-head
+                        tr.va-bottom
+                            th Load
+                            th Date
+                            th From
+                            th To
+                            th Pay Code
+                            th Pay Type
+                            th.text-right Loaded<br>Rate
+                            th.text-right Empty<br>Rate
+                            th.text-right Load<br>Revenue
+                            th.text-right Total<br>Pay
+                    tbody.doc__table-body
+                        tr
+                            td 130185
+                            td 12/24
+                            td PERRIS, CA
+                            td Coppell, TX
+                            td Load
+                            td Percent
+                            td.text-right 0.75
+                            td.text-right 0.00
+                            td.text-right 7,000.00
+                            td.text-right 5,250.00
+                        tr
+                            td 130191
+                            td 12/27
+                            td Phoenix, AZ
+                            td LANCASTER, NY
+                            td Load
+                            td Percent
+                            td.text-right 0.75
+                            td.text-right 0.00
+                            td.text-right 15,000.00
+                            td.text-right 11,250.00
+                    tfoot
+                        tr
+                            td(colspan='6').text-right Totals
+                            td.text-right
+                            td.text-right
+                            td.text-right 22,000.00
+                            td.text-right 16,500.00
+            .clearfix
+                .w-73.py-0.mr-2.pull-left
+                    .doc__table
+                        .doc__table-header.border
+                            p.text-uppercase.text-center PAY ADJUSTMENTS
+                        table
+                            thead
+                                tr
+                                    th Type
+                                    th.text-right Amt
+                                    th Truck No
+                                    th Description
+                            tbody
+                                tr
+                                    td 13 Cents Per Mile
+                                    td.text-right -746.85
+                                    td
+                                    td
+                                tr
+                                    td Administrative Fees
+                                    td.text-right -35.00
+                                    td
+                                    td
+                                tr
+                                    td IFTA
+                                    td.text-right -35.00
+                                    td
+                                    td
+                                tr
+                                    td Insurance Lease
+                                    td.text-right -450.00
+                                    td
+                                    td
+                                tr
+                                    td Other
+                                    td.text-right -2995.83
+                                    td
+                                    td ALI, MOHAMED MIRE
+                                tr
+                                    td Other
+                                    td.text-right -1820.50
+                                    td
+                                    td PILOT/FUEL
+                                tr
+                                    td Other
+                                    td.text-right -1020.82
+                                    td
+                                    td RYDER/SERVICE 11.26 E 49222
+                                tr
+                                    td Other
+                                    td.text-right -2995.83
+                                    td
+                                    td SHEIKH SAID MADI
+                                tr
+                                    td Toll
+                                    td.text-right -18.90
+                                    td
+                                    td 12/21/20-12/21/20KTA
+                                tr
+                                    td Trailer Fee
+                                    td.text-right -125.00
+                                    td
+                                    td
+                                tr
+                                    td Truck Lease
+                                    td.text-right -730.00
+                                    td
+                                    td
+                            tfoot
+                                tr
+                                    td.text-right Total Adjustments
+                                    td.text-right -10,973.73
+                .w-25.p-0.pull-left
+                    .doc__table
+                        .doc__table-header.border
+                            p.text-uppercase.text-center BALANCES
+                        table
+                            thead
+                                tr
+                                    td Description
+                                    td.text-right Balance
+                            tbody
+                                tr
+                                    td Advances Given
+                                    td.text-right 2,648.99
+

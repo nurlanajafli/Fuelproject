@@ -1,0 +1,41 @@
+.location-map
+	position: relative
+
+	&__panel
+		position: absolute
+		right: 0
+		background-color: rgba($clr-white, 0.88)
+		padding: 0
+		z-index: 1
+		box-shadow: -1px 1px 4px 0px rgba(78,114,223,0.25)
+
+	&__list
+		margin: 0
+		padding: 0 10px
+		list-style-type: none
+		max-height: 502px
+		overflow: auto
+
+	&__option
+		padding: 8px 10px
+		cursor: pointer
+		border-radius: 0
+		border-top: 1px solid #DDDDDD
+		&:first-child
+			border-top: 0
+		&:last-child
+			border-bottom: 1px solid #DDDDDD
+		&.active
+			background-color: $clr-primary
+			color: $clr-white
+			border-color: currentColor
+			& + li
+				border-top: 0
+
+		&-label
+			padding: 8px
+			border-top: 1px solid #DDDDDD
+			color: $clr-blue
+
+	&__actions
+		padding: 15px 10px

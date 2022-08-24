@@ -1,0 +1,116 @@
+.modal.clear-load-modal.fade(tabindex='-1')
+    .modal-dialog.modal-xl
+        .modal-content
+            .modal-header.bg-primary.text-white
+                h5.modal-title Clear Load 129853 - TL
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span.text-white &times;
+            .modal-toolbar.bg-light
+                button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Plus')
+                    i.fas.fa-plus
+                button.btn.btn-link.js-show-load-cleaning(data-tooltip='tooltip' data-placement='top' title='Image')
+                    i.fas.fa-image
+                button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Check')
+                    i.fas.fa-check
+                button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Undo')
+                    i.fas.fa-undo
+                button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Info')
+                    i.fas.fa-info
+                button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Times')
+                    i.fas.fa-times
+            .modal-body
+                .modal-border
+                    .row
+                        .col-6
+                            .field.row
+                                .col-2
+                                    label Carrier
+                                .col-10
+                                    span.form-readonly-text DM WORLD TRANSPORTATION LLC
+                            .field.row
+                                .col-2
+                                    label Truck
+                                .col-10
+                                    span.form-readonly-text 123456
+                        .col-4
+                            .field.row
+                                .col-4
+                                    label Dispatches
+                                .col-8
+                                    span.form-readonly-text 1
+                            .field.row
+                                .col-4
+                                    label Scans
+                                .col-4
+                                    span.form-readonly-text 5
+                                .col-4
+                                    .custom-control.custom-checkbox
+                                        input(type="checkbox" class="custom-control-input" id="custom-check")
+                                        label(class="custom-control-label" for="custom-check")
+                        .col-2.border-left-secondary
+                            .text-center.mb-1
+                                label Load Cleared?
+                                p.form-readonly-text No
+                            .text-center
+                                label Backup Cleared?
+                                p.form-readonly-text Yes
+                .js-load-cleaning(style="display: none;")
+                    .row
+                        .col-6
+                            .d-flex
+                                p Now Clearing:
+                                span.form-readonly-text  Backup
+                            .table.table-responsive
+                                table.table.table-bordered.compact.js-datatable.w-100(data-var='clearData' style="margin:0 !important;")
+                                    thead
+                                        tr
+                                            th
+                                            th
+                                            th
+                                            th
+                        .col-3
+                            .field
+                                p Scans
+                            .table.table-responsive
+                                table.table.table-bordered.compact.js-datatable.w-100(data-var='scansData' style="margin:0 !important;")
+                                    thead
+                                        tr
+                                            th
+                                            th
+                        .col-3
+                            .field
+                                p &nbsp;
+                            .border
+                                table.table.table-sm.text-center.border-0
+                                    thead
+                                        tr
+                                            td Required Backup
+                                    tbody
+                                        tr
+                                            td.border-0.form-readonly-text Bill of Lading
+                                        tr
+                                            td.border-0.form-readonly-text Rate Confirmations
+                    .row.mt-3
+                        .col-6.clearfix
+                            .float-right
+                                button.btn.btn-primary(data-tooltip='tooltip' data-placement='top' title='Save')
+                                    i.fas.fa-save
+                                button.btn.btn-primary(data-tooltip='tooltip' data-placement='top' title='Save')
+                                    i.far.fa-save
+                                button.btn.btn-primary(data-tooltip='tooltip' data-placement='top' title='Save')
+                                    i.fas.fa-star
+                                button.btn.btn-primary(data-tooltip='tooltip' data-placement='top' title='Star')
+                                    i.far.fa-star
+                        .col-3.clearfix
+                            .float-right
+                                button.btn.btn-primary(data-tooltip='tooltip' data-placement='top' title='Image')
+                                    i.fas.fa-image
+                        .col-3.clearfix
+                            .float-right
+                                button.btn.btn-primary(data-tooltip='tooltip' data-placement='top' title='Left')
+                                    i.fas.fa-arrow-left
+                                button.btn.btn-primary(data-tooltip='tooltip' data-placement='top' title='Right')
+                                    i.fas.fa-arrow-right
+            .modal-footer.bg-light
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary(type='button') Save changes

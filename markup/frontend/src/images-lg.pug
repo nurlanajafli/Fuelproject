@@ -1,0 +1,87 @@
+extends pug/layouts/dashboard
+
+block title
+    title Images in table variant
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 Images
+        .card.shadow.mb-4
+            .card-header.py-3
+                h6.m-0.font-weight-bold.text-primary Images in table
+            .card-body
+                h4.h4.mb-3 Gallery mode (.js-lg-gallery)
+                table.table.table-bordered
+                    thead.table-dark
+                        tr
+                            th #
+                            th Truck
+                            th Desc
+                            th Image
+                    tbody
+                        tr
+                            th 1
+                            td 1234
+                            td Some text
+                            td
+                                a(href='https://images.unsplash.com/photo-1508138221679-760a23a2285b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050' class='js-lg-gallery') 1.JPG
+                                    img.d-none(src='https://images.unsplash.com/photo-1508138221679-760a23a2285b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050')
+                        tr
+                            th 2
+                            td 1234
+                            td Some text
+                            td
+                                a(href='https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050' class='js-lg-gallery') 2.JPG
+                                    img.d-none(src='https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050')
+                        tr
+                            th 3
+                            td 1234
+                            td Some text
+                            td
+                                a(href='https://images.unsplash.com/photo-1508754039285-f78290179120?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050' class='js-lg-gallery') 3.JPG
+                                    img.d-none(src='https://images.unsplash.com/photo-1508754039285-f78290179120?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050')
+                        tr
+                            th 2
+                            td 1234
+                            td Some text
+                            td
+                                a(href='https://images.unsplash.com/photo-1443106479821-1617f92e6983?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050' class='js-lg-gallery') 4.JPG
+                                    img.d-none(src='https://images.unsplash.com/photo-1443106479821-1617f92e6983?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050')
+                hr.m-5
+                h4.h4.mb-3 Single mode (.js-lg-single)
+                table.table.table-bordered
+                    thead.table-dark
+                        tr
+                            th #
+                            th Truck
+                            th Desc
+                            th Image
+                    tbody
+                        tr
+                            th 1
+                            td 1234
+                            td Some text
+                            td
+                                a(href='https://images.unsplash.com/photo-1508138221679-760a23a2285b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050' class='js-lg-single') 1.JPG
+                                    img.d-none(src='https://images.unsplash.com/photo-1508138221679-760a23a2285b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050')
+                        tr
+                            th 2
+                            td 1234
+                            td Some text
+                            td
+                                a(href='https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050' class='js-lg-single') 2.JPG
+                                    img.d-none(src='https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050')
+                        tr
+                            th 3
+                            td 1234
+                            td Some text
+                            td
+                                a(href='https://images.unsplash.com/photo-1508754039285-f78290179120?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050' class='js-lg-single') 3.JPG
+                                    img.d-none(src='https://images.unsplash.com/photo-1508754039285-f78290179120?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050')
+                        tr
+                            th 2
+                            td 1234
+                            td Some text
+                            td
+                                a(href='https://images.unsplash.com/photo-1443106479821-1617f92e6983?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050' class='js-lg-single') 4.JPG
+                                    img.d-none(src='https://images.unsplash.com/photo-1443106479821-1617f92e6983?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050')

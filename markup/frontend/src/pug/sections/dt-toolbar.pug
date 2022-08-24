@@ -1,0 +1,60 @@
+mixin DTToolbar(type)
+    if (type == 'justify')
+        .dt-toolbar.justify-content-between
+            .dt-toolbar__left
+                .dt-toolbar-actions
+                    a(href='#').btn.btn-success New
+                .dt-toolbar-filter.js-table-filter
+                    .dt-toolbar-filter-item
+                        select.form-control(data-column-index='1')
+                    .dt-toolbar-filter-item
+                        select.custom-select(data-column-index='2')
+            .dt-toolbar__right
+                ul.dt-toolbar-legend
+                    li.dt-legend-load--yellow(data-toggle="tooltip" data-placement="top" title="Load is 'Droppped', that is, it has been picked up by a driver/carrier and dropped at a location other than the final consignee.")
+                    li.dt-legend-load--blue(data-toggle="tooltip" data-placement="top" title="Load is 'Reserved' for a driver or carrier.")
+                    li.dt-legend-load--light-gray(data-toggle="tooltip" data-placement="top" title="'Possible load - a 'Possible' load is just that - one that may or may not happen.'")
+                    li.dt-legend-load--gray(data-toggle="tooltip" data-placement="top" title="'Pending' load - a 'Pending' load is visible only to the user who created it. A Pending load is one that you do not want released until a specific date, at which point the load becomes visible to all.")
+                    li.dt-legend-load--light-orange(data-toggle="tooltip" data-placement="top" title="Load is 2-8 hours out from Pickup or Delivery.")
+                    li.dt-legend-load--medium-orange(data-toggle="tooltip" data-placement="top" title="Load is 1-2 hours out from Pickup or Delivery.")
+                    li.dt-legend-load--dark-orange(data-toggle="tooltip" data-placement="top" title="Load is within 1 hour of Pickup or Delivery.")
+                    li.dt-legend-load--red(data-toggle="tooltip" data-placement="top" title="Load is 'Late' for Pickup or Delivery.")
+                    li.dt-legend-load--white(data-toggle="tooltip" data-placement="top" title="Load is 'Available' and is not assigned nor has it been dropped.")
+    if (type == 'left')
+        .dt-toolbar
+            .dt-toolbar-actions
+                a(href='#').btn.btn-success New
+            .dt-toolbar-filter.js-table-filter
+                .dt-toolbar-filter-item
+                    select.form-control(data-column-index='1')
+                .dt-toolbar-filter-item
+                    select.custom-select(data-column-index='2')
+            ul.dt-toolbar-legend
+                li.dt-legend-load--yellow(data-toggle="tooltip" data-placement="top" title="Load is 'Droppped', that is, it has been picked up by a driver/carrier and dropped at a location other than the final consignee.")
+                li.dt-legend-load--blue(data-toggle="tooltip" data-placement="top" title="Load is 'Reserved' for a driver or carrier.")
+                li.dt-legend-load--light-gray(data-toggle="tooltip" data-placement="top" title="'Possible load - a 'Possible' load is just that - one that may or may not happen.'")
+                li.dt-legend-load--gray(data-toggle="tooltip" data-placement="top" title="'Pending' load - a 'Pending' load is visible only to the user who created it. A Pending load is one that you do not want released until a specific date, at which point the load becomes visible to all.")
+                li.dt-legend-load--light-orange(data-toggle="tooltip" data-placement="top" title="Load is 2-8 hours out from Pickup or Delivery.")
+                li.dt-legend-load--medium-orange(data-toggle="tooltip" data-placement="top" title="Load is 1-2 hours out from Pickup or Delivery.")
+                li.dt-legend-load--dark-orange(data-toggle="tooltip" data-placement="top" title="Load is within 1 hour of Pickup or Delivery.")
+                li.dt-legend-load--red(data-toggle="tooltip" data-placement="top" title="Load is 'Late' for Pickup or Delivery.")
+                li.dt-legend-load--white(data-toggle="tooltip" data-placement="top" title="Load is 'Available' and is not assigned nor has it been dropped.")
+    if (type == 'right')
+        .dt-toolbar.justify-content-end
+            .dt-toolbar-actions
+                a(href='#').btn.btn-success New
+            .dt-toolbar-filter.js-table-filter
+                .dt-toolbar-filter-item
+                    select.form-control(data-column-index='1')
+                .dt-toolbar-filter-item
+                    select.custom-select(data-column-index='2')
+            ul.dt-toolbar-legend
+                li.dt-legend-load--yellow(data-toggle="tooltip" data-placement="top" title="Load is 'Droppped', that is, it has been picked up by a driver/carrier and dropped at a location other than the final consignee.")
+                li.dt-legend-load--blue(data-toggle="tooltip" data-placement="top" title="Load is 'Reserved' for a driver or carrier.")
+                li.dt-legend-load--light-gray(data-toggle="tooltip" data-placement="top" title="'Possible load - a 'Possible' load is just that - one that may or may not happen.'")
+                li.dt-legend-load--gray(data-toggle="tooltip" data-placement="top" title="'Pending' load - a 'Pending' load is visible only to the user who created it. A Pending load is one that you do not want released until a specific date, at which point the load becomes visible to all.")
+                li.dt-legend-load--light-orange(data-toggle="tooltip" data-placement="top" title="Load is 2-8 hours out from Pickup or Delivery.")
+                li.dt-legend-load--medium-orange(data-toggle="tooltip" data-placement="top" title="Load is 1-2 hours out from Pickup or Delivery.")
+                li.dt-legend-load--dark-orange(data-toggle="tooltip" data-placement="top" title="Load is within 1 hour of Pickup or Delivery.")
+                li.dt-legend-load--red(data-toggle="tooltip" data-placement="top" title="Load is 'Late' for Pickup or Delivery.")
+                li.dt-legend-load--white(data-toggle="tooltip" data-placement="top" title="Load is 'Available' and is not assigned nor has it been dropped.")

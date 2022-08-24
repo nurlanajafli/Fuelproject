@@ -1,0 +1,13 @@
+actor: ApiTester
+modules:
+  enabled:
+    - REST:
+        part: Json
+        depends: Yii2
+    - DataFactory:
+        factories: tests/_support/factories
+        depends: Yii2
+    - Asserts
+    - garage\tests\helpers\Oauth2
+    - garage\tests\helpers\Api
+suite_namespace: garage\tests\api

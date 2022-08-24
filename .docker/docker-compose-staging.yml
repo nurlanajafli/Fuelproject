@@ -1,0 +1,15 @@
+version: "3.9"
+   
+services:
+  app:
+    image: nexus.jafton.com:5000/tms/app:staging
+    env_file: staging.env
+    depends_on:
+      - redis
+    volumes:
+      - /home/ubuntu/tms_data/cdn/uploads:/var/www/app/cdn/web
+      - /home/ubuntu/tms_data/vendor:/var/www/app/vendor
+    ports:
+      - "90:80"
+  redis:
+    image: redis

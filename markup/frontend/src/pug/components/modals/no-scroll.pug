@@ -1,0 +1,12 @@
+.modal.modal--no-scroll#random-id-for-launch-by-button-0.fade(tabindex='-1')
+    .modal-dialog.modal-full
+        .modal-content
+            .modal-header.bg-primary.text-white
+                h5.modal-title DT Column search
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span.text-white &times;
+            .modal-body
+                include ../../sections/data-table
+            .modal-footer.bg-light
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary(type='button') Save changes

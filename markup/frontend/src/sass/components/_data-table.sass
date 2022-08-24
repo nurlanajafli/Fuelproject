@@ -1,0 +1,286 @@
+.dt-actions
+	display: flex
+	.btn
+		&:not(:last-child)
+			margin-right: 5px
+.actions
+	width: 200px !important
+	min-width: 0
+	max-width: none
+	input
+		display: none
+
+.dataTable
+	tbody
+		tr:not([class*="load"])
+			&:hover
+				background-color: rgba($clr-black, 0.05)
+
+.dataTable
+	.load
+		&-light-gray
+			background-color: $load-light-gray
+			color: #B32A23
+			a
+				color: #B32A23
+
+		&-gray
+			background-color: $load-gray
+			color: lighten($clr-black, 10)
+			a
+				color: lighten($clr-black, 10)
+
+		&-blue
+			background-color: $load-blue
+			color: lighten($clr-black, 10)
+			a
+				color: lighten($clr-black, 10)
+
+		&-red
+			background-color: $load-red
+			color: lighten($clr-white, 10)
+			a
+				color: lighten($clr-white, 10)
+		&-light-orange
+			background-color: $load-light-orange
+			color: lighten($clr-black, 10)
+			a
+				color: lighten($clr-black, 10)
+		&-medium-orange
+			background-color: $load-medium-orange
+			color: lighten($clr-black, 10)
+			a
+				color: lighten($clr-black, 10)
+		&-dark-orange
+			background-color: $load-dark-orange
+			color: lighten($clr-black, 10)
+			a
+				color: lighten($clr-black, 10)
+		&-yellow
+			background-color: $load-yellow
+			color: lighten($clr-black, 10)
+			a
+				color: lighten($clr-black, 10)
+
+	.driver
+		&-text
+			&-red
+				color: #FF0000
+			&-orange
+				color: #FF6000
+
+// custom styles
+table.dataTable thead td
+	padding: 4px 20px
+	white-space: nowrap
+	cursor: pointer
+
+table.dataTable tfoot th
+	padding: 0
+	white-space: nowrap
+
+table.dataTable.compact tbody td
+	padding: 4px 12px
+
+tfoot
+	display: table-header-group
+
+.dataTables_filter .form-control:focus
+	box-shadow: 0 0 0 1px rgba($clr-blue, 0.25)
+
+.dataTable.compact .form-control
+	border-radius: 0
+	border: 0
+	padding: 4px 12px
+	height: auto
+
+table.dataTable thead
+	th[data-orderable]
+		//cursor: default
+		&:before,
+		&:after
+			display: none
+
+table.dataTable tfoot
+	th[data-searchable]
+		cursor: not-allowed
+		background: rgba($clr-blue, 0.2)
+		color: rgba($clr-black, 0.7)
+	.js-column-search
+		background: rgba($clr-blue, 0.2)
+		color: rgba($clr-black, 0.7)
+
+// dataTable temp styling
+table.table-bordered.dataTable
+	border: 0
+
+	thead th
+		border: 1px solid $clr-blue
+		background-color: $clr-blue
+		color: $clr-white
+		font-weight: 500
+		cursor: pointer
+		letter-spacing: 0.04em
+
+		&:not(:last-child)
+			border-right: 0
+
+	tbody
+		td
+			border: 1px solid rgba($clr-blue, 0.3)
+			border-bottom-width: 0
+			letter-spacing: 0.04em
+			&:not(:last-child)
+				border-right: 0
+
+		tr:last-child
+			td
+				border-bottom-width: 1px
+
+	tfoot th
+		font-weight: 500
+		border: 1px solid rgba($clr-blue, 0.3)
+		border-bottom: 0
+		border-top: 0
+		letter-spacing: 0.04em
+
+		&:not(:last-child)
+			border-right: 0
+
+// colvis style
+div.dt-button-collection
+	> &:last-child
+		display: table !important
+
+.buttons-columnVisibility
+	font-size: 15px
+	min-width: 100%
+	position: relative
+	padding-left: 34px
+	padding-right: 10px
+	white-space: break-spaces
+	color: rgba($clr-gray, 0.5)
+	user-select: none
+	&:before
+		content: "\f070"
+		font-family: 'Font Awesome 5 Free'
+		font-size: 13px
+		position: absolute
+		left: 10px
+		top: 6px
+		color: rgba($clr-gray, 0.5)
+	&.active
+		background: transparent
+		color: $clr-gray-dark
+		&:before
+			content: "\f06e"
+			font-family: 'Font Awesome 5 Free'
+			color: $clr-blue
+
+	&:focus,
+	&:hover
+		background: transparent
+		color: $clr-gray
+		&:before
+			color: $clr-gray
+
+.dataTables_wrapper
+	position: relative
+
+.dt-buttons
+	position: absolute
+	right: 260px
+	z-index: 5
+	.btn
+		padding: 0.25rem 0.5rem
+		font-size: 0.875rem
+		line-height: 1.5
+		-webkit-border-radius: 0.2rem
+		border-radius: 0.2rem
+
+// dt select
+table.dataTable tbody tr.selected,
+table.dataTable tbody tr td.selected
+	background-color: #384e94
+	color: #ffffff
+
+table.dataTable tbody tr.selected:hover,
+table.dataTable tbody tr td.selected:hover
+	background-color: #384e94
+	color: #ffffff
+
+.hidden,
+.dataTables_paginate[style="visibility: hidden;"]
+	display: none
+
+.modal--no-padding,
+.dt-buttons-fix
+	.dt-buttons
+		position: relative
+		left: 100%
+		transform: translateX(-100%)
+
+@-moz-document url-prefix()
+	.dt-buttons
+		right: 280px
+
+@media screen and (min-width: 0\0) and (min-resolution: +72dpi)
+	.dt-buttons
+		right: 280px
+
+.dataTable
+	thead
+		th
+			text-align: center !important
+
+.dataTables_scrollFoot
+	table.table
+		margin-bottom: 0 !important
+
+.dataTable#available-loads
+	tbody
+		tr:not([class*=load])
+			td:first-child
+				background-color: $load-red
+				color: $clr-white
+
+.dataTables_scrollHeadInner,
+.dataTables_scrollFootInner
+	width: 100% !important
+	table
+		width: 100% !important
+
+
+.dataTables_scrollBody
+	border-bottom: 1px solid rgba(78, 115, 223, 0.3)
+	overflow-x: hidden !important
+
+
+// Inline DataTable
+.inline-dt
+	width: auto
+	position: absolute
+	top: 0
+	left: 0
+	margin: 0
+	display: none
+	box-shadow: 0 0 8px -2px opacify($clr-blue, 0.5)
+
+	&-wrap
+		position: relative
+
+		table
+			margin: 0 !important
+
+	&-trigger
+		cursor: pointer
+
+		&.active
+			background-color: rgba($clr-blue, 0.12)
+
+	table
+		width: auto
+		background-color: $clr-white
+		color: $clr-gray
+		margin: 0 !important
+		white-space: nowrap

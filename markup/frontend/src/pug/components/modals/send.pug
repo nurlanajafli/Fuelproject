@@ -1,0 +1,22 @@
+.modal.send-modal.fade(tabindex='-1')
+    .modal-dialog.modal-lg
+        .modal-content
+            .modal-header.bg-primary.text-white
+                h5.modal-title Send Message
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span.text-white &times;
+            .modal-toolbar.bg-light
+                button.btn.btn-link.text-decoration-none(data-tooltip='tooltip' data-placement='top' title='Send')
+                    i.fas.fa-paper-plane.mr-2
+                    | Send
+            .modal-body
+                .row
+                    .col
+                        .form-group
+                            input.form-control.form-readonly-text(value='LEGERME, JEAN')
+                        .form-group
+                            label Message:
+                            textarea.form-control(rows='10')
+            .modal-footer.bg-light
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary(type='button') Save changes

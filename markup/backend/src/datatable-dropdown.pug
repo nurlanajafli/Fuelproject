@@ -1,0 +1,296 @@
+extends pug/layouts/base
+
+block title
+    title Table dropdown
+
+block content
+    .page-header
+        h1 Table dropdown
+    ol.breadcrumb
+        li
+            a(href='./') Home
+        li.active Table dropdown
+
+    .row
+        .col-sm-12
+            .panel.panel-default
+                .panel-heading
+                    h2 Table dropdown
+                .panel-body
+                    form
+                        .row
+                            .col-sm-6
+                                .field.row
+                                    .col-sm-3
+                                        label Truck No
+                                    .col-sm-6
+                                        input.form-control.dropdown-toggle(type='text' data-toggle='dropdown')
+                                        .dropdown-menu.dropdown-menu--table
+                                            .table.table-responsive
+                                                table.table.table-bordered.compact.js-datatable(width='100%' cellspacing='0' data-var='dataTableDropdown')
+                                                    thead
+                                                        th
+                                                        th
+                                                        th
+                                                        th
+                                                        th
+                                                        th
+                                                        th
+
+                                .field.row
+                                    .col-sm-3
+                                        label Name
+                                    .col-sm-6
+                                        input.form-control(type='text' name='name')
+                                .field.row
+                                    .col-sm-3
+                                        label Address
+                                    .col-sm-6
+                                        input.form-control(type='text' name='address')
+                                .field.row
+                                    .col-sm-3
+                                        label City
+                                    .col-sm-6
+                                        input.form-control(type='text' name='city')
+                                .field.row
+                                    .col-sm-3
+                                        label State
+                                    .col-sm-6
+                                        select.form-control(name='st')
+                                            option(selected) NY
+                                            option(value='TX') TX
+                                            option(value='LA') LA
+                                            option(value='IL') IL
+                                            option(value='FL') FL
+                                .field.row
+                                    .col-sm-3
+                                        label Type
+                                    .col-sm-6
+                                        input.form-control(type='text' name='type')
+                                .field.row
+                                    .col-sm-3
+                                        label Date
+                                    .col-sm-6
+                                        input.form-control(type='date' name='date')
+                                .field.row
+                                    .col-sm-3
+                                        label Inactive
+                                    .col-sm-9
+                                        .custom-control.custom-checkbox
+                                            input(type="checkbox" name='inactive' class="custom-control-input" id="inactive-check2" onclick="return false;" checked)
+                                            label(class="custom-control-label" for="inactive-check2")
+                            .col-sm-6
+                                .field.row
+                                    .col-sm-3
+                                        label Truck No
+                                    .col-sm-6
+                                        input.form-control.dropdown-toggle(type='text' data-toggle='dropdown')
+                                        .dropdown-menu.dropdown-menu-right.dropdown-menu--table
+                                            .table.table-responsive
+                                                table.table.table-bordered.compact.js-datatable(width='100%' cellspacing='0' data-var='dataTableDropdown2')
+                                                    thead
+                                                        th
+
+                                .field.row
+                                    .col-sm-3
+                                        label Name
+                                    .col-sm-6
+                                        input.form-control(type='text' name='name')
+                                .field.row
+                                    .col-sm-3
+                                        label Address
+                                    .col-sm-6
+                                        input.form-control(type='text' name='address')
+                                .field.row
+                                    .col-sm-3
+                                        label City
+                                    .col-sm-6
+                                        input.form-control(type='text' name='city')
+                                .field.row
+                                    .col-sm-3
+                                        label State
+                                    .col-sm-6
+                                        select.form-control(name='st')
+                                            option(selected) NY
+                                            option(value='TX') TX
+                                            option(value='LA') LA
+                                            option(value='IL') IL
+                                            option(value='FL') FL
+                                .field.row
+                                    .col-sm-3
+                                        label Type
+                                    .col-sm-6
+                                        input.form-control(type='text' name='type')
+                                .field.row
+                                    .col-sm-3
+                                        label Date
+                                    .col-sm-6
+                                        input.form-control(type='date' name='date')
+                                .field.row
+                                    .col-sm-3
+                                        label Inactive
+                                    .col-sm-9
+                                        .custom-control.custom-checkbox
+                                            input(type="checkbox" name='inactive' class="custom-control-input" id="inactive-check" onclick="return false;" checked)
+                                            label(class="custom-control-label" for="inactive-check")
+
+block scripts
+    script.
+        var dataTableDropdown = {
+            data: [
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+                ['BNG CARGO', '2100 MANCHESTER DR', 'WHEATON', 'IL', 'Carrier', false, '2019-02-12'],
+                ['DM WORLD LOGISTICS', '', '', '', 'Carrier', true, '1999-12-05'],
+                ['DM WORLD TRANSPORTATIONS', '8026 SUNPORT DR', 'ORLANDO', 'FL', 'Carrier', false, '2012-05-15'],
+                ['MUZOM TRANSPORTATIONS', '4255 WESTBOOK DRIVE ', 'AURORA', 'IL', 'Carrier', true, '2015-05-20'],
+            ],
+            pagingType: 'simple_numbers',
+            orderCellsTop: true,
+            initComplete: function () {
+            },
+            dom: 'tp',
+            columns: [
+                {
+                    title: 'Name',
+                },{
+                    title:  'Address',
+                },{
+                    title: 'City',
+                },{
+                    title: 'St',
+                },{
+                    title: 'Type/',
+                },{
+                    title: "Inactive",
+                    searchable: false,
+                    bSortable: false,
+                    render: function (data, type, row) {
+                        if (data) {
+                            return '<input type="checkbox" class="editor-active" onclick="return false;" checked>';
+                        } else {
+                            return '<input type="checkbox" class="editor-active" onclick="return false;">';
+                        }
+                    },
+                    className: "dt-body-center text-center"
+                },{
+                    title: "Date",
+                    searchable: false,
+                }
+            ],
+            conditionalPaging: true,
+        };
+
+
+        var dataTableDropdown2 = {
+            data: [
+                ['1'],
+                ['2'],
+                ['3'],
+                ['4'],
+                ['1'],
+                ['2'],
+                ['3'],
+                ['4'],
+                ['1'],
+                ['2'],
+                ['3'],
+                ['4'],
+                ['1'],
+                ['2'],
+                ['3'],
+                ['4'],
+            ],
+            dom: 'tp',
+            orderCellsTop: true,
+            initComplete: function () {
+            },
+            conditionalPaging: true,
+            columns: [
+                {
+                    title: 'Name',
+                }
+            ],
+        };

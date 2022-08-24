@@ -1,0 +1,66 @@
+extends pug/layouts/dashboard
+
+block title
+    title Simple image view
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 Images
+        .card.shadow.mb-4
+            .card-header.py-3
+                .file-view-toolbar
+                    button(type='button' data-toggle='modal' data-target='#js-file-upload').btn.btn-link
+                        i.fas.fa.fa-upload
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-download
+                    //- button(type='button' data-toggle='modal' data-target='#js-modal-images' data-tooltip='In modal').btn.btn-link
+                        i.fas.fa.fa-question
+            .card-body
+                include pug/sections/file-view
+
+block modals
+    //- .modal#js-modal-images.fade(tabindex='-1')
+        .modal-dialog.modal-full
+            .modal-content
+                .modal-header
+                    h5.modal-title Truck Gallery
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span &times;
+                .card-header
+                    .file-view-toolbar
+                        button(type='button' disabled).btn.btn-link
+                            i.fas.fa.fa-box-open
+                        button(type='button' disabled).btn.btn-link
+                            i.fas.fa.fa-download
+                .modal-body
+                    include pug/sections/file-view
+                .modal-footer
+                    button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                    button.btn.btn-primary(type='button') Save changes
+
+    .modal#js-file-upload.fade(tabindex='-1')
+        .modal-dialog.modal-lg
+            .modal-content
+                .modal-header
+                    h5.modal-title Image upload
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span &times;
+                .modal-body
+                    .col
+                        form.custom-file-container(data-upload-id='fileUploadWithPreview')
+                            label Upload File
+                            .field.justify-content-between
+                                label.custom-file-container__custom-file
+                                    input.custom-file-container__custom-file__custom-file-input(type='file' accept='*' aria-label='Choose File')
+                                    input(type='hidden' name='MAX_FILE_SIZE' value='10485760')
+                                    span.custom-file-container__custom-file__custom-file-control(data-file-choose='Choose image...' data-file-browse='Select' data-file-selected=' files selected')
+                                label
+                                    a.custom-file-container__image-clear.btn.btn-outline-danger(href='javascript:void(0)' title='Clear Image') Clear
+                            a.custom-file-container__image-preview.js-lg-single
+                            hr
+                            .form-group
+                                label.col-form-label Description
+                                textarea.form-control(rows='4')
+                .modal-footer
+                    button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                    button.btn.btn-primary(type='button') Save changes

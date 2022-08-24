@@ -1,0 +1,74 @@
+.file-view
+    .row
+        .col-3
+            .file-view-sidebar
+                .file-view-modes
+                    button(type='button').btn.btn-link.js-file-view-link
+                        i.fas.fa.fa-th-list
+                    button(type='button').btn.btn-link.js-file-view-thumb
+                        i.fas.fa.fa-th-large
+                .file-view-list.file-view-list--link
+                    h6.text-center Desc
+                    ul
+                        li
+                            a(href='https://via.placeholder.com/768x992' class='js-img-view')
+                                span fake-image-name-2020-01-02
+                                img(src='https://via.placeholder.com/280x200?text=thumbnail' alt='Picture')
+                        li
+                            a(href='https://via.placeholder.com/960x1100' class='js-img-view')
+                                span random-image-name
+                                img(src='https://via.placeholder.com/280x200?text=thumbnail' alt='Picture')
+                        li
+                            a(href='https://via.placeholder.com/640x840' class='js-img-view')
+                                span IMG_VIA_PLACEHOLDER
+                                img(src='https://via.placeholder.com/280x200?text=thumbnail' alt='Picture')
+                        li
+                            a(href='https://via.placeholder.com/576x768' class='js-img-view')
+                                span IMG22021345
+                                img(src='https://via.placeholder.com/280x200?text=thumbnail' alt='Picture')
+        .col-9
+            .file-view-area
+                .file-view-options
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-print
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-fax
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-envelope
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-upload
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-trash-alt
+                    span.file-view-area-separator
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-step-backward
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-play.fa-rotate-180
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-play
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-step-forward
+                    // 1/5
+                    span.file-view-area-separator
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-search-minus
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-search-plus
+                    select(disabled).form-control
+                        option(value='#') 200%
+                        option(value='#') 150%
+                        option(value='#' selected) 100%
+                        option(value='#') 75%
+                        option(value='#') 50%
+                    span.file-view-area-separator
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-undo-alt
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-redo-alt
+                    span.file-view-area-separator
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-arrows-alt
+                    button(type='button' disabled).btn.btn-link
+                        i.fas.fa.fa-font
+                    span.file-view-area-separator
+                .file-view-content

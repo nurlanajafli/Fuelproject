@@ -1,0 +1,332 @@
+extends pug/layouts/dashboard
+
+block title
+    title Location
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 Location
+        .card.shadow.mb-4
+            .card-header.py-3
+                .edit-form-toolbar
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Images')
+                        i.fas.fa-image
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Mark as Down')
+                        i.fas.fa-suitcase-rolling
+                    button.btn.btn-link(data-tooltip='tooltip' data-placement='top' title='Out of Servise')
+                        i.fas.fa-eraser
+            .card-body
+                section.edit-form.location-form
+                    form#Location(method='post')
+                        input(type='hidden' name='_csrf-frontend' value='RlXx4qb3FT4ouW64s_e6M2GyYsy8_I0QjTeBHbV5q0UxLLyq7ZVZVXrwBOfXsetHL9BX_Iy7ulf8fPNTjBHBNQ==')
+                        ul#w1.nav.nav-tabs(role='tablist')
+                            li.nav-item
+                                a.nav-link.active(href='#w1-tab0' data-toggle='tab' role='tab' aria-controls='w1-tab0' aria-selected='true') Company
+                            li.nav-item
+                                a.nav-link.disabled(href='#w1-tab1' data-toggle='tab' role='tab' aria-controls='w1-tab1' tabindex='-1' aria-disabled='true') Contacts
+                        .tab-content
+                            #w1-tab0.tab-pane.active
+                                .row
+                                    .col-lg
+                                        // attribute company_name
+                                        .form-group.row.field-location-company_name.required.validating
+                                            label.col-3(for='location-company_name') Company Name
+                                            .col-9
+                                                input#location-company_name.form-control(type='text' name='Location[company_name]' maxlength='255' aria-required='true' aria-invalid='true')
+                                        // attribute location_name
+                                        .form-group.row.field-location-location_name.required.validating
+                                            label.col-3(for='location-location_name') Location Name
+                                            .col-9
+                                                input#location-location_name.form-control(type='text' name='Location[location_name]' maxlength='255' aria-required='true' aria-invalid='true')
+                                        // attribute address
+                                        .form-group.row.field-location-address.required.validating
+                                            label.col-3(for='location-address') Address
+                                            .col-9
+                                                input#location-address.form-control.pac-target-input(type='text' name='Location[address]' maxlength='255' aria-required='true' placeholder='Введите местоположение' autocomplete='off' aria-invalid='true')
+                                        .form-group.row
+                                            label.col-3 City, State, Zip
+                                            // attribute city
+                                            .col-9
+                                                .field.no-gutters
+                                                    .col-5
+                                                        input#location-city.form-control(type='text' name='Location[city]' maxlength='255' placeholder='City' aria-required='true' aria-invalid='true')
+                                                    .col
+                                                        select#location-state_id.form-control(name='Location[state]' aria-invalid='false')
+                                                            option(value='') State
+                                                            option(value='1') AL
+                                                            option(value='2') AK
+                                                            option(value='3') AZ
+                                                            option(value='4') AR
+                                                            option(value='CA') CA
+                                                            option(value='CO') CO
+                                                            option(value='7') CT
+                                                            option(value='8') DE
+                                                            option(value='FL') FL
+                                                            option(value='10') GA
+                                                            option(value='11') HI
+                                                            option(value='12') ID
+                                                            option(value='13') IL
+                                                            option(value='14') IN
+                                                            option(value='IA') IA
+                                                            option(value='16') KS
+                                                            option(value='17') KY
+                                                            option(value='18') LA
+                                                            option(value='19') ME
+                                                            option(value='20') MD
+                                                            option(value='21') MA
+                                                            option(value='22') MI
+                                                            option(value='MN') MN
+                                                            option(value='24') MS
+                                                            option(value='25') MO
+                                                            option(value='26') MT
+                                                            option(value='27') NE
+                                                            option(value='28') NV
+                                                            option(value='29') NH
+                                                            option(value='30') NJ
+                                                            option(value='31') NM
+                                                            option(value='32') NY
+                                                            option(value='33') NC
+                                                            option(value='34') ND
+                                                            option(value='35') OH
+                                                            option(value='36') OK
+                                                            option(value='37') OR
+                                                            option(value='38') PA
+                                                            option(value='39') RI
+                                                            option(value='40') SC
+                                                            option(value='SD') SD
+                                                            option(value='42') TN
+                                                            option(value='TX') TX
+                                                            option(value='44') UT
+                                                            option(value='45') VT
+                                                            option(value='46') VA
+                                                            option(value='47') WA
+                                                            option(value='48') WV
+                                                            option(value='49') WI
+                                                            option(value='50') WY
+                                                            option(value='51') ON
+                                                            option(value='52') QC
+                                                            option(value='53') NS
+                                                            option(value='54') NB
+                                                            option(value='55') MB
+                                                            option(value='56') BC
+                                                            option(value='57') PE
+                                                            option(value='58') SK
+                                                            option(value='59') AB
+                                                            option(value='60') NL
+                                                            option(value='61') NT
+                                                            option(value='62') YT
+                                                            option(value='63') NU
+                                                    // attribute zip
+                                                    .col-4.d-flex
+                                                        input#location-zip.form-control(type='text' name='Location[zip]' placeholder='Zip' aria-required='true' aria-invalid='true')
+                                                        button(type="button" class="btn js-suggested-address") ...
+                                        // attribute main_phone
+                                        .form-group.row.field-location-main_phone.required
+                                            label.col-3(for='location-main_phone') Main Phone
+                                            .col-9
+                                                input#location-main_phone.form-control(type='text' name='Location[main_phone]' maxlength='255' aria-required='true')
+                                        // attribute main_800
+                                        .form-group.row.field-location-main_800
+                                            label.col-3(for='location-main_800') Main 800
+                                            .col-9
+                                                input#location-main_800.form-control(type='text' name='Location[main_800]' maxlength='255')
+                                        // attribute main_fax
+                                        .form-group.row.field-location-main_fax
+                                            label.col-3(for='location-main_fax') Main Fax
+                                            .col-9
+                                                input#location-main_fax.form-control(type='text' name='Location[main_fax]' maxlength='255')
+                                        // attribute emergency
+                                        .form-group.row.field-location-emergency.required
+                                            label.col-3(for='location-emergency') Emergency
+                                            .col-9
+                                                input#location-emergency.form-control(type='text' name='Location[emergency]' maxlength='255' aria-required='true')
+                                        // attribute business_hours
+                                        .form-group.row.field-location-business_hours
+                                            label.col-3(for='location-business_hours') Business Hours
+                                            .col-9
+                                                input#location-business_hours.form-control(type='text' name='Location[business_hours]' maxlength='255')
+                                        // attribute zone
+                                        .form-group.row.field-location-zone
+                                            label.col-3(for='location-zone') Zone
+                                            .col-9
+                                                select#location-zone.form-control(name='Location[zone]')
+                                                    option(value='') Select
+                                                    option(value='IS') IS
+                                                    option(value='MW') MW
+                                        // attribute office_id
+                                        .form-group.row.field-location-office_id
+                                            label.col-3(for='location-office_id') Office
+                                            .col-9
+                                                select#location-office_id.form-control(name='Location[office_id]')
+                                                    option(value='') Select
+                                                    option(value='1') Main Office
+                                    .col-lg.offset-1
+                                        // attribute contact
+                                        .form-group.row.field-location-contact.required
+                                            label.col-2(for='location-contact') Contact
+                                            .col-9
+                                                input#location-contact.form-control(type='text' name='Location[contact]' maxlength='255' aria-required='true')
+                                        // attribute website
+                                        .form-group.row.field-location-website
+                                            label.col-2(for='location-website') Website
+                                            .col-9
+                                                input#location-website.form-control(type='text' name='Location[website]' maxlength='255')
+                                        // attribute bill_to
+                                        .form-group.row.field-location-bill_to
+                                            label.col-2(for='location-bill_to') Bill To
+                                            .col-9
+                                                select#location-bill_to.form-control(name='Location[bill_to]')
+                                                    option(value='') Select
+                                                    option(value='2') -
+                                        // attribute notes
+                                        .form-group.row.field-location-notes
+                                            label.col-2(for='location-notes') Notes
+                                            .col-9
+                                                textarea#location-notes.form-control(name='Location[notes]' rows='6')
+                                        // attribute directions
+                                        .form-group.row.field-location-directions
+                                            label.col-2(for='location-directions') Directions
+                                            .col-9
+                                                textarea#location-directions.form-control(name='Location[directions]' rows='6')
+                                        // attribute appointment_required
+                                        .form-group.row.field-location-appointment_required.required
+                                            .col-9.col-sm-10.offset-sm-2
+                                                .custom-control.custom-checkbox
+                                                    input(type='hidden' name='Location[appointment_required]' value='0')
+                                                    input#location-appointment_required.custom-control-input(type='checkbox' name='Location[appointment_required]' value='1' aria-required='true')
+                                                    label.custom-control-label(for='location-appointment_required') Appointment Required
+                                        // attribute trailer_pool_location
+                                        .form-group.row.field-location-trailer_pool_location.required
+                                            .col-9.col-sm-10.offset-sm-2
+                                                .custom-control.custom-checkbox
+                                                    input(type='hidden' name='Location[trailer_pool_location]' value='0')
+                                                    input#location-trailer_pool_location.custom-control-input(type='checkbox' name='Location[trailer_pool_location]' value='1' aria-required='true')
+                                                    label.custom-control-label(for='location-trailer_pool_location') Trailer Pool Location
+                                .row
+                                    .col-lg
+                                        .location-map
+                                            .location-map__panel
+                                                ul.location-map__list
+                                                    li.location-map__option Exact Location
+                                                    li.location-map__option-label OR SUGGESTED ADDRESS
+                                                    li.location-map__option Robinson Lane, Honolulu, HI, 96817
+                                                    li.location-map__option Robinson Lane, Pittsburgh, PA, 15205
+                                                    li.location-map__option Robinson Lane, Albany, NY, 12211
+                                                    li.location-map__option Robinson Lane, Corona, CA, 92883
+                                                    li.location-map__option Robinson Lane, London, ON, N5X 3V3
+                                                    li.location-map__option Robinson Lane, Pensacola, FL, 32514
+                                                    li.location-map__option Robinson Lane, Santa Rosa, CA, 95403
+                                                    li.location-map__option Robinson Lane, Wilmington, DE, 19805
+                                                    li.location-map__option Robinson Lane, Lodi, CA, 95242
+                                                    li.location-map__option Robinson Lane, Boulder City, NV, 89005
+                                                .location-map__actions
+                                                    a.btn.btn-primary.btn-block.js-location-update(href='#') UPDATE
+                                                .alert.alert-success.alert-dismissible.mt-3(style='display: none;')
+                                                    | Updated successfully!
+                                                    button.close(type='button' data-dismiss='alert' aria-label='Close')
+                                                        span(aria-hidden='true') &times;
+                                            | <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15251347.026311604!2d-105.51561243570032!3d38.301383487450344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2s!4v1611923199186!5m2!1sen!2s" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                            input#location-lat(type='hidden' name='Location[lat]')
+                                            input#location-long(type='hidden' name='Location[lon]')
+
+                            #w1-tab1.tab-pane
+                                .clearfix
+                                    button#contact-add.btn.btn-sm.btn-secondary.float-right(type='button' data-location='')
+                                        i.fas.fa.fa-plus
+                                        |  Add
+                                br
+                                script(type='text/javascript').
+                                    var tableOptions_6013c6ef6aedf = {
+                                        data: [],
+                                        columns: [{"title": "Contact Name"}, {"title": "Department ID"}, {"title": "Alt Phone 1"}, {"title": "Email"}, {"title": "Notes"}, {
+                                            "orderable": false,
+                                            "searchable": false,
+                                            "className": "actions",
+                                            "title": "Actions"
+                                        }]
+                                    };
+                                .card.shadow.mb-4
+                                    .card-body
+                                        .table.table-responsive
+                                            #dt-0_wrapper.dataTables_wrapper.dt-bootstrap4
+                                                .row
+                                                    .col-sm-12.col-md-6
+                                                        #dt-0_length.dataTables_length
+                                                            label
+                                                                | Show
+                                                                select.custom-select.custom-select-sm.form-control.form-control-sm(name='dt-0_length' aria-controls='dt-0')
+                                                                    option(value='10') 10
+                                                                    option(value='25') 25
+                                                                    option(value='50') 50
+                                                                    option(value='100') 100
+                                                                |  entries
+                                                    .col-sm-12.col-md-6
+                                                        #dt-0_filter.dataTables_filter
+                                                            label
+                                                                | Search:
+                                                                input.form-control.form-control-sm(type='search' placeholder='' aria-controls='dt-0')
+                                                .row
+                                                    .col-sm-12
+                                                        table#dt-0.table.table-bordered.compact.js-datatable.dataTable(width='100%' cellspacing='0' data-var='tableOptions_6013c6ef6aedf' role='grid' aria-describedby='dt-0_info' style='width: 100%;')
+                                                            thead
+                                                                tr(role='row')
+                                                                    th.sorting_asc(tabindex='0' aria-controls='dt-0' rowspan='1' colspan='1' style='width: 0px;' aria-sort='ascending' aria-label='Contact Name: activate to sort column descending') Contact Name
+                                                                    th.sorting(tabindex='0' aria-controls='dt-0' rowspan='1' colspan='1' style='width: 0px;' aria-label='Department ID: activate to sort column ascending') Department ID
+                                                                    th.sorting(tabindex='0' aria-controls='dt-0' rowspan='1' colspan='1' style='width: 0px;' aria-label='Alt Phone 1: activate to sort column ascending') Alt Phone 1
+                                                                    th.sorting(tabindex='0' aria-controls='dt-0' rowspan='1' colspan='1' style='width: 0px;' aria-label='Email: activate to sort column ascending') Email
+                                                                    th.sorting(tabindex='0' aria-controls='dt-0' rowspan='1' colspan='1' style='width: 0px;' aria-label='Notes: activate to sort column ascending') Notes
+                                                                    th.actions.sorting_disabled(rowspan='1' colspan='1' style='width: 0px;' aria-label='Actions' data-orderable='false') Actions
+                                                            tfoot
+                                                                tr
+                                                                    th(rowspan='1' colspan='1')
+                                                                        input.form-control(type='text' placeholder='Search Contact Name')
+                                                                    th(rowspan='1' colspan='1')
+                                                                        input.form-control(type='text' placeholder='Search Department ID')
+                                                                    th(rowspan='1' colspan='1')
+                                                                        input.form-control(type='text' placeholder='Search Alt Phone 1')
+                                                                    th(rowspan='1' colspan='1')
+                                                                        input.form-control(type='text' placeholder='Search Email')
+                                                                    th(rowspan='1' colspan='1')
+                                                                        input.form-control(type='text' placeholder='Search Notes')
+                                                                    th.actions(rowspan='1' colspan='1' data-searchable='false')
+                                                            tbody
+                                                                tr.odd
+                                                                    td.dataTables_empty(valign='top' colspan='6') No data available in table
+                                                .row
+                                                    .col-sm-12.col-md-5
+                                                        #dt-0_info.dataTables_info(role='status' aria-live='polite') Showing 0 to 0 of 0 entries
+                                                    .col-sm-12.col-md-7
+                                                        #dt-0_paginate.dataTables_paginate.paging_simple_numbers
+                                                            ul.pagination
+                                                                li#dt-0_previous.paginate_button.page-item.previous.disabled
+                                                                    a.page-link(href='#' aria-controls='dt-0' data-dt-idx='0' tabindex='0') Previous
+                                                                li#dt-0_next.paginate_button.page-item.next.disabled
+                                                                    a.page-link(href='#' aria-controls='dt-0' data-dt-idx='1' tabindex='0') Next
+                        hr
+                        .error-summary.alert.alert-danger(style='display:none')
+                            p Please fix the following errors:
+                            ul
+                        button#save-Location.btn.btn-success(type='submit')
+                            i.fas.fa.fa-check
+                            |  Create
+
+block modals
+    .modal.location-confirm-modal.fade(tabindex='-1')
+        .modal-dialog.modal-dialog-centered
+            .modal-content
+                .modal-header
+                    h5.modal-title Express
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span &times;
+                .modal-body
+                    .location-confirm-inner
+                        .location-confirm-left
+                            i.fas.fa.fa-question-circle.fa-3x
+                        .location-confirm-right
+                            p Update Address:
+                            p.location-confirm-old  old address
+                            p To:
+                            p.location-confirm-new  new address
+                .modal-footer
+                    button.btn.btn-primary.js-location-modal-yes(type='button') Yes
+                    button.btn.btn-secondary.js-location-modal-no(type='button' data-dismiss='modal') No

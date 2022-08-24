@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Invoice</title>
+  <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+  <div class="container">
+    <div class="invoice">
+      <div class="invoice__header">
+        <table>
+          <tbody>
+            <tr>
+              <td class="w-82 border-0">
+                <div class="invoice__company clearfix">
+                  <div class="invoice__company-logo pull-left"><img src="https://via.placeholder.com/175x125"></div>
+                  <div class="invoice__company-info pull-left">
+                    <p>Gurman Trucking Inc</p>
+                    <p>201 E Veterans Parkway</p>
+                    <p>Yorkville, IL 60560</p>
+                    <p>P: 630-381-0064 F:</p>
+                  </div>
+                </div>
+              </td>
+              <td class="w-18 border-0">
+                <div class="invoice__number">
+                  <h4 class="clr-light-blue">INVOICE</h4>
+                  <p>130335</p>
+                  <p>5/11/2021</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="invoice__header-info">
+          <tr>
+            <td class="border-0">
+              <p class="clr-light-blue">Bill To</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-75 border-0">
+              <p>SDM TRANSPORT LLC</p>
+              <p>220 W LANDSTREET ROAD Suite A</p>
+              <p>ORLANDO, FL 32824</p>
+            </td>
+            <td class="w-25 border-0">
+              <p>Terms:  Net 30</p>
+              <p>Reference: TEST2</p>
+              <p>Office: 1</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="invoice__info">
+        <div class="doc__table">
+          <table>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Reference</td>
+              </tr>
+              <tr>
+                <td>PU</td>
+                <td>S P RICHARDS CO</td>
+                <td>24 WES WARREN DR</td>
+                <td>MIDDLETOWN, NY 10941</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>DEL</td>
+                <td>VELOCITY CENTER</td>
+                <td>4540 FISHER ROAD</td>
+                <td>COLUMBUS, OH 43228</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="invoice__inputs">
+        <table class="invoice__inputs-first w-100">
+          <tbody>
+            <tr>
+              <td>Commodity</td>
+              <td>Description</td>
+              <td>Reference</td>
+              <td>Pcs</td>
+              <td>Bill Wgt</td>
+            </tr>
+            <tr>
+              <td class="border-0">Steel Pipe</td>
+              <td class="border-0"></td>
+              <td class="border-0">456564</td>
+              <td class="border-0">10</td>
+              <td class="border-0">500</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="invoice__inputs-second w-100">
+          <tbody>
+            <tr>
+              <td>Accessorial</td>
+              <td>Reference</td>
+              <td>Rate Ea</td>
+              <td>Units</td>
+              <td>Amount</td>
+            </tr>
+            <tr>
+              <td class="border-0">0</td>
+              <td class="border-0">0</td>
+              <td class="border-0">0</td>
+              <td class="border-0">0</td>
+              <td class="border-0">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="invoice__summary clearfix border-y">
+        <div class="invoice__summary-item">
+          <p>Pickup Date: <span>3/23/21</span></p>
+          <p>Delivery Date: <span>3/23/21</span></p>
+        </div>
+        <div class="invoice__summary-item">
+          <p>Total Pieces: <span>0</span></p>
+          <p>Total Space: <span>0</span></p>
+        </div>
+        <div class="invoice__summary-item">
+          <p>Actual Wgt: <span>0</span></p>
+          <p>Tariff Wgt: <span>0</span></p>
+        </div>
+        <div class="invoice__summary-item">
+          <p>As Wgt: <span>0</span></p>
+          <p>Miles: <span>558</span></p>
+        </div>
+        <div class="invoice__summary-item"></div>
+      </div>
+      <div class="invoice__total clearfix">
+        <div class="pull-left w-50">
+          <p>Remit Payment To:</p>
+          <p>RTS Financial Service, Inc.</p>
+          <p>PO Box 840267</p>
+          <p>Dallas, TX 75284-0267</p>
+        </div>
+        <div class="pull-left w-25">
+          <p>Rate By: <span>Flat</span></p>
+          <p>Rate: <span>1.00</span></p>
+          <p>&nbsp;</p>
+          <p>Discount: <span>0.90</span></p>
+        </div>
+        <div class="pull-left w-25">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <p>Freight:</p>
+                </td>
+                <td>
+                  <p>0.10</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>+ Accessorials:</p>
+                </td>
+                <td>
+                  <p>0.00</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Invoice Total:</p>
+                </td>
+                <td>
+                  <p class="border-b text-right">0.10</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

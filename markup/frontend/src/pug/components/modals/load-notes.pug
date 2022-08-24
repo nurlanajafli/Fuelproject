@@ -1,0 +1,45 @@
+.modal#load-notes-modal.fade(tabindex='-1')
+    .modal-dialog.modal-lg
+        .modal-content
+            .modal-header
+                h5.modal-title Load Notes
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span &times;
+            .modal-body
+                form.modal-form
+                    .row
+                        .col-6
+                            .form-group
+                                label Date/Time
+                                .input-group
+                                    input.form-control(type='date')
+                                    input.form-control(type='text' data-mask='00:00' placeholder='00:00')
+                            span or
+                            .form-group
+                                label Date/Time
+                                .input-group
+                                    input.form-control(type='text' data-mask='00/00/0000' placeholder='00/00/0000')
+                                    input.form-control(type='text' data-mask='00:00' placeholder='00:00')
+                            .form-group
+                                label Last Action
+                                select.form-control
+                                    option(value='#') Assigned
+                                    option(value='#') Confirmed
+                                    option(value='#') At Origin
+                                    option(value='#') Loading
+                                    option(value='#') Moving
+                                    option(value='#') At Destination
+                                    option(value='#') Unloading
+                                    option(value='#') Dropped
+                                    option(value='#') Hold
+                                    option(value='#') Rejected
+                                    option(value='#') Custom Hold
+                                    option(value='#') Custom Released
+                                    option(value='#') Out For Delivery
+                        .col
+                            .form-group
+                                label Notes
+                                textarea.form-control(rows='9')
+            .modal-footer
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary(type='button') Save changes

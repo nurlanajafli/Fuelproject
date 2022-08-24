@@ -1,0 +1,248 @@
+extends pug/layouts/dashboard
+
+block title
+    title Truck information
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 Truck information
+        .card.shadow.mb-4
+            .card-header.py-3
+                .edit-form-toolbar
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#truck-set-date' data-placement='top' title='Set Date')
+                        i.fas.fa-redo
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#truck-out-of-service' data-placement='top' title='Out of Service')
+                        i.fas.fa-sign-out-alt
+                    button.btn.btn-link(data-tooltip='tooltip' data-toggle='modal' data-target='#truck-down' data-placement='top' title='Truck Down')
+                        i.fas.fa-arrow-down
+            .card-body
+                section.edit-form
+                    nav#nav-tab.nav.nav-tabs
+                        a#nav-info-tab.nav-link.active(data-toggle='tab' href='#nav-info') Info
+                        a#nav-financial-tab.nav-link(data-toggle='tab' href='#nav-financial') Financial
+                    #nav-tabContent.tab-content
+                        #nav-info.tab-pane.fade.show.active
+                            .form-fieldset
+                                .row
+                                    .col-5
+                                        .field.row
+                                            .col-3
+                                                label Truck No
+                                            .col-6
+                                                input.form-control(type='text')
+                                        .field.row
+                                            .col-3
+                                                label Type
+                                            .col-6
+                                                select.form-control
+                                                    option(selected) B1
+                                                    option(value='#') B2
+                                                    option(value='#') A1
+                                                    option(value='#') A2
+                                        .field.row
+                                            .col-3
+                                                label Year
+                                            .col-6
+                                                input.form-control(type='text')
+                                        .field.row
+                                            .col-3
+                                                label Make
+                                            .col-6
+                                                input.form-control(type='text')
+                                        .field.row
+                                            .col-3
+                                                label Model
+                                            .col-6
+                                                input.form-control(type='text')
+                                        .field.row
+                                            .col-3
+                                                label Tare
+                                            .col-6
+                                                input.form-control(type='text')
+                                        .field.row
+                                            .col-3
+                                                label In Svc
+                                            .col-9
+                                                input.form-control(type='text' data-mask='00/00/000' placeholder='__/__/____')
+                                        .field.row
+                                            .col-3
+                                                label License
+                                            .col-6
+                                                input.form-control(type='text')
+                                            .col-1
+                                                label St
+                                            .col-2
+                                                select.form-control
+                                                    option(selected) NY
+                                                    option(value='#') TX
+                                                    option(value='#') LA
+                                        .field.row
+                                            .col-3
+                                                label Dispatcher
+                                            .col-6
+                                                select.form-control
+                                                    option(selected) Dispatcher option
+                                                    option(value='#') Dispatcher option
+                                                    option(value='#') Dispatcher option
+                                        .field.row
+                                            .col-3
+                                                label Office
+                                            .col-6
+                                                select.form-control
+                                                    option(selected) Choose ...
+                                                    option(value='#') New York
+                                                    option(value='#') Texas
+                                                    option(value='#') Chicago
+                        #nav-financial.tab-pane.fade
+                    .form-fieldset
+                        span.form-legend Status
+
+block modals
+    // Set Date
+    .modal#truck-set-date.fade(tabindex='-1')
+        .modal-dialog.modal-dialog-centered
+            .modal-content
+                .modal-header.bg-primary.text-white
+                    h5.modal-title Set Date
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span.text-white &times;
+                .modal-body
+                    form.form
+                        .row.align-items-center
+                            .col-7
+                                .field.custom-control.custom-radio
+                                    input#edit-truck-date.custom-control-input(type='radio' name='edit-or-remove-date')
+                                    label.custom-control-label(for='edit-truck-date') Edit Out of Service Date
+                            .col-5
+                                .field
+                                    input.form-control(type='date')
+                        .row.align-items-center
+                            .col-7
+                                .field.custom-control.custom-radio
+                                    input#remove-truck-date.custom-control-input(type='radio' name='edit-or-remove-date')
+                                    label.custom-control-label(for='remove-truck-date') Remove Out of Service Date
+                .modal-footer.bg-light
+                    button.btn.btn-secondary(type='button' data-dismiss='modal') Cancel
+                    button.btn.btn-primary(type='button') Save
+    // Truck out of service
+    .modal#truck-out-of-service.fade(tabindex='-1')
+        .modal-dialog.modal-lg.modal-dialog-centered
+            .modal-content
+                .modal-header.bg-primary.text-white
+                    h5.modal-title Truck Out of Service
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span.text-white &times;
+                .modal-body
+                    form.form
+                        .form-fieldset
+                            p.text-secondary.mb-5 No Unit Assigned
+                            .field.custom-control.custom-radio
+                                input#remove-truck-from-assigned.custom-control-input(type='radio' name='truck-assigned-unit')
+                                label.custom-control-label(for='remove-truck-from-assigned') Remove Out of Service Date
+                            .field.custom-control.custom-radio
+                                input#make-assigned-unit-inactive.custom-control-input(type='radio' name='truck-assigned-unit')
+                                label.custom-control-label(for='make-assigned-unit-inactive') Make Assigned Unit Inactive
+                            .form-fieldset.mt-5
+                                span.form-legend Drivers
+                                .field.row
+                                    .col
+                                        .custom-control.custom-radio
+                                            input#drivers-remove-unit.custom-control-input(type='radio' name='truck-assigned-unit')
+                                            label.custom-control-label(for='drivers-remove-unit') Remove From Unit
+                                    .col
+                                        .custom-control.custom-radio
+                                            input#drivers-keep-unit.custom-control-input(type='radio' name='truck-assigned-unit')
+                                            label.custom-control-label(for='drivers-keep-unit') Keep With Unit
+                            .form-fieldset
+                                span.form-legend Trailer
+                                .field.row
+                                    .col
+                                        .custom-control.custom-control-inline.custom-radio
+                                            input#trailers-remove-unit.custom-control-input(type='radio' name='truck-assigned-unit')
+                                            label.custom-control-label(for='trailers-remove-unit') Remove From Unit
+                                    .col
+                                        .custom-control.custom-control-inline.custom-radio
+                                            input#trailers-keep-unit.custom-control-input(type='radio' name='truck-assigned-unit')
+                                            label.custom-control-label(for='trailers-keep-unit') Keep With Unit
+                            .row
+                                .col-6.m-auto
+                                    .field.row
+                                        .col
+                                            label Out of Service
+                                        .col
+                                            input.form-control(type='date')
+
+                .modal-footer.bg-light
+                    button.btn.btn-secondary(type='button' data-dismiss='modal') Cancel
+                    button.btn.btn-primary(type='button') Save
+    // Truck down
+    .modal#truck-down.fade(tabindex='-1')
+        .modal-dialog.modal-lg.modal-dialog-centered
+            .modal-content
+                .modal-header.bg-primary.text-white
+                    h5.modal-title Take Truck Down - 333666
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span.text-white &times;
+                .modal-body
+                    form.form.row
+                        .col-5
+                            .form-fieldset
+                                .field.row
+                                    .col
+                                        p Truck
+                                    .col
+                                        p.form-readonly-text 333666
+                                .field.row
+                                    .col
+                                        p Unit
+                                    .col
+                                        p.form-readonly-text None
+                                .field.row
+                                    .col
+                                        p Office
+                                    .col
+                                        p.form-readonly-text
+                                .field.row.mb-4
+                                    .col
+                                        p Status
+                                    .col
+                                        p.form-readonly-text Available
+                                .field.row
+                                    .col
+                                        p Last Trip
+                                    .col
+                                        p.form-readonly-text
+                                .field.row
+                                    .col
+                                        p Load No
+                                    .col
+                                        p.form-readonly-text
+                                .field.row
+                                    .col
+                                        p Date
+                                    .col
+                                        p.form-readonly-text
+                        .col-7
+                            .form-fieldset
+                                .field.row
+                                    .col
+                                        label Returns To Service
+                                    .col
+                                        input.form-control(type='date')
+                                label Returns Location
+                                select.form-control
+                                    option(selected) Location option
+                                    option(value='#') Location option
+                                    option(value='#') Location option
+                                    option(value='#') Location option
+                            .form-fieldset
+                                .mb-3
+                            .form-fieldset
+                                span.form-legend Send Notifications
+                                .custom-control.custom-checkbox
+                                    input(type="checkbox" class="custom-control-input" id="notify-all-dispatch")
+                                    label(class="custom-control-label" for="notify-all-dispatch") Notify All Dispatch Personnel
+
+                .modal-footer.bg-light
+                    button.btn.btn-primary(type='button') Mark As Down
+                        i.fas.fa-arrow-down.pl-2

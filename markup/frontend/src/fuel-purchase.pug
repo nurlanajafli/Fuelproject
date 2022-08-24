@@ -1,0 +1,485 @@
+extends pug/layouts/dashboard
+
+block title
+    title Fuel Purchase
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 Fuel Purchase
+        .card.shadow.mb-4
+            .card-header.py-3
+                .dt-toolbar.justify-content-between
+                    .dt-toolbar__left
+                        .dt-toolbar-actions
+                            button.btn.btn-primary(data-tooltip='tooltip' data-placement='top' title='Reload')
+                                i.fas.fa-sync
+                            button.btn.btn-primary(data-tooltip='tooltip' data-placement='top' title='Plus' data-toggle='modal' data-target='#some-random-id')
+                                i.fas.fa-plus
+                            a(href='/fuel-settings.html').btn.btn-primary
+                                i.fas.fa-cog
+                        .dt-toolbar-filter.js-table-filter
+                            .dt-toolbar-filter-item
+                                input.form-control.dropdown-toggle(type='text' data-toggle='dropdown' placeholder='Offices')
+                                .dropdown-menu.dropdown-menu--table
+                                    .table.table-responsive
+                                        table.table.table-bordered.compact.js-datatable(width='100%' cellspacing='0' data-var='tbOffices')
+                                            thead
+                                                th
+                                                th
+                            .dt-toolbar-filter-item
+                                input.form-control.dropdown-toggle(type='text' data-toggle='dropdown' placeholder='Drivers')
+                                .dropdown-menu.dropdown-menu--table
+                                    .table.table-responsive
+                                        table.table.table-bordered.compact.js-datatable(width='100%' cellspacing='0' data-var='tbNames')
+                                            thead
+                                                th
+                            .dt-toolbar-filter-item
+                                input.form-control.dropdown-toggle(type='text' data-toggle='dropdown' placeholder='Trucks')
+                                .dropdown-menu.dropdown-menu--table
+                                    .table.table-responsive
+                                        table.table.table-bordered.compact.js-datatable(width='100%' cellspacing='0' data-var='tbTrucks')
+                                            thead
+                                                th
+                                                th
+                    .dt-toolbar__right
+                        .dt-toolbar-actions.js-daterange.d-flex(data-column-index='4' data-date-format='DD/MM/YYYY')
+                            .dropdown
+                                button.btn.btn-primary.dropdown-toggle(type='button' data-toggle='dropdown')
+                                    i.fas.fa-filter
+                                .dropdown-menu
+                                    a.dropdown-item.js-daterange-this-month(href='#') This Month
+                                    a.dropdown-item.js-daterange-last-month(href='#') Last Month
+                                    a.dropdown-item.js-daterange-this-quarter(href='#') This Quarter
+                                    a.dropdown-item.js-daterange-last-quarter(href='#') Last Quarter
+                                    a.dropdown-item.js-daterange-this-year(href='#') This Year
+                                    a.dropdown-item.js-daterange-last-year(href='#') Last Year
+                                    a.dropdown-item.js-daterange-today(href='#') Today
+                            input.form-control.js-daterange-min(type='text' name='min' placeholder='from date')
+                            input.form-control.js-daterange-max(type='text' name='max' placeholder='to date')
+            .card-body
+                .table.table-responsive
+                    table.table.table-bordered.compact.js-datatable#first(cellspacing='0' data-var='richTable')
+                        thead
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                        tfoot
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+                            th
+
+block modals
+    .modal#some-random-id.fade(tabindex='-1')
+        .modal-dialog.modal-xl
+            .modal-content
+                .modal-header
+                    h5.modal-title Input Fuel Purchase
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span &times;
+                .modal-body
+                    .row.mt-2
+                        .col
+                            .form-group.row
+                                .col-3
+                                    label Trip No
+                                .col-6
+                                    input.form-control
+                            .form-group.row
+                                .col-3
+                                    label Unit
+                                .col-6
+                                    input.form-control.dropdown-toggle(type='text' data-toggle='dropdown')
+                                    .dropdown-menu.dropdown-menu--table
+                                        .table.table-responsive
+                                            table.table.table-bordered.compact.js-datatable(width='100%' cellspacing='0' data-var='tbOffices')
+                                                thead
+                                                    th
+                                                    th
+                            .form-group.row
+                                .col-3
+                                    label Driver
+                                .col-8
+                                    input.form-control.dropdown-toggle(type='text' data-toggle='dropdown')
+                                    .dropdown-menu.dropdown-menu--table
+                                        .table.table-responsive
+                                            table.table.table-bordered.compact.js-datatable(width='100%' cellspacing='0' data-var='tbOffices')
+                                                thead
+                                                    th
+                                                    th
+                            .form-group.row
+                                .col-3
+                                    label Co Driver
+                                .col-8
+                                    input.form-control.dropdown-toggle(type='text' data-toggle='dropdown')
+                                    .dropdown-menu.dropdown-menu--table
+                                        .table.table-responsive
+                                            table.table.table-bordered.compact.js-datatable(width='100%' cellspacing='0' data-var='tbOffices')
+                                                thead
+                                                    th
+                                                    th
+                            .form-group.row
+                                .col-3
+                                    label Truck
+                                .col-6
+                                    input.form-control.dropdown-toggle(type='text' data-toggle='dropdown')
+                                    .dropdown-menu.dropdown-menu--table
+                                        .table.table-responsive
+                                            table.table.table-bordered.compact.js-datatable(width='100%' cellspacing='0' data-var='tbOffices')
+                                                thead
+                                                    th
+                                                    th
+                            .form-group.row
+                                .col-3
+                                    label Trailer
+                                .col-6
+                                    input.form-control.dropdown-toggle(type='text' data-toggle='dropdown')
+                                    .dropdown-menu.dropdown-menu--table
+                                        .table.table-responsive
+                                            table.table.table-bordered.compact.js-datatable(width='100%' cellspacing='0' data-var='tbOffices')
+                                                thead
+                                                    th
+                                                    th
+                            .form-group.row
+                                .col-3
+                                    label Trailer 2
+                                .col-6
+                                    input.form-control.dropdown-toggle(type='text' data-toggle='dropdown')
+                                    .dropdown-menu.dropdown-menu--table
+                                        .table.table-responsive
+                                            table.table.table-bordered.compact.js-datatable(width='100%' cellspacing='0' data-var='tbOffices')
+                                                thead
+                                                    th
+                                                    th
+                        .col
+                            .form-group.row
+                                .col-3
+                                    label Date
+                                .col-8
+                                    .row
+                                        .col-8
+                                            input.form-control(type='date')
+                                        .col-4
+                                            input.form-control(type='time')
+                            .form-group.row
+                                .col-3
+                                    label Vendor
+                                .col-8
+                                    input.form-control(type='text')
+                            .form-group.row
+                                .col-3
+                                    label City, State
+                                .col-8
+                                    .row
+                                        .col-8
+                                            input.form-control(type='text')
+                                        .col-4
+                                            input.form-control.dropdown-toggle(type='text' data-toggle='dropdown')
+                                            .dropdown-menu.dropdown-menu-right.dropdown-menu--table
+                                                .table.table-responsive
+                                                    table.table.table-bordered.compact.js-datatable(cellspacing='0' data-var='tbOffices')
+                                                        thead
+                                                            th
+                                                            th
+                            .form-group.row
+                                .col-3
+                                    label Quantity
+                                .col-3
+                                    input.form-control(type='text' placeholder='0.00')
+                            .form-group.row
+                                .col-3
+                                    label Cost
+                                .col-3
+                                    input.form-control(type='text' placeholder='0.00')
+                            .form-group.row
+                                .col-3
+                                    label PPG
+                                .col-3
+                                    input.form-control(type='text' placeholder='0.00')
+                .modal-footer.justify-content-between
+                    .modal-footer-left
+                        button.btn.btn-danger(type='button') Delete
+                    .modal-footer-right
+                        button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                        button.btn.btn-primary(type='button') Save changes
+
+    .modal.modal--no-scroll#random-id-for-launch-by-button-1.fade(tabindex='-1' )
+        .modal-dialog.modal-full
+            .modal-content
+                .modal-header.bg-primary.text-white
+                    h5.modal-title DataTD
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span.text-white &times;
+                .modal-body
+                    .inline-dt-wrap
+                        .table.table-responsive
+                            table.table.table-bordered.compact.js-datatable.w-100#payrollDT(cellspacing='0' data-var='DTVar')
+                                thead
+                                    th
+                                    th
+                                    th
+                                    th
+                                    th
+                                tfoot.d-none
+                                    th
+                                    th
+                                    th
+                                    th
+                                    th
+                        .table.table-responsive.inline-dt.dropdown-menu--table
+                            table.table.compact.js-datatable.table-bordered#inlineDT1(data-var='inlineDT' cellspacing='0')
+                                thead
+                                    tr
+                                        th
+                                        th
+                                        th
+                .modal-footer.bg-light
+                    button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                    button.btn.btn-primary(type='button') Save changes
+
+
+block scripts
+    script.
+        var DTVar = {
+            data: [
+                ['GOOD #1', '', '', '0.00', ''],
+                ['GOOD #2', ' ', ' ' , '0.00', ''],
+                ['GOOD #3', ' ', ' ' , '0.00', ''],
+                ['GOOD #4', ' ', ' ' , '0.00', ''],
+                ['GOOD #5', ' ', ' ' , '0.00', ''],
+                ['GOOD #6', ' ', ' ' , '0.00', ''],
+                ['GOOD #7', ' ', ' ' , '0.00', ''],
+                ['GOOD #8', ' ', ' ' , '0.00', ''],
+                ['GOOD #9', ' ', ' ' , '0.00', ''],
+                ['GOOD #10', ' ', ' ' , '0.00', ''],
+                ['GOOD #11', ' ', ' ' , '0.00', ''],
+                ['GOOD #12', ' ', ' ' , '0.00', ''],
+                ['GOOD #13', ' ', ' ' , '0.00', ''],
+                ['GOOD #14', ' ', ' ' , '0.00', ''],
+                ['GOOD #15', ' ', ' ' , '0.00', ''],
+                ['GOOD #16', ' ', ' ' , '0.00', ''],
+                ['GOOD #17', ' ', ' ' , '0.00', ''],
+                ['GOOD #18', ' ', ' ' , '0.00', ''],
+                ['GOOD #19', ' ', ' ' , '0.00', ''],
+                ['GOOD #20', ' ', ' ' , '0.00', ''],
+                ['GOOD #2', ' ', ' ' , '0.00', ''],
+                ['GOOD #3', ' ', ' ' , '0.00', ''],
+                ['GOOD #4', ' ', ' ' , '0.00', ''],
+                ['GOOD #5', ' ', ' ' , '0.00', ''],
+                ['GOOD #6', ' ', ' ' , '0.00', ''],
+                ['GOOD #7', ' ', ' ' , '0.00', ''],
+                ['GOOD #8', ' ', ' ' , '0.00', ''],
+                ['GOOD #9', ' ', ' ' , '0.00', ''],
+                ['GOOD #10', ' ', ' ' , '0.00', ''],
+                ['GOOD #11', ' ', ' ' , '0.00', ''],
+                ['GOOD #12', ' ', ' ' , '0.00', ''],
+                ['GOOD #13', ' ', ' ' , '0.00', ''],
+                ['GOOD #14', ' ', ' ' , '0.00', ''],
+                ['GOOD #15', ' ', ' ' , '0.00', ''],
+                ['GOOD #16', ' ', ' ' , '0.00', ''],
+                ['GOOD #17', ' ', ' ' , '0.00', ''],
+                ['GOOD #18', ' ', ' ' , '0.00', ''],
+                ['GOOD #19', ' ', ' ' , '0.00', ''],
+                ['GOOD #20', ' ', ' ' , '0.00', ''],
+            ],
+            dom: 't',
+            orderCellsTop: true,
+            initComplete: function () {
+            },
+            paging: false,
+            columns: [
+                {title: 'Description',},
+                {title: 'O/O Acct', className: 'inline-dt-trigger'},
+                {title: 'C/D Acct', className: 'inline-dt-trigger'},
+                {title: 'Fee Amt',},
+                {title: 'Fee Acct', className: 'inline-dt-trigger'},
+            ],
+        };
+
+        var richTable = {
+            data: [],
+            dom: 'tp',
+            orderCellsTop: true,
+            autoWidth: false,
+            initComplete: function () {
+            },
+            conditionalPaging: true,
+            columns: [
+                { title: 'Trip', },
+                { title: 'Date', },
+                { title: 'Time', },
+                { title: 'Off', },
+                { title: 'Driver', },
+                { title: 'Truck', },
+                { title: 'Vendor', },
+                { title: 'City', },
+                { title: 'St', },
+                { title: 'Qty', },
+                { title: 'Cost', },
+                { title: 'PPG', },
+            ],
+        };
+
+        var tbOffices = {
+            data: [
+                ['All', 'All Offices'],
+                ['1', 'Main Office'],
+                ['2', 'test'],
+            ],
+            dom: 'tp',
+            orderCellsTop: true,
+            initComplete: function () {
+            },
+            conditionalPaging: true,
+            columns: [
+                { title: 'No', },
+                { title: 'Office', },
+            ],
+        };
+
+        var inlineDT = {
+            data: [
+                ['1000', 'Bank of America Account', 'Bank'],
+                ['1030', 'Receviables', 'Accounts Receviable'],
+                ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+                ['1033', 'TAFS - Reserve', 'Current Asset'],
+                ['1050', 'Advances Given', 'Current Asset'],
+                ['1055', 'Loans Given', 'Current Asset'],
+                ['1056', 'Deductible', 'Current Asset'],
+                ['1100', 'Undeposited Funds', 'Current Asset'],
+                ['1500', 'Parts Inventory', 'Current Asset'],
+                ['1800', 'Land', 'Fixed Asset'],
+                ['1000', 'Bank of America Account', 'Bank'],
+                ['1030', 'Receviables', 'Accounts Receviable'],
+                ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+                ['1033', 'TAFS - Reserve', 'Current Asset'],
+                ['1050', 'Advances Given', 'Current Asset'],
+                ['1055', 'Loans Given', 'Current Asset'],
+                ['1056', 'Deductible', 'Current Asset'],
+                ['1100', 'Undeposited Funds', 'Current Asset'],
+                ['1500', 'Parts Inventory', 'Current Asset'],
+                ['1800', 'Land', 'Fixed Asset'],
+                ['1000', 'Bank of America Account', 'Bank'],
+                ['1030', 'Receviables', 'Accounts Receviable'],
+                ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+                ['1033', 'TAFS - Reserve', 'Current Asset'],
+                ['1050', 'Advances Given', 'Current Asset'],
+                ['1055', 'Loans Given', 'Current Asset'],
+                ['1056', 'Deductible', 'Current Asset'],
+                ['1100', 'Undeposited Funds', 'Current Asset'],
+                ['1500', 'Parts Inventory', 'Current Asset'],
+                ['1800', 'Land', 'Fixed Asset'],
+                ['1000', 'Bank of America Account', 'Bank'],
+                ['1030', 'Receviables', 'Accounts Receviable'],
+                ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+                ['1033', 'TAFS - Reserve', 'Current Asset'],
+                ['1050', 'Advances Given', 'Current Asset'],
+                ['1055', 'Loans Given', 'Current Asset'],
+                ['1056', 'Deductible', 'Current Asset'],
+                ['1100', 'Undeposited Funds', 'Current Asset'],
+                ['1500', 'Parts Inventory', 'Current Asset'],
+                ['1800', 'Land', 'Fixed Asset'],
+                ['1000', 'Bank of America Account', 'Bank'],
+                ['1030', 'Receviables', 'Accounts Receviable'],
+                ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+                ['1033', 'TAFS - Reserve', 'Current Asset'],
+                ['1050', 'Advances Given', 'Current Asset'],
+                ['1055', 'Loans Given', 'Current Asset'],
+                ['1056', 'Deductible', 'Current Asset'],
+                ['1100', 'Undeposited Funds', 'Current Asset'],
+                ['1500', 'Parts Inventory', 'Current Asset'],
+                ['1800', 'Land', 'Fixed Asset'],
+                ['1000', 'Bank of America Account', 'Bank'],
+                ['1030', 'Receviables', 'Accounts Receviable'],
+                ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+                ['1033', 'TAFS - Reserve', 'Current Asset'],
+                ['1050', 'Advances Given', 'Current Asset'],
+                ['1055', 'Loans Given', 'Current Asset'],
+                ['1056', 'Deductible', 'Current Asset'],
+                ['1100', 'Undeposited Funds', 'Current Asset'],
+                ['1500', 'Parts Inventory', 'Current Asset'],
+                ['1800', 'Land', 'Fixed Asset'],
+                ['1000', 'Bank of America Account', 'Bank'],
+                ['1030', 'Receviables', 'Accounts Receviable'],
+                ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+                ['1033', 'TAFS - Reserve', 'Current Asset'],
+                ['1050', 'Advances Given', 'Current Asset'],
+                ['1055', 'Loans Given', 'Current Asset'],
+                ['1056', 'Deductible', 'Current Asset'],
+                ['1100', 'Undeposited Funds', 'Current Asset'],
+                ['1500', 'Parts Inventory', 'Current Asset'],
+                ['1800', 'Land', 'Fixed Asset'],
+            ],
+            dom: 'rtp',
+            orderCellsTop: true,
+            // scrollY: '500px',
+            // scrollCollapse: true,
+            // paging: false,
+            autoWidth: false,
+            order: [[0, 'asc']],
+            initComplete: function () {
+            },
+            conditionalPaging: true,
+            columns: [
+                { title: 'Account No', },
+                { title: 'Desc', },
+                { title: 'Type', },
+            ],
+        };
+
+        var tbNames = {
+            data: [
+                ['ALI, MOHAMED MIRE'],
+                ['BELEDI, ABDULAHI'],
+                ['BELLEVUE, NEWTON'],
+                ['DANIEL, JOHN EDOUARD'],
+                ['DERNE, HENOCK'],
+                ['DOE, JOHN'],
+            ],
+            dom: 'tp',
+            orderCellsTop: true,
+            initComplete: function () {
+            },
+            conditionalPaging: true,
+            columns: [
+                { title: 'Names', },
+            ],
+        };
+
+        var tbTrucks = {
+            data: [
+                ['222947', 'CS'],
+                ['222961', 'CS'],
+                ['222969', 'CS'],
+                ['252401', 'CS'],
+                ['333666', 'B1'],
+                ['809846', 'CS'],
+                ['834600', 'CS'],
+            ],
+            dom: 'tp',
+            orderCellsTop: true,
+            initComplete: function () {
+            },
+            conditionalPaging: true,
+            columns: [
+                { title: 'Truck No',},
+                { title: 'Type',},
+            ],
+        };

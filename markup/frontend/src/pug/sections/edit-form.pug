@@ -1,0 +1,9 @@
+section.edit-form
+    nav#nav-tab.nav.nav-tabs
+        a#nav-company-tab.nav-link.active(data-toggle='tab' href='#nav-company') Simple
+        a#nav-defaults-tab.nav-link(data-toggle='tab' href='#nav-defaults') Layouts
+    #nav-tabContent.tab-content
+        #nav-company.tab-pane.fade.show.active
+            include forms/simple
+        #nav-defaults.tab-pane.fade
+            include forms/layouts

@@ -1,0 +1,118 @@
+.edit-form
+
+	&-toolbar
+		display: flex
+		.btn
+			&:not(:last-child)
+				margin-right: 4px
+
+		i
+			&:not(:last-child)
+				margin-right: 10px
+
+	.nav-link
+		&.active
+			background-color: $clr-blue
+			border-color: $clr-blue
+			color: $clr-white
+		&:hover
+			border-bottom: 0
+			border-color: $clr-blue
+
+	.nav-tabs
+		border-bottom: 1px solid $clr-blue
+		margin-bottom: 40px
+
+	p
+		margin-bottom: 0
+
+	input[type='date']
+		padding: 0.5rem
+
+.form
+	display: flex
+	flex-wrap: wrap
+	&-fieldset
+		width: 100%
+		border: 1px solid #d1d3e2
+		padding: 20px
+		border-radius: 4px
+		position: relative
+		margin-bottom: 40px
+
+	&-legend
+		position: absolute
+		top: -10px
+		background-color: $clr-white
+		line-height: 1
+		padding: 0 4px
+		left: 20px
+		color: darken($clr-orange, 15)
+
+	&-row
+		display: flex
+
+	.input
+		height: 40px
+
+	&-control
+		&:focus
+			box-shadow: 0 0 0 1px rgba($clr-blue, 0.25)
+		&-plaintext
+			outline: none
+
+	&-readonly-text
+		color: #375F8A
+		margin-bottom: 0
+		font: inherit
+
+	&-hr-text
+		display: flex
+		align-items: center
+		text-align: center
+		color: darken($clr-orange, 15)
+
+		&::before,
+		&::after
+			content: ''
+			flex: 1
+			border-bottom: 1px solid #C0C0C1
+
+		&:not(:empty)::before
+			margin-right: 0.8rem
+
+		&:not(:empty)::after
+			margin-left: 0.8rem
+
+// errors
+.has-error
+	.form-control,
+	.form-control-file,
+	.custom-file-label,
+	.custom-select
+		border: 1px solid $clr-red
+
+	.help-block
+		display: block
+		color: $clr-red
+		font-size: 14px
+		margin: 4px 0
+
+	.form-check-label
+		color: $clr-red
+
+.form-check.has-error
+	.help-block
+		display: none
+
+.custom-control.has-error
+	.help-block
+		display: none
+	.custom-control-label
+		color: $clr-red
+		&:before
+			border-color: $clr-red
+
+.input-group.has-error
+	.help-block
+		display: none

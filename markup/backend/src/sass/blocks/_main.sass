@@ -1,0 +1,67 @@
+*,
+*:after,
+*:before
+	box-sizing: border-box
+
+.btn:active,
+.btn:focus
+	outline: 0
+
+.ajax-alert
+	position: absolute
+	right: 20px
+	bottom: 20px
+	min-width: 30rem
+
+.ajax-alert .close:focus
+	outline: none
+
+.no-focus
+	&:focus,
+	&:active
+		outline: none
+
+	a:focus,
+	button:focus,
+	a:active,
+	button:active
+		outline: none
+
+.dropdown-menu--table
+	&:not(.dropdown-menu-right)
+		left: 15px
+
+	&.dropdown-menu-right
+		right: 15px
+
+	.dropdown-item
+		padding: 6px 12px
+
+.d-flex
+	display: flex
+
+.js-daterange
+	input
+		max-width: 110px
+
+body
+	font-size: 15px
+	letter-spacing: 0.01em
+
+.content .the-legend
+	font-size: 16px
+
+.main-sidebar .sidebar-menu li.header
+	font-size: 14px
+
+.main-sidebar .user-panel > .info > a
+	font-size: 14px
+
+.content-wrapper .content-header > .breadcrumb
+	font-size: 14px
+
+.content .form-control
+	font-size: 15px
+
+select[readonly]
+	pointer-events: none

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/css/fontawesome-all.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <title>Chat</title>
+  </head>
+  <body>
+    <script>
+      var svgArray = [
+          '/svgmin/sprite_icons.svg'
+      ];
+    </script>
+    <div class="svgSprite"></div>
+    <div class="wrapper">
+      <div class="wrapper__inner">
+        <div class="wrapper__content">
+          <div id="wrapper">
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+              <!-- Sidebar - Brand--><a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-truck"></i></div>
+                <div class="sidebar-brand-text mx-3">TMS Markup</div></a>
+              <!-- Divider-->
+              <hr class="sidebar-divider my-0">
+              <!-- Nav Item - Tables-->
+              <li class="nav-item active"><a class="nav-link" href="tables.html"><i class="fas fa-fw fa-table"></i><span>Tables</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="edit.html"><i class="fas fa-fw fa-pen"></i><span>Edit</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="forms.html"><i class="fas fa-fw fa-list"></i><span>Forms</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="notes.html"><i class="fas fa-fw fa-sticky-note"></i><span>Notes</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="compliance.html"><i class="fas fa-fw fa-car"></i><span>Compliance</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="load.html"><i class="fas fa-fw fa-truck-loading"></i><span>Load</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="truck-information.html"><i class="fas fa-fw fa-info"></i><span>Truck information</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="table-dropdown.html"><i class="fas fa-fw fa-table"></i><span>Table dropdown</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="modals.html"><i class="far fa-fw fa-window-maximize"></i><span>Modals</span></a></li>
+              <li class="nav-item active"><a class="nav-link" href="location.html"><i class="fas fa-fw fa-search-location"></i><span>Location</span></a></li>
+              <!-- Divider-->
+              <hr class="sidebar-divider d-none d-md-block">
+              <!-- Sidebar Toggler (Sidebar)-->
+              <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+              </div>
+            </ul>
+            <div class="d-flex flex-column" id="content-wrapper">
+              <div id="content">
+                <!-- Topbar-->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                  <!-- Sidebar Toggle (Topbar)-->
+                  <form class="form-inline">
+                    <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop"><i class="fa fa-bars"></i></button>
+                  </form>
+                  <!-- Topbar Search-->
+                  <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div class="input-group">
+                      <input class="form-control bg-light border-0 small" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button"><i class="fas fa-search fa-sm"></i></button>
+                      </div>
+                    </div>
+                  </form>
+                  <!-- Topbar Navbar-->
+                  <ul class="navbar-nav ml-auto">
+                    <!-- Nav Item - Search Dropdown (Visible Only XS)-->
+                    <li class="nav-item dropdown no-arrow d-sm-none"><a class="nav-link dropdown-toggle" id="searchDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-search fa-fw"></i></a>
+                      <!-- Dropdown - Messages-->
+                      <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                        <form class="form-inline mr-auto w-100 navbar-search">
+                          <div class="input-group">
+                            <input class="form-control bg-light border-0 small" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                              <button class="btn btn-primary" type="button"><i class="fas fa-search fa-sm"></i></button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </li>
+                    <!-- Nav Item - Alerts-->
+                    <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" id="alertsDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell fa-fw"></i>
+                        <!-- Counter - Alerts--><span class="badge badge-danger badge-counter">3+</span></a>
+                      <!-- Dropdown - Alerts-->
+                      <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in ntf-list" aria-labelledby="alertsDropdown">
+                        <div class="dropdown-header">
+                          <h6>Notifications</h6>
+                          <button class="ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                        </div><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a><a class="dropdown-item ntf-item" href="#">
+                          <div class="ntf-item-info">
+                            <p><span>From:</span> DENZEL WILLIAMS</p>
+                            <div class="ntf-item-right">
+                              <p class="ntf-item-time">12/30/20 14:14</p>
+                              <button class="ntf-item-remove js-ntf-remove" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="ntf-item-content">
+                            <p><span>Subject:</span> 130193</p>
+                            <p><span>Details:</span> Arrived: WILLIAMS, DENZEL</p>
+                          </div></a>
+                      </div>
+                    </li>
+                    <!-- Nav Item - Messages-->
+                    <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" id="messagesDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-envelope fa-fw"></i>
+                        <!-- Counter - Messages--><span class="badge badge-danger badge-counter">7</span></a>
+                      <!-- Dropdown - Messages-->
+                      <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                        <h6 class="dropdown-header">Message Center</h6><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="images/svg/undraw_profile_1.svg" alt="">
+                            <div class="status-indicator bg-success"></div>
+                          </div>
+                          <div class="font-weight-bold">
+                            <div class="text-truncate">
+                              Hi there! I am wondering if you can help me with a
+                              problem I&apos;ve been having.
+                            </div>
+                            <div class="small text-gray-500">Emily Fowler &middot; 58m</div>
+                          </div></a><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="images/svg/undraw_profile_2.svg" alt="">
+                            <div class="status-indicator"></div>
+                          </div>
+                          <div>
+                            <div class="text-truncate">
+                              I have the photos that you ordered last month, how
+                              would you like them sent to you?
+                            </div>
+                            <div class="small text-gray-500">Jae Chun &middot; 1d</div>
+                          </div></a><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="images/svg/undraw_profile_3.svg" alt="">
+                            <div class="status-indicator bg-warning"></div>
+                          </div>
+                          <div>
+                            <div class="text-truncate">
+                              Last month&apos;s report looks great, I am very happy with
+                              the progress so far, keep up the good work!
+                            </div>
+                            <div class="small text-gray-500">Morgan Alvarez &middot; 2d</div>
+                          </div></a><a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                            <div class="status-indicator bg-success"></div>
+                          </div>
+                          <div>
+                            <div class="text-truncate">
+                              Am I a good boy? The reason I ask is because someone
+                              told me that people say this to all dogs, even if they aren&apos;t good...
+                            </div>
+                            <div class="small text-gray-500">Chicken the Dog &middot; 2w</div>
+                          </div></a><a class="dropdown-item text-center small text-gray-500" href="/chat.html">Read More Messages</a>
+                      </div>
+                    </li>
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <!-- Nav Item - User Information-->
+                    <li class="nav-item dropdown no-arrow"><a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span><img class="img-profile rounded-circle" src="images/svg/undraw_profile.svg"></a>
+                      <!-- Dropdown - User Information-->
+                      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>                                    Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>                                    Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>                                    Activity Log</a>
+                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>                                    Logout</a>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- End of Topbar-->
+                <!-- Begin Page Content-->
+                <div class="container-fluid">
+                  <div class="card shadow mb-4">
+                    <div class="card-body">
+                      <div class="row chat">
+                        <div class="col-4">
+                          <div class="chat__list">
+                            <div class="card">
+                              <div class="card-header">Chat list</div>
+                              <div class="card-body">
+                                <div class="chat__list-inner">
+                                  <div class="chat__item active user-card">
+                                    <div class="chat__item-avatar"><img class="user-avatar" src="/images/svg/undraw_profile_1.svg"><span class="user-status user-status--online"></span></div>
+                                    <div class="chat__item-info">
+                                      <h6 class="user-name">Emily Fowler</h6>
+                                      <p class="chat__item-text"><span class="user-sender">You:</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto dolor dolores doloribus ducimus enim, est itaque officiis quas quia quibusdam quidem quis veniam vero voluptatum? Culpa debitis dicta minima.</p>
+                                      <!-- -span.chat__item-date today-->
+                                    </div><span class="badge badge-danger">3</span>
+                                  </div>
+                                  <div class="chat__item">
+                                    <div class="chat__item-avatar"><img class="user-avatar" src="/images/svg/undraw_profile_2.svg"><span class="user-status user-status--afk"></span></div>
+                                    <div class="chat__item-info">
+                                      <h6 class="user-name">Jae Chun</h6>
+                                      <p class="chat__item-text"><span class="user-sender">You:</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque exercitationem nihil nulla quaerat quia quo reiciendis suscipit veniam, voluptates voluptatum? Dolor expedita inventore mollitia necessitatibus odit optio reprehenderit temporibus. Molestiae.</p>
+                                    </div><span class="badge badge-danger">3</span>
+                                  </div>
+                                  <div class="chat__item">
+                                    <div class="chat__item-avatar"><img class="user-avatar" src="/images/svg/undraw_profile_3.svg"><span class="user-status user-status--busy"></span></div>
+                                    <div class="chat__item-info">
+                                      <h6 class="user-name">Morgan Alvarez</h6>
+                                      <p class="chat__item-text">Lorem ipsum dolor sit amet</p><span class="chat__item-date">a week ago</span>
+                                    </div><span class="badge badge-danger">3</span>
+                                  </div>
+                                  <div class="chat__item">
+                                    <div class="chat__item-avatar"><img class="user-avatar" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"><span class="user-status user-status--offline"></span></div>
+                                    <div class="chat__item-info">
+                                      <h6 class="user-name">Chicken the Dog</h6>
+                                      <p class="chat__item-text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p><span class="chat__item-date">2 months ago</span>
+                                    </div><span class="badge badge-danger">3</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card">
+                              <div class="card-header">Archived</div>
+                              <div class="card-body">
+                                <div class="chat__list-inner">
+                                  <div class="chat__item">
+                                    <div class="chat__item-avatar"><img class="user-avatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><span class="user-status user-status--deleted"></span></div>
+                                    <div class="chat__item-info">
+                                      <h6 class="user-name">Some old user</h6>
+                                      <p class="chat__item-text">User's last post...</p>
+                                    </div><span class="badge badge-danger">3</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-8">
+                          <div class="card chat__messages">
+                            <div class="card-header">
+                              <div class="chat__user">
+                                <div class="chat__user-avatar"><img class="user-avatar" src="/images/svg/undraw_profile_1.svg"></div>
+                                <div class="chat__user-info">
+                                  <h6 class="user-name">Emily Fowler</h6><span class="user-status user-status--online">online</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="clearfix">
+                                <div class="float-left chat__message">
+                                  <div class="chat__message-author"><span>Emily Fowler</span><span>3:14 PM</span></div>
+                                  <div class="chat__message-text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias animi asperiores assumenda doloribus eos harum, id incidunt ipsum laborum, minus nisi officia quibusdam rerum sit ullam ut velit voluptatem.</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="clearfix">
+                                <div class="float-right chat__message">
+                                  <div class="chat__message-author"><span>Douglas McGee</span><span>9:12 PM</span></div>
+                                  <div class="chat__message-text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias animi asperiores assumenda doloribus eos harum, id incidunt ipsum laborum, minus nisi officia quibusdam rerum sit ullam ut velit voluptatem.</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="chat__message-date"><span>Today</span></div>
+                              <div class="clearfix">
+                                <div class="float-left chat__message">
+                                  <div class="chat__message-author"><span>Emily Fowler</span><span>11:15 AM</span></div>
+                                  <div class="chat__message-text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias animi asperiores assumenda doloribus eos harum, id incidunt ipsum laborum, minus nisi officia quibusdam rerum sit ullam ut velit voluptatem.</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="clearfix">
+                                <div class="float-left chat__message">
+                                  <div class="chat__message-author"><span>Emily Fowler</span><span>11:40 AM</span></div>
+                                  <div class="chat__message-text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias animi asperiores assumenda doloribus eos harum, id incidunt ipsum laborum, minus nisi officia quibusdam rerum sit ullam ut velit voluptatem.</p>
+                                  </div>
+                                </div>
+                                <div class="float-right chat__message">
+                                  <div class="chat__message-author"><span>Douglas McGee</span><span>4:52 PM</span></div>
+                                  <div class="chat__message-text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias animi asperiores assumenda doloribus eos harum, id incidunt ipsum laborum, minus nisi officia quibusdam rerum sit ullam ut velit voluptatem.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <form>
+                                <textarea class="form-control" placeholder="Your message"></textarea>
+                                <button class="btn btn-primary btn-block">Send</button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                  <div class="copyright text-center my-auto"><span>Copyright &copy; Your Website 2020</span></div>
+                </div>
+              </footer>
+            </div><a class="scroll-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/jquery-3.5.1.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.bundle.js" type="text/javascript"></script>
+    <script src="/js/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="/js/dataTables.bootstrap4.js" type="text/javascript"></script>
+    <script src="/js/vendor.js" type="text/javascript"></script>
+    <script src="/js/scripts.js" type="text/javascript"></script>
+  </body>
+</html>

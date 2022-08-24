@@ -1,0 +1,180 @@
+extends pug/layouts/dashboard
+
+block title
+    title Fuel Settings
+
+block page
+    .container-fluid
+        h1.h3.mb-4.text-gray-800 Fuel Settings
+        .card.shadow.mb-4
+            .card-body
+                .inline-dt-wrap
+                    .table.table-responsive
+                        table.table.table-bordered.compact.js-datatable.w-100#payrollDT(cellspacing='0' data-var='DTVar')
+                            thead
+                                th
+                                th
+                                th
+                                th
+                                th
+                            tfoot.d-none
+                                th
+                                th
+                                th
+                                th
+                                th
+                    .table.table-responsive.inline-dt.dropdown-menu--table
+                        table.table.compact.js-datatable.table-bordered#inlineDT1(data-var='inlineDT' cellspacing='0')
+                            thead
+                                tr
+                                    th
+                                    th
+                                    th
+
+block scripts
+    script.
+        var DTVar = {
+            data: [
+                ['GOOD #1', '', '', '0.00', ''],
+                ['GOOD #2', ' ', ' ' , '0.00', ''],
+                ['GOOD #3', ' ', ' ' , '0.00', ''],
+                ['GOOD #4', ' ', ' ' , '0.00', ''],
+                ['GOOD #5', ' ', ' ' , '0.00', ''],
+                ['GOOD #6', ' ', ' ' , '0.00', ''],
+                ['GOOD #7', ' ', ' ' , '0.00', ''],
+                ['GOOD #8', ' ', ' ' , '0.00', ''],
+                ['GOOD #9', ' ', ' ' , '0.00', ''],
+                ['GOOD #10', ' ', ' ' , '0.00', ''],
+                ['GOOD #11', ' ', ' ' , '0.00', ''],
+                ['GOOD #12', ' ', ' ' , '0.00', ''],
+                ['GOOD #13', ' ', ' ' , '0.00', ''],
+                ['GOOD #14', ' ', ' ' , '0.00', ''],
+                ['GOOD #15', ' ', ' ' , '0.00', ''],
+                ['GOOD #16', ' ', ' ' , '0.00', ''],
+                ['GOOD #17', ' ', ' ' , '0.00', ''],
+                ['GOOD #18', ' ', ' ' , '0.00', ''],
+                ['GOOD #19', ' ', ' ' , '0.00', ''],
+                ['GOOD #20', ' ', ' ' , '0.00', ''],
+                ['GOOD #2', ' ', ' ' , '0.00', ''],
+                ['GOOD #3', ' ', ' ' , '0.00', ''],
+                ['GOOD #4', ' ', ' ' , '0.00', ''],
+                ['GOOD #5', ' ', ' ' , '0.00', ''],
+                ['GOOD #6', ' ', ' ' , '0.00', ''],
+                ['GOOD #7', ' ', ' ' , '0.00', ''],
+                ['GOOD #8', ' ', ' ' , '0.00', ''],
+                ['GOOD #9', ' ', ' ' , '0.00', ''],
+                ['GOOD #10', ' ', ' ' , '0.00', ''],
+                ['GOOD #11', ' ', ' ' , '0.00', ''],
+                ['GOOD #12', ' ', ' ' , '0.00', ''],
+                ['GOOD #13', ' ', ' ' , '0.00', ''],
+                ['GOOD #14', ' ', ' ' , '0.00', ''],
+                ['GOOD #15', ' ', ' ' , '0.00', ''],
+                ['GOOD #16', ' ', ' ' , '0.00', ''],
+                ['GOOD #17', ' ', ' ' , '0.00', ''],
+                ['GOOD #18', ' ', ' ' , '0.00', ''],
+                ['GOOD #19', ' ', ' ' , '0.00', ''],
+                ['GOOD #20', ' ', ' ' , '0.00', ''],
+            ],
+            dom: 't',
+            orderCellsTop: true,
+            initComplete: function () {
+            },
+            paging: false,
+            columns: [
+                {title: 'Description',},
+                {title: 'O/O Acct', className: 'inline-dt-trigger'},
+                {title: 'C/D Acct', className: 'inline-dt-trigger'},
+                {title: 'Fee Amt',},
+                {title: 'Fee Acct', className: 'inline-dt-trigger'},
+            ],
+        };
+
+        var inlineDT = {
+            data: [
+                ['1000', 'Bank of America Account', 'Bank'],
+                ['1030', 'Receviables', 'Accounts Receviable'],
+                ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+                ['1033', 'TAFS - Reserve', 'Current Asset'],
+                ['1050', 'Advances Given', 'Current Asset'],
+                ['1055', 'Loans Given', 'Current Asset'],
+                ['1056', 'Deductible', 'Current Asset'],
+                ['1100', 'Undeposited Funds', 'Current Asset'],
+                ['1500', 'Parts Inventory', 'Current Asset'],
+                ['1800', 'Land', 'Fixed Asset'],
+                ['1000', 'Bank of America Account', 'Bank'],
+                ['1030', 'Receviables', 'Accounts Receviable'],
+                ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+                ['1033', 'TAFS - Reserve', 'Current Asset'],
+                ['1050', 'Advances Given', 'Current Asset'],
+                ['1055', 'Loans Given', 'Current Asset'],
+                ['1056', 'Deductible', 'Current Asset'],
+                ['1100', 'Undeposited Funds', 'Current Asset'],
+                ['1500', 'Parts Inventory', 'Current Asset'],
+                ['1800', 'Land', 'Fixed Asset'],
+                ['1000', 'Bank of America Account', 'Bank'],
+                ['1030', 'Receviables', 'Accounts Receviable'],
+                ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+                ['1033', 'TAFS - Reserve', 'Current Asset'],
+                ['1050', 'Advances Given', 'Current Asset'],
+                ['1055', 'Loans Given', 'Current Asset'],
+                ['1056', 'Deductible', 'Current Asset'],
+                ['1100', 'Undeposited Funds', 'Current Asset'],
+                ['1500', 'Parts Inventory', 'Current Asset'],
+                ['1800', 'Land', 'Fixed Asset'],
+                ['1000', 'Bank of America Account', 'Bank'],
+                ['1030', 'Receviables', 'Accounts Receviable'],
+                ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+                ['1033', 'TAFS - Reserve', 'Current Asset'],
+                ['1050', 'Advances Given', 'Current Asset'],
+                ['1055', 'Loans Given', 'Current Asset'],
+                ['1056', 'Deductible', 'Current Asset'],
+                ['1100', 'Undeposited Funds', 'Current Asset'],
+                ['1500', 'Parts Inventory', 'Current Asset'],
+                ['1800', 'Land', 'Fixed Asset'],
+                ['1000', 'Bank of America Account', 'Bank'],
+                ['1030', 'Receviables', 'Accounts Receviable'],
+                ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+                ['1033', 'TAFS - Reserve', 'Current Asset'],
+                ['1050', 'Advances Given', 'Current Asset'],
+                ['1055', 'Loans Given', 'Current Asset'],
+                ['1056', 'Deductible', 'Current Asset'],
+                ['1100', 'Undeposited Funds', 'Current Asset'],
+                ['1500', 'Parts Inventory', 'Current Asset'],
+                ['1800', 'Land', 'Fixed Asset'],
+                ['1000', 'Bank of America Account', 'Bank'],
+                ['1030', 'Receviables', 'Accounts Receviable'],
+                ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+                ['1033', 'TAFS - Reserve', 'Current Asset'],
+                ['1050', 'Advances Given', 'Current Asset'],
+                ['1055', 'Loans Given', 'Current Asset'],
+                ['1056', 'Deductible', 'Current Asset'],
+                ['1100', 'Undeposited Funds', 'Current Asset'],
+                ['1500', 'Parts Inventory', 'Current Asset'],
+                ['1800', 'Land', 'Fixed Asset'],
+                ['1000', 'Bank of America Account', 'Bank'],
+                ['1030', 'Receviables', 'Accounts Receviable'],
+                ['1031', 'TAFS - Factored Invoices', 'Current Asset'],
+                ['1033', 'TAFS - Reserve', 'Current Asset'],
+                ['1050', 'Advances Given', 'Current Asset'],
+                ['1055', 'Loans Given', 'Current Asset'],
+                ['1056', 'Deductible', 'Current Asset'],
+                ['1100', 'Undeposited Funds', 'Current Asset'],
+                ['1500', 'Parts Inventory', 'Current Asset'],
+                ['1800', 'Land', 'Fixed Asset'],
+            ],
+            dom: 'rtp',
+            orderCellsTop: true,
+            scrollY: '495px',
+            scrollCollapse: true,
+            paging: false,
+            autoWidth: false,
+            order: [[0, 'asc']],
+            initComplete: function () {
+            },
+            conditionalPaging: true,
+            columns: [
+                { title: 'Account No', },
+                { title: 'Desc', },
+                { title: 'Type', },
+            ],
+        };
